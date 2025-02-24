@@ -1,52 +1,72 @@
-Subject Code,Program,Year Level,Teacher Name,Room Name,Day,Start Time,End Time
-MATH301,All,3,Prof. Euler,Room 116,Friday,7:00:00,8:00:00
-AI101,All,3,Prof. Turing,Room 113,Saturday,7:00:00,8:00:00
-AI101,All,3,Prof. Turing,Room 111,Saturday,9:00:00,10:00:00
-SEC301,All,3,Prof. Schneier,Room 118,Thursday,10:00:00,11:00:00
-SEC301,All,3,Prof. Schneier,Room 106,Tuesday,7:00:00,8:00:00
-CS102,BS Computer Science,2,Prof. Jones,Room 104,Friday,10:00:00,11:00:00
-CS101,BS Computer Science,1,Prof. Smith,Room 105,Friday,16:00:00,17:00:00
-CS101,BS Computer Science,1,Prof. Smith,Room 119,Monday,14:00:00,15:00:00
-CS103,BS Computer Science,3,Prof. Brown,Room 107,Monday,15:00:00,16:00:00
-CS103,BS Computer Science,3,Prof. Brown,Room 120,Monday,16:00:00,17:00:00
-CS101,BS Computer Science,1,Prof. Smith,Room 108,Thursday,15:00:00,16:00:00
-CS102,BS Computer Science,2,Prof. Jones,Room 107,Tuesday,8:00:00,9:00:00
-CS103,BS Computer Science,3,Prof. Brown,Room 106,Wednesday,14:00:00,15:00:00
-CS102,BS Computer Science,2,Prof. Jones,Room 117,Wednesday,15:00:00,16:00:00
-CY103,BS Cyber Security,3,Prof. Lime,Room 114,Saturday,10:00:00,11:00:00
-CY102,BS Cyber Security,2,Prof. Magenta,Room 112,Saturday,15:00:00,16:00:00
-CY102,BS Cyber Security,2,Prof. Magenta,Room 111,Thursday,14:00:00,15:00:00
-CY101,BS Cyber Security,1,Prof. Cyan,Room 110,Thursday,16:00:00,17:00:00
-CY102,BS Cyber Security,2,Prof. Magenta,Room 120,Tuesday,14:00:00,15:00:00
-CY101,BS Cyber Security,1,Prof. Cyan,Room 115,Wednesday,8:00:00,9:00:00
-CY104,BS Cyber Security,4,Prof. Mitnick,Room 112,Wednesday,10:00:00,11:00:00
-CY101,BS Cyber Security,1,Prof. Cyan,Room 103,Wednesday,11:00:00,12:00:00
-DS103,BS Data Science,3,Prof. Orange,Room 114,Friday,11:00:00,12:00:00
-DS103,BS Data Science,3,Prof. Orange,Room 108,Friday,13:00:00,14:00:00
-DS101,BS Data Science,1,Prof. Grey,Room 118,Friday,14:00:00,15:00:00
-DS103,BS Data Science,3,Prof. Orange,Room 116,Monday,9:00:00,10:00:00
-DS101,BS Data Science,1,Prof. Grey,Room 105,Monday,10:00:00,11:00:00
-DS102,BS Data Science,2,Prof. Blue,Room 101,Monday,11:00:00,12:00:00
-DS102,BS Data Science,2,Prof. Blue,Room 116,Thursday,8:00:00,9:00:00
-DS101,BS Data Science,1,Prof. Grey,Room 111,Thursday,9:00:00,10:00:00
-DS102,BS Data Science,2,Prof. Blue,Room 113,Tuesday,10:00:00,11:00:00
-IT101,BS Information Technology,1,Prof. White,Room 113,Friday,15:00:00,16:00:00
-IT102,BS Information Technology,2,Prof. Green,Room 111,Saturday,14:00:00,15:00:00
-IT102,BS Information Technology,2,Prof. Green,Room 119,Thursday,7:00:00,8:00:00
-IT102,BS Information Technology,2,Prof. Green,Room 105,Thursday,11:00:00,12:00:00
-IT104,BS Information Technology,4,Prof. Bezos,Room 113,Thursday,13:00:00,14:00:00
-IT103,BS Information Technology,3,Prof. Black,Room 107,Tuesday,9:00:00,10:00:00
-IT101,BS Information Technology,1,Prof. White,Room 111,Tuesday,13:00:00,14:00:00
-IT101,BS Information Technology,1,Prof. White,Room 106,Tuesday,15:00:00,16:00:00
-IT104,BS Information Technology,4,Prof. Bezos,Room 117,Wednesday,7:00:00,8:00:00
-IT103,BS Information Technology,3,Prof. Black,Room 106,Wednesday,9:00:00,10:00:00
-SE103,BS Software Engineering,3,Prof. Purple,Room 106,Friday,8:00:00,9:00:00
-SE103,BS Software Engineering,3,Prof. Purple,Room 108,Friday,9:00:00,10:00:00
-SE102,BS Software Engineering,2,Prof. Yellow,Room 109,Monday,13:00:00,14:00:00
-SE103,BS Software Engineering,3,Prof. Purple,Room 101,Saturday,8:00:00,9:00:00
-SE104,BS Software Engineering,4,Prof. Gamma,Room 111,Saturday,13:00:00,14:00:00
-SE102,BS Software Engineering,2,Prof. Yellow,Room 117,Saturday,16:00:00,17:00:00
-SE102,BS Software Engineering,2,Prof. Yellow,Room 107,Tuesday,11:00:00,12:00:00
-SE101,BS Software Engineering,1,Prof. Red,Room 116,Tuesday,16:00:00,17:00:00
-SE101,BS Software Engineering,1,Prof. Red,Room 111,Wednesday,13:00:00,14:00:00
-SE101,BS Software Engineering,1,Prof. Red,Room 109,Wednesday,16:00:00,17:00:00
+Subject Code,Teacher Name,Room Name,Day,Start Time,End Time
+580,DS102,Prof. Blue,Room 117,Tuesday,9:00:00,10:00:00
+581,DS102,Prof. Blue,Room 110,Wednesday,16:00:00,17:00:00
+582,DS102,Prof. Blue,Room 102,Saturday,15:00:00,16:00:00
+583,IT102,Prof. Green,Room 120,Monday,14:00:00,15:00:00
+584,IT102,Prof. Green,Room 111,Tuesday,16:00:00,17:00:00
+585,IT102,Prof. Green,Room 106,Saturday,14:00:00,15:00:00
+586,CS102,Prof. Jones,Room 101,Tuesday,9:00:00,10:00:00
+587,CS102,Prof. Jones,Room 102,Thursday,9:00:00,10:00:00
+588,CS102,Prof. Jones,Room 107,Tuesday,16:00:00,17:00:00
+589,CY101,Prof. Cyan,Room 106,Tuesday,9:00:00,10:00:00
+590,CY101,Prof. Cyan,Room 120,Tuesday,15:00:00,16:00:00
+591,CY101,Prof. Cyan,Room 111,Monday,9:00:00,10:00:00
+592,SE101,Prof. Red,Room 114,Wednesday,9:00:00,10:00:00
+593,SE101,Prof. Red,Room 108,Monday,16:00:00,17:00:00
+594,SE101,Prof. Red,Room 106,Friday,15:00:00,16:00:00
+595,DS101,Prof. Grey,Room 109,Monday,16:00:00,17:00:00
+596,DS101,Prof. Grey,Room 102,Monday,15:00:00,16:00:00
+597,DS101,Prof. Grey,Room 115,Friday,15:00:00,16:00:00
+598,IT101,Prof. White,Room 112,Saturday,14:00:00,15:00:00
+599,IT101,Prof. White,Room 119,Thursday,15:00:00,16:00:00
+600,CS101,Prof. Smith,Room 110,Tuesday,14:00:00,15:00:00
+601,CS101,Prof. Smith,Room 105,Friday,14:00:00,15:00:00
+602,CS101,Prof. Smith,Room 106,Thursday,14:00:00,15:00:00
+603,SE102,Prof. Yellow,Room 114,Tuesday,9:00:00,10:00:00
+604,SE102,Prof. Yellow,Room 111,Monday,15:00:00,16:00:00
+605,SE102,Prof. Yellow,Room 107,Thursday,14:00:00,15:00:00
+606,CY102,Prof. Magenta,Room 106,Tuesday,16:00:00,17:00:00
+607,CY102,Prof. Magenta,Room 102,Tuesday,14:00:00,15:00:00
+608,CY102,Prof. Magenta,Room 115,Saturday,9:00:00,10:00:00
+609,CS103,Prof. Brown,Room 103,Monday,9:00:00,10:00:00
+610,CS103,Prof. Brown,Room 103,Saturday,15:00:00,16:00:00
+611,CS103,Prof. Brown,Room 110,Friday,16:00:00,17:00:00
+612,IT103,Prof. Black,Room 113,Friday,16:00:00,17:00:00
+613,IT103,Prof. Black,Room 112,Saturday,16:00:00,17:00:00
+614,DS103,Prof. Orange,Room 109,Saturday,9:00:00,10:00:00
+615,DS103,Prof. Orange,Room 105,Friday,15:00:00,16:00:00
+616,DS103,Prof. Orange,Room 111,Thursday,9:00:00,10:00:00
+617,SE103,Prof. Purple,Room 118,Friday,14:00:00,15:00:00
+618,SE103,Prof. Purple,Room 113,Wednesday,9:00:00,10:00:00
+619,SE103,Prof. Purple,Room 114,Monday,9:00:00,10:00:00
+620,CY103,Prof. Lime,Room 112,Monday,15:00:00,16:00:00
+621,MATH301,Prof. Euler,Room 109,Thursday,15:00:00,16:00:00
+622,MATH301,Prof. Euler,Room 116,Thursday,9:00:00,10:00:00
+623,MATH301,Prof. Euler,Room 114,Wednesday,15:00:00,16:00:00
+624,AI101,Prof. Turing,Room 105,Thursday,14:00:00,15:00:00
+625,AI101,Prof. Turing,Room 109,Tuesday,9:00:00,10:00:00
+626,AI101,Prof. Turing,Room 111,Monday,14:00:00,15:00:00
+627,SEC301,Prof. Schneier,Room 101,Tuesday,16:00:00,17:00:00
+628,SEC301,Prof. Schneier,Room 118,Saturday,15:00:00,16:00:00
+629,SEC301,Prof. Schneier,Room 102,Friday,9:00:00,10:00:00
+630,CS104,Prof. Tanenbaum,Room 106,Thursday,16:00:00,17:00:00
+631,CS104,Prof. Tanenbaum,Room 105,Saturday,14:00:00,15:00:00
+632,CS104,Prof. Tanenbaum,Room 108,Wednesday,9:00:00,10:00:00
+633,IT104,Prof. Bezos,Room 119,Monday,14:00:00,15:00:00
+634,IT104,Prof. Bezos,Room 101,Wednesday,15:00:00,16:00:00
+635,IT104,Prof. Bezos,Room 106,Saturday,15:00:00,16:00:00
+636,DS104,Prof. McKinney,Room 118,Wednesday,14:00:00,15:00:00
+637,DS104,Prof. McKinney,Room 115,Tuesday,15:00:00,16:00:00
+638,DS104,Prof. McKinney,Room 104,Monday,16:00:00,17:00:00
+639,SE104,Prof. Gamma,Room 105,Saturday,15:00:00,16:00:00
+640,SE104,Prof. Gamma,Room 109,Monday,14:00:00,15:00:00
+641,SE104,Prof. Gamma,Room 113,Tuesday,16:00:00,17:00:00
+642,CY104,Prof. Mitnick,Room 118,Monday,14:00:00,15:00:00
+643,RES401,Prof. Chomsky,Room 113,Saturday,9:00:00,10:00:00
+644,RES401,Prof. Chomsky,Room 116,Friday,15:00:00,16:00:00
+645,RES401,Prof. Chomsky,Room 114,Thursday,14:00:00,15:00:00
+646,CAP401,Prof. Gates,Room 116,Thursday,16:00:00,17:00:00
+647,CAP401,Prof. Gates,Room 108,Saturday,9:00:00,10:00:00
+648,CAP401,Prof. Gates,Room 103,Thursday,15:00:00,16:00:00
+649,ENT401,Prof. Musk,Room 107,Tuesday,9:00:00,10:00:00
+650,ENT401,Prof. Musk,Room 116,Wednesday,14:00:00,15:00:00
