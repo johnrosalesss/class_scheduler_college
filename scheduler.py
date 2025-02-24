@@ -1,6 +1,8 @@
 import mysql.connector
 import random
 import csv
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 # Debug message
 print("Connecting to MySQL...")

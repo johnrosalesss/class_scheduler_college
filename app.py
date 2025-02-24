@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from datetime import timedelta
 import mysql.connector
 import pandas as pd
+import subprocess
 
 app = Flask(__name__)
 
@@ -36,28 +37,46 @@ def index():
 
 @app.route('/get_schedule', methods=['GET'])
 def get_schedule_json():
-    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler")
-    cursor = conn.cursor(dictionary=True)  # Fetch as dictionary
+    day_filter = request.args.get('day', '')  # Get selected day from request
 
-    # Fetch column names and schedule data
-    cursor.execute("SELECT * FROM schedule")
+    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler")
+    cursor = conn.cursor(dictionary=True)
+
+    # Fetch schedule based on selected day
+    if day_filter:
+        cursor.execute("SELECT * FROM schedule WHERE day = %s", (day_filter,))
+    else:
+        cursor.execute("SELECT * FROM schedule")
+    
     data = cursor.fetchall()
     conn.close()
 
-    # Handle empty result
     if not data:
         return jsonify({"columns": [], "data": []})
 
-    # Get column names from the first row
     columns = list(data[0].keys())
 
-    # Convert timedelta objects (TIME columns) to strings
     for row in data:
         for key, value in row.items():
             if isinstance(value, timedelta):
                 row[key] = str(value)
 
     return jsonify({"columns": columns, "data": data})
+
+@app.route('/run_scheduler', methods=['POST'])
+def run_scheduler():
+    try:
+        # Run scheduler.py and capture output
+        result = subprocess.run(["python", "scheduler.py"], capture_output=True, text=True)
+
+        if result.returncode == 0:
+            return jsonify({"message": "Scheduling completed successfully!"})
+        else:
+            print("Scheduler Error:", result.stderr)  # 🔍 Log error to Flask console
+            return jsonify({"error": "Scheduling failed!", "details": result.stderr}), 500
+    except Exception as e:
+        print("Exception:", str(e))  # 🔍 Log unexpected errors
+        return jsonify({"error": "An error occurred while running the scheduler.", "details": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
