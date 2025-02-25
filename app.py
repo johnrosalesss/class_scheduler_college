@@ -7,7 +7,7 @@ import subprocess
 app = Flask(__name__)
 
 def get_schedule(filter_by=""):
-    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler")
+    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler_undergrad")  # UPDATED
     cursor = conn.cursor(dictionary=True)  # Fetch results as dictionaries
     
     query = "SELECT * FROM schedule"
@@ -39,7 +39,7 @@ def index():
 def get_schedule_json():
     day_filter = request.args.get('day', '')  # Get selected day from request
 
-    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler")
+    conn = mysql.connector.connect(host="localhost", user="root", password="", database="class_scheduler_undergrad") 
     cursor = conn.cursor(dictionary=True)
 
     # Fetch schedule based on selected day

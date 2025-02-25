@@ -1,72 +1,133 @@
-Subject Code,Teacher Name,Room Name,Day,Start Time,End Time
-580,DS102,Prof. Blue,Room 117,Tuesday,9:00:00,10:00:00
-581,DS102,Prof. Blue,Room 110,Wednesday,16:00:00,17:00:00
-582,DS102,Prof. Blue,Room 102,Saturday,15:00:00,16:00:00
-583,IT102,Prof. Green,Room 120,Monday,14:00:00,15:00:00
-584,IT102,Prof. Green,Room 111,Tuesday,16:00:00,17:00:00
-585,IT102,Prof. Green,Room 106,Saturday,14:00:00,15:00:00
-586,CS102,Prof. Jones,Room 101,Tuesday,9:00:00,10:00:00
-587,CS102,Prof. Jones,Room 102,Thursday,9:00:00,10:00:00
-588,CS102,Prof. Jones,Room 107,Tuesday,16:00:00,17:00:00
-589,CY101,Prof. Cyan,Room 106,Tuesday,9:00:00,10:00:00
-590,CY101,Prof. Cyan,Room 120,Tuesday,15:00:00,16:00:00
-591,CY101,Prof. Cyan,Room 111,Monday,9:00:00,10:00:00
-592,SE101,Prof. Red,Room 114,Wednesday,9:00:00,10:00:00
-593,SE101,Prof. Red,Room 108,Monday,16:00:00,17:00:00
-594,SE101,Prof. Red,Room 106,Friday,15:00:00,16:00:00
-595,DS101,Prof. Grey,Room 109,Monday,16:00:00,17:00:00
-596,DS101,Prof. Grey,Room 102,Monday,15:00:00,16:00:00
-597,DS101,Prof. Grey,Room 115,Friday,15:00:00,16:00:00
-598,IT101,Prof. White,Room 112,Saturday,14:00:00,15:00:00
-599,IT101,Prof. White,Room 119,Thursday,15:00:00,16:00:00
-600,CS101,Prof. Smith,Room 110,Tuesday,14:00:00,15:00:00
-601,CS101,Prof. Smith,Room 105,Friday,14:00:00,15:00:00
-602,CS101,Prof. Smith,Room 106,Thursday,14:00:00,15:00:00
-603,SE102,Prof. Yellow,Room 114,Tuesday,9:00:00,10:00:00
-604,SE102,Prof. Yellow,Room 111,Monday,15:00:00,16:00:00
-605,SE102,Prof. Yellow,Room 107,Thursday,14:00:00,15:00:00
-606,CY102,Prof. Magenta,Room 106,Tuesday,16:00:00,17:00:00
-607,CY102,Prof. Magenta,Room 102,Tuesday,14:00:00,15:00:00
-608,CY102,Prof. Magenta,Room 115,Saturday,9:00:00,10:00:00
-609,CS103,Prof. Brown,Room 103,Monday,9:00:00,10:00:00
-610,CS103,Prof. Brown,Room 103,Saturday,15:00:00,16:00:00
-611,CS103,Prof. Brown,Room 110,Friday,16:00:00,17:00:00
-612,IT103,Prof. Black,Room 113,Friday,16:00:00,17:00:00
-613,IT103,Prof. Black,Room 112,Saturday,16:00:00,17:00:00
-614,DS103,Prof. Orange,Room 109,Saturday,9:00:00,10:00:00
-615,DS103,Prof. Orange,Room 105,Friday,15:00:00,16:00:00
-616,DS103,Prof. Orange,Room 111,Thursday,9:00:00,10:00:00
-617,SE103,Prof. Purple,Room 118,Friday,14:00:00,15:00:00
-618,SE103,Prof. Purple,Room 113,Wednesday,9:00:00,10:00:00
-619,SE103,Prof. Purple,Room 114,Monday,9:00:00,10:00:00
-620,CY103,Prof. Lime,Room 112,Monday,15:00:00,16:00:00
-621,MATH301,Prof. Euler,Room 109,Thursday,15:00:00,16:00:00
-622,MATH301,Prof. Euler,Room 116,Thursday,9:00:00,10:00:00
-623,MATH301,Prof. Euler,Room 114,Wednesday,15:00:00,16:00:00
-624,AI101,Prof. Turing,Room 105,Thursday,14:00:00,15:00:00
-625,AI101,Prof. Turing,Room 109,Tuesday,9:00:00,10:00:00
-626,AI101,Prof. Turing,Room 111,Monday,14:00:00,15:00:00
-627,SEC301,Prof. Schneier,Room 101,Tuesday,16:00:00,17:00:00
-628,SEC301,Prof. Schneier,Room 118,Saturday,15:00:00,16:00:00
-629,SEC301,Prof. Schneier,Room 102,Friday,9:00:00,10:00:00
-630,CS104,Prof. Tanenbaum,Room 106,Thursday,16:00:00,17:00:00
-631,CS104,Prof. Tanenbaum,Room 105,Saturday,14:00:00,15:00:00
-632,CS104,Prof. Tanenbaum,Room 108,Wednesday,9:00:00,10:00:00
-633,IT104,Prof. Bezos,Room 119,Monday,14:00:00,15:00:00
-634,IT104,Prof. Bezos,Room 101,Wednesday,15:00:00,16:00:00
-635,IT104,Prof. Bezos,Room 106,Saturday,15:00:00,16:00:00
-636,DS104,Prof. McKinney,Room 118,Wednesday,14:00:00,15:00:00
-637,DS104,Prof. McKinney,Room 115,Tuesday,15:00:00,16:00:00
-638,DS104,Prof. McKinney,Room 104,Monday,16:00:00,17:00:00
-639,SE104,Prof. Gamma,Room 105,Saturday,15:00:00,16:00:00
-640,SE104,Prof. Gamma,Room 109,Monday,14:00:00,15:00:00
-641,SE104,Prof. Gamma,Room 113,Tuesday,16:00:00,17:00:00
-642,CY104,Prof. Mitnick,Room 118,Monday,14:00:00,15:00:00
-643,RES401,Prof. Chomsky,Room 113,Saturday,9:00:00,10:00:00
-644,RES401,Prof. Chomsky,Room 116,Friday,15:00:00,16:00:00
-645,RES401,Prof. Chomsky,Room 114,Thursday,14:00:00,15:00:00
-646,CAP401,Prof. Gates,Room 116,Thursday,16:00:00,17:00:00
-647,CAP401,Prof. Gates,Room 108,Saturday,9:00:00,10:00:00
-648,CAP401,Prof. Gates,Room 103,Thursday,15:00:00,16:00:00
-649,ENT401,Prof. Musk,Room 107,Tuesday,9:00:00,10:00:00
-650,ENT401,Prof. Musk,Room 116,Wednesday,14:00:00,15:00:00
+Subject Code,Teacher ID,Teacher Name,Room ID,Room Name,Day,Start Time,End Time
+1001,General-1,GENED01,T036,Room 157,Monday,15:00:00,16:00:00
+1002,General-1,GENED01,T036,Room 182,Thursday,9:00:00,10:00:00
+1003,General-1,GENED01,T036,Room 218,Thursday,15:00:00,16:00:00
+1004,General-1,GENED02,T036,Room 161,Wednesday,16:00:00,17:00:00
+1005,General-1,GENED02,T036,Room 243,Monday,16:00:00,17:00:00
+1006,General-1,GENED02,T036,Room 115,Friday,16:00:00,17:00:00
+1007,General-1,GENED03,T037,Room 109,Monday,9:00:00,10:00:00
+1008,General-1,GENED03,T037,Room 235,Tuesday,16:00:00,17:00:00
+1009,General-1,GENED03,T037,Room 215,Monday,16:00:00,17:00:00
+1010,General-1,GENED04,T038,Room 174,Friday,14:00:00,15:00:00
+1011,General-1,GENED04,T038,Room 187,Friday,9:00:00,10:00:00
+1012,General-1,GENED04,T038,Room 227,Friday,15:00:00,16:00:00
+1013,General-2,GENED05,T039,Room 198,Thursday,15:00:00,16:00:00
+1014,General-2,GENED05,T039,Room 125,Monday,9:00:00,10:00:00
+1015,General-2,GENED05,T039,Room 169,Tuesday,16:00:00,17:00:00
+1016,General-2,GENED06,T040,Room 244,Monday,9:00:00,10:00:00
+1017,General-2,GENED06,T040,Room 153,Wednesday,9:00:00,10:00:00
+1018,General-2,GENED06,T040,Room 134,Saturday,9:00:00,10:00:00
+1019,General-2,GENED07,T041,Room 122,Wednesday,16:00:00,17:00:00
+1020,General-2,GENED07,T041,Room 131,Friday,16:00:00,17:00:00
+1021,General-2,GENED07,T041,Room 194,Thursday,16:00:00,17:00:00
+1022,Computer S,CS101,T001,Room 228,Thursday,14:00:00,15:00:00
+1023,Computer S,CS101,T001,Room 101,Friday,16:00:00,17:00:00
+1024,Computer S,CS101,T001,Room 248,Friday,16:00:00,17:00:00
+1025,Computer S,CS102,T001,Room 194,Thursday,9:00:00,10:00:00
+1026,Computer S,CS102,T001,Room 195,Saturday,15:00:00,16:00:00
+1027,Computer S,CS102,T001,Room 153,Monday,15:00:00,16:00:00
+1028,Computer S,CS103,T002,Room 115,Saturday,15:00:00,16:00:00
+1029,Computer S,CS103,T002,Room 228,Tuesday,14:00:00,15:00:00
+1030,Computer S,CS103,T002,Room 142,Saturday,16:00:00,17:00:00
+1031,Computer S,CS104,T003,Room 164,Tuesday,16:00:00,17:00:00
+1032,Computer S,CS104,T003,Room 142,Tuesday,16:00:00,17:00:00
+1033,Computer S,CS104,T003,Room 212,Wednesday,9:00:00,10:00:00
+1034,Informatio,IT101,T004,Room 242,Thursday,15:00:00,16:00:00
+1035,Informatio,IT101,T004,Room 225,Monday,16:00:00,17:00:00
+1036,Informatio,IT101,T004,Room 140,Friday,9:00:00,10:00:00
+1037,Informatio,IT102,T005,Room 136,Monday,14:00:00,15:00:00
+1038,Informatio,IT102,T005,Room 124,Monday,14:00:00,15:00:00
+1039,Informatio,IT102,T005,Room 176,Thursday,14:00:00,15:00:00
+1040,Informatio,IT103,T005,Room 127,Monday,15:00:00,16:00:00
+1041,Informatio,IT103,T005,Room 109,Thursday,14:00:00,15:00:00
+1042,Nursing-1,BSN101,T006,Room 212,Tuesday,15:00:00,16:00:00
+1043,Nursing-1,BSN101,T006,Room 124,Saturday,9:00:00,10:00:00
+1044,Nursing-1,BSN101,T006,Room 238,Friday,14:00:00,15:00:00
+1045,Nursing-1,BSN102,T006,Room 237,Tuesday,9:00:00,10:00:00
+1046,Nursing-1,BSN102,T006,Room 182,Saturday,9:00:00,10:00:00
+1047,Nursing-1,BSN102,T006,Room 229,Thursday,16:00:00,17:00:00
+1048,Nursing-2,BSN201,T007,Room 244,Thursday,14:00:00,15:00:00
+1049,Nursing-2,BSN201,T007,Room 213,Friday,9:00:00,10:00:00
+1050,Nursing-2,BSN201,T007,Room 146,Tuesday,14:00:00,15:00:00
+1051,Nursing-2,BSN202,T008,Room 138,Wednesday,15:00:00,16:00:00
+1052,Nursing-2,BSN202,T008,Room 164,Saturday,14:00:00,15:00:00
+1053,Nursing-2,BSN202,T008,Room 247,Friday,15:00:00,16:00:00
+1054,Nursing-3,BSN301,T009,Room 108,Wednesday,14:00:00,15:00:00
+1055,Nursing-3,BSN301,T009,Room 105,Saturday,14:00:00,15:00:00
+1056,Nursing-3,BSN301,T009,Room 145,Friday,16:00:00,17:00:00
+1057,Nursing-4,BSN401,T010,Room 228,Friday,15:00:00,16:00:00
+1058,Nursing-4,BSN401,T010,Room 145,Tuesday,16:00:00,17:00:00
+1059,Nursing-4,BSN401,T010,Room 142,Friday,15:00:00,16:00:00
+1060,Hospitalit,HM101,T011,Room 131,Thursday,16:00:00,17:00:00
+1061,Hospitalit,HM101,T011,Room 243,Monday,9:00:00,10:00:00
+1062,Hospitalit,HM101,T011,Room 250,Thursday,15:00:00,16:00:00
+1063,Hospitalit,HM102,T012,Room 214,Tuesday,16:00:00,17:00:00
+1064,Hospitalit,HM102,T012,Room 182,Thursday,16:00:00,17:00:00
+1065,Hospitalit,HM102,T012,Room 137,Thursday,14:00:00,15:00:00
+1066,Hospitalit,HM201,T013,Room 209,Thursday,16:00:00,17:00:00
+1067,Hospitalit,HM201,T013,Room 241,Saturday,16:00:00,17:00:00
+1068,Hospitalit,HM201,T013,Room 220,Tuesday,15:00:00,16:00:00
+1069,Hospitalit,HM301,T014,Room 168,Tuesday,9:00:00,10:00:00
+1070,Hospitalit,HM301,T014,Room 222,Thursday,16:00:00,17:00:00
+1071,Hospitalit,HM301,T014,Room 206,Saturday,9:00:00,10:00:00
+1072,Hospitalit,HM401,T015,Room 125,Wednesday,15:00:00,16:00:00
+1073,Hospitalit,HM401,T015,Room 186,Saturday,15:00:00,16:00:00
+1074,Hospitalit,HM401,T015,Room 132,Wednesday,15:00:00,16:00:00
+1075,Business A,BA101,T016,Room 209,Monday,16:00:00,17:00:00
+1076,Business A,BA101,T016,Room 183,Monday,15:00:00,16:00:00
+1077,Business A,BA101,T016,Room 204,Saturday,14:00:00,15:00:00
+1078,Business A,BA102,T017,Room 125,Thursday,14:00:00,15:00:00
+1079,Business A,BA102,T017,Room 147,Friday,16:00:00,17:00:00
+1080,Business A,BA201,T018,Room 156,Thursday,14:00:00,15:00:00
+1081,Business A,BA201,T018,Room 250,Tuesday,14:00:00,15:00:00
+1082,Business A,BA201,T018,Room 156,Tuesday,15:00:00,16:00:00
+1083,Business A,BA301,T019,Room 213,Thursday,16:00:00,17:00:00
+1084,Business A,BA301,T019,Room 101,Tuesday,14:00:00,15:00:00
+1085,Business A,BA301,T019,Room 240,Tuesday,14:00:00,15:00:00
+1086,Accounting,BSA101,T020,Room 129,Monday,14:00:00,15:00:00
+1087,Accounting,BSA101,T020,Room 214,Thursday,15:00:00,16:00:00
+1088,Accounting,BSA101,T020,Room 182,Wednesday,16:00:00,17:00:00
+1089,Accounting,BSA102,T021,Room 204,Tuesday,14:00:00,15:00:00
+1090,Accounting,BSA102,T021,Room 218,Tuesday,16:00:00,17:00:00
+1091,Accounting,BSA102,T021,Room 237,Monday,9:00:00,10:00:00
+1092,Accounting,BSA201,T022,Room 106,Friday,16:00:00,17:00:00
+1093,Accounting,BSA201,T022,Room 180,Friday,15:00:00,16:00:00
+1094,Accounting,BSA201,T022,Room 113,Friday,9:00:00,10:00:00
+1095,Accounting,BSA301,T023,Room 189,Wednesday,15:00:00,16:00:00
+1096,Accounting,BSA301,T023,Room 187,Friday,9:00:00,10:00:00
+1097,Accounting,BSA301,T023,Room 115,Saturday,9:00:00,10:00:00
+1098,Psychology,PSY101,T024,Room 132,Thursday,14:00:00,15:00:00
+1099,Psychology,PSY101,T024,Room 159,Friday,14:00:00,15:00:00
+1100,Psychology,PSY101,T024,Room 172,Wednesday,14:00:00,15:00:00
+1101,Psychology,PSY102,T025,Room 161,Monday,9:00:00,10:00:00
+1102,Psychology,PSY102,T025,Room 169,Tuesday,15:00:00,16:00:00
+1103,Psychology,PSY102,T025,Room 241,Friday,15:00:00,16:00:00
+1104,Psychology,PSY201,T026,Room 138,Saturday,15:00:00,16:00:00
+1105,Psychology,PSY201,T026,Room 164,Saturday,9:00:00,10:00:00
+1106,Psychology,PSY301,T027,Room 159,Saturday,9:00:00,10:00:00
+1107,Psychology,PSY301,T027,Room 204,Friday,9:00:00,10:00:00
+1108,Psychology,PSY301,T027,Room 129,Saturday,15:00:00,16:00:00
+1109,Engineerin,ENG101,T028,Room 152,Tuesday,15:00:00,16:00:00
+1110,Engineerin,ENG101,T028,Room 161,Saturday,9:00:00,10:00:00
+1111,Engineerin,ENG101,T028,Room 187,Tuesday,16:00:00,17:00:00
+1112,Engineerin,ENG102,T029,Room 241,Thursday,15:00:00,16:00:00
+1113,Engineerin,ENG102,T029,Room 220,Saturday,15:00:00,16:00:00
+1114,Engineerin,ENG102,T029,Room 132,Saturday,15:00:00,16:00:00
+1115,Engineerin,ENG201,T030,Room 153,Monday,16:00:00,17:00:00
+1116,Engineerin,ENG201,T030,Room 161,Friday,14:00:00,15:00:00
+1117,Engineerin,ENG201,T030,Room 128,Wednesday,14:00:00,15:00:00
+1118,Engineerin,ENG301,T031,Room 229,Friday,15:00:00,16:00:00
+1119,Engineerin,ENG301,T031,Room 134,Monday,9:00:00,10:00:00
+1120,Engineerin,ENG301,T031,Room 167,Thursday,16:00:00,17:00:00
+1121,Education-,ED101,T032,Room 202,Tuesday,14:00:00,15:00:00
+1122,Education-,ED101,T032,Room 244,Tuesday,15:00:00,16:00:00
+1123,Education-,ED101,T032,Room 139,Monday,14:00:00,15:00:00
+1124,Education-,ED102,T033,Room 154,Wednesday,16:00:00,17:00:00
+1125,Education-,ED102,T033,Room 126,Wednesday,15:00:00,16:00:00
+1126,Education-,ED102,T033,Room 124,Thursday,15:00:00,16:00:00
+1127,Education-,ED201,T034,Room 134,Saturday,9:00:00,10:00:00
+1128,Education-,ED201,T034,Room 163,Monday,15:00:00,16:00:00
+1129,Education-,ED201,T034,Room 248,Tuesday,14:00:00,15:00:00
+1130,Education-,ED301,T035,Room 200,Wednesday,14:00:00,15:00:00
+1131,Education-,ED301,T035,Room 197,Saturday,15:00:00,16:00:00
+1132,Education-,ED301,T035,Room 170,Monday,14:00:00,15:00:00
