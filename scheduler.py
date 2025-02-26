@@ -6,21 +6,20 @@ from datetime import timedelta
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-# Connect to MySQL
+# **1. Connect to MySQL**
 print("Connecting to MySQL...")
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
-    database="class_scheduler_undergrad",  # UPDATED DATABASE NAME
+    database="class_scheduler_undergrad",
     charset="utf8mb4",
     collation="utf8mb4_general_ci"
 )
-
 cursor = conn.cursor()
 print("Connected successfully!")
 
-# Load data
+# **2. Load Data from Tables**
 print("Loading subjects...")
 cursor.execute("SELECT subject_code, subject_name, program, year_level, lecture_hours FROM subjects")
 subjects = cursor.fetchall()
@@ -39,31 +38,30 @@ time_slots = cursor.fetchall()
 
 print("Loading students...")
 cursor.execute("SELECT id, school_aide_id, last_name, first_name, rfid, section FROM student")
-student = cursor.fetchall()
+students = cursor.fetchall()
 
 print("Loading student groups...")
 cursor.execute("SELECT block_id, course, year_level, num_students, section_name FROM students")
-students = cursor.fetchall()
+student_groups = cursor.fetchall()
 
-# Clear old schedule
+# **3. Clear Old Schedule**
 print("Clearing old schedule...")
 cursor.execute("DELETE FROM schedule")
 
-# Track assigned slots and conflicts
+# **4. Define Constraints**
+LUNCH_START = "12:00:00"
+LUNCH_END = "13:00:00"
+DAY_START = "08:00:00"
+DAY_END = "17:00:00"
+
+# **5. Initialize Tracking Structures**
 assigned_slots = set()
 teacher_schedules = {}  # {teacher_id: [(day, start_time, end_time)]}
 room_schedules = {}     # {room_id: [(day, start_time, end_time)]}
 student_schedules = {}  # {program-year: [(day, start_time, end_time)]}
 
-# Time Constraints
-LUNCH_START = "11:00:00"
-LUNCH_END = "13:00:00"
-DAY_START = "08:00:00"
-DAY_END = "17:00:00"
-
-# Function to check if a time slot is valid
+# **6. Function to Check Schedule Validity**
 def is_valid_slot(teacher_id, room_id, students, day, start_time, end_time):
-    # Convert `timedelta` objects to strings
     start_time_str = str(start_time) if isinstance(start_time, timedelta) else start_time
     end_time_str = str(end_time) if isinstance(end_time, timedelta) else end_time
 
@@ -92,13 +90,13 @@ def is_valid_slot(teacher_id, room_id, students, day, start_time, end_time):
 
     return True
 
-# Assign subjects while following constraints
+# **7. Assign Subjects While Following Constraints**
 unassigned_subjects = []
 
 for subject in subjects:
     subject_code, subject_name, program, year_level, lecture_hours = subject
     students_group = f"{program}-{year_level}"  # Unique student group key
-    
+
     available_teachers = [t for t in teachers if t[3] == subject_code]
     if not available_teachers:
         print(f"⚠ No teacher available for {subject_code}, skipping...")
@@ -113,23 +111,23 @@ for subject in subjects:
         teacher = random.choice(available_teachers)
         room = random.choice(rooms)
 
-        # Assign only on Saturdays if teacher is part-time
+        # **Special Condition for Part-Time Teachers**
         if teacher[4] == "Part-Time" and "Saturday" not in [slot[1] for slot in time_slots]:
             print(f"⚠ Part-time teacher {teacher[1]} must be scheduled on Saturday, skipping...")
             attempts += 1
             continue
 
-        # Randomly select a time slot
+        # **Randomly Select a Time Slot**
         time_slot = random.choice(time_slots)
         slot_id, day, start_time, end_time = time_slot
 
-        # Check if the slot is valid
+        # **Check If Slot is Valid**
         if is_valid_slot(teacher[1], room[0], students_group, day, start_time, end_time):
             # Assign slot
             assigned_slots.add(slot_id)
             teacher_schedules.setdefault(teacher[0], []).append((day, start_time, end_time))
             room_schedules.setdefault(room[0], []).append((day, start_time, end_time))
-            student_schedules.setdefault(f"{student[5]}", []).append((day, start_time, end_time))
+            student_schedules.setdefault(f"{students_group}", []).append((day, start_time, end_time))
             hours_scheduled += 1
 
             print(f"Inserting: {subject_code} - {teacher[1]} in {room[1]} at {day} {start_time}-{end_time}")
@@ -137,8 +135,6 @@ for subject in subjects:
                 "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, start_time, end_time) VALUES (%s, %s, %s, %s, %s, %s, %s)",
                 (students_group, subject_code, teacher[1], room[1], day, start_time, end_time)
             )
-
-
 
         else:
             print(f"⚠ Slot {slot_id} conflicts with existing schedule, retrying...")
@@ -149,17 +145,17 @@ for subject in subjects:
         print(f"❌ Failed to schedule all hours for {subject_code} after {attempts} attempts.")
         unassigned_subjects.append((subject_code, "Failed to schedule all hours"))
 
-# Commit schedule to database
+# **8. Commit Schedule to Database**
 conn.commit()
 
-# Export the schedule to a CSV file
+# **9. Export Weekly Schedule to CSV**
 def export_to_csv(cursor, filename):
     cursor.execute("SELECT * FROM schedule")
     rows = cursor.fetchall()
 
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['Subject Code', 'Teacher ID', 'Teacher Name', 'Room ID', 'Room Name', 'Day', 'Start Time', 'End Time'])
+        writer.writerow(['Block ID', 'Subject Code', 'Teacher Name', 'Room Name', 'Day', 'Start Time', 'End Time'])
         for row in rows:
             writer.writerow(row)
 
@@ -167,7 +163,7 @@ def export_to_csv(cursor, filename):
 
 export_to_csv(cursor, 'weekly_schedule.csv')
 
-# Summary of unassigned subjects
+# **10. Summary of Unassigned Subjects**
 print("\n=== Unassigned Subjects ===")
 if unassigned_subjects:
     for subject_code, reason in unassigned_subjects:
@@ -175,6 +171,6 @@ if unassigned_subjects:
 else:
     print("All subjects were successfully scheduled.")
 
-# Close MySQL connection
+# **11. Close MySQL Connection**
 conn.close()
 print("✅ Schedule generation process completed!")
