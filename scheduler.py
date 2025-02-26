@@ -3,6 +3,7 @@ import random
 import csv
 import sys
 from datetime import timedelta
+from collections import defaultdict
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -29,11 +30,11 @@ cursor.execute("SELECT id_num, teacher_id, teacher_name, subject_code, teacher_t
 teachers = cursor.fetchall()
 
 print("Loading rooms...")
-cursor.execute("SELECT room_id, room_name, capacity, room_type FROM rooms")  # Added room_type
+cursor.execute("SELECT room_id, room_name, capacity, room_type FROM rooms")
 rooms = cursor.fetchall()
 
 print("Loading time slots...")
-cursor.execute("SELECT time_slot_id, day, start_time, end_time FROM time_slots")
+cursor.execute("SELECT time_slot_id, day, start_time, end_time FROM time_slots ORDER BY day, start_time")
 time_slots = cursor.fetchall()
 
 print("Loading student groups (blocks)...")
@@ -51,17 +52,17 @@ DAY_START = "08:00:00"
 DAY_END = "17:00:00"
 
 # **5. Initialize Tracking Structures**
-teacher_schedules = {}  # {teacher_id: [(day, start_time, end_time)]}
-room_schedules = {}     # {room_id: [(day, start_time, end_time)]}
-student_schedules = {}  # {block_id: [(day, start_time, end_time)]}
+teacher_schedules = defaultdict(list)  # {teacher_id: [(day, start_time, end_time)]}
+room_schedules = defaultdict(list)     # {room_id: [(day, start_time, end_time)]}
+student_schedules = defaultdict(list)  # {block_id: [(day, start_time, end_time)]}
 
 # **6. Function to Check Schedule Validity**
 def is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teacher_type, subject_type, room_type):
-    start_time_str = str(start_time) if isinstance(start_time, timedelta) else start_time
-    end_time_str = str(end_time) if isinstance(end_time, timedelta) else end_time
+    start_time_str = str(start_time)
+    end_time_str = str(end_time)
 
     # **Lunch break restriction**
-    if LUNCH_START <= start_time_str <= LUNCH_END or LUNCH_START <= end_time_str <= LUNCH_END:
+    if LUNCH_START <= start_time_str < LUNCH_END or LUNCH_START < end_time_str <= LUNCH_END:
         return False
 
     # **School hours restriction**
@@ -77,24 +78,27 @@ def is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teac
         return False  # Part-time teachers can only teach on Saturdays
 
     # **Teacher Schedule Conflict**
-    if teacher_id in teacher_schedules:
-        if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in teacher_schedules[teacher_id]):
+    for d, s, e in teacher_schedules[teacher_id]:
+        if d == day and not (e <= start_time or s >= end_time):
             return False
 
     # **Room Schedule Conflict**
-    if room_id in room_schedules:
-        if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in room_schedules[room_id]):
+    for d, s, e in room_schedules[room_id]:
+        if d == day and not (e <= start_time or s >= end_time):
             return False
 
     # **Student Group Conflict**
-    if block_id in student_schedules:
-        if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in student_schedules[block_id]):
+    for d, s, e in student_schedules[block_id]:
+        if d == day and not (e <= start_time or s >= end_time):
             return False
 
     return True
 
-# **7. Assign Subjects While Following Constraints**
+# **7. Assign Subjects While Distributing Across the Week**
 unassigned_subjects = []
+
+# **Track scheduled hours per day to balance days**
+day_counts = defaultdict(int)
 
 for subject in subjects:
     subject_code, subject_name, program, year_level, lecture_hours, subject_type = subject
@@ -115,6 +119,9 @@ for subject in subjects:
 
     hours_scheduled = 0
 
+    # **Prioritize days with fewer scheduled hours**
+    sorted_days = sorted(set(slot[1] for slot in time_slots), key=lambda d: day_counts[d])
+
     while hours_scheduled < lecture_hours:
         teacher = random.choice(available_teachers)
         teacher_id = teacher[1]
@@ -133,25 +140,38 @@ for subject in subjects:
         room_name = room[1]
         room_type = room[3]  
 
-        # **Find a Valid Time Slot**
-        random.shuffle(time_slots)  # Shuffle to increase variety
-        for slot_id, day, start_time, end_time in time_slots:
-            if is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teacher_type, subject_type, room_type):
-                teacher_schedules.setdefault(teacher_id, []).append((day, start_time, end_time))
-                room_schedules.setdefault(room_id, []).append((day, start_time, end_time))
-                student_schedules.setdefault(block_id, []).append((day, start_time, end_time))
-                hours_scheduled += 1
+        # **Find Continuous Valid Time Slots on Least Used Days**
+        for day in sorted_days:
+            valid_slots = [slot for slot in time_slots if slot[1] == day]
+            for i in range(len(valid_slots) - (lecture_hours - hours_scheduled)):
+                continuous_slots = []
+                for j in range(lecture_hours - hours_scheduled):
+                    slot = valid_slots[i + j]
+                    slot_id, slot_day, start_time, end_time = slot
 
-                print(f"Inserting: {subject_code} - {teacher_name} in {room_name} at {day} {start_time}-{end_time}")
-                cursor.execute(
-                    "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id) VALUES (%s, %s, %s, %s, %s, %s)",
-                    (block_id, subject_code, teacher_name, room_name, day, slot_id)
-                )
-                break  # Move to the next lecture hour requirement if one slot is assigned
+                    if is_valid_slot(teacher_id, room_id, block_id, slot_day, start_time, end_time, teacher_type, subject_type, room_type):
+                        continuous_slots.append(slot)
+                    else:
+                        break  
+
+                if len(continuous_slots) == (lecture_hours - hours_scheduled):  
+                    for slot_id, slot_day, start_time, end_time in continuous_slots:
+                        teacher_schedules[teacher_id].append((slot_day, start_time, end_time))
+                        room_schedules[room_id].append((slot_day, start_time, end_time))
+                        student_schedules[block_id].append((slot_day, start_time, end_time))
+                        day_counts[slot_day] += 1  
+                        hours_scheduled += 1
+
+                        print(f"Inserting: {subject_code} - {teacher_name} in {room_name} at {slot_day} {start_time}-{end_time}")
+                        cursor.execute(
+                            "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id) VALUES (%s, %s, %s, %s, %s, %s)",
+                            (block_id, subject_code, teacher_name, room_name, slot_day, slot_id)
+                        )
+                    break
 
     if hours_scheduled < lecture_hours:
         print(f"❌ Failed to schedule all hours for {subject_code}.")
-        unassigned_subjects.append((subject_code, "Insufficient time slots"))
+        unassigned_subjects.append((subject_code, "Insufficient continuous time slots"))
 
 # **8. Commit Schedule to Database**
 conn.commit()
@@ -171,14 +191,6 @@ def export_to_csv(cursor, filename):
 
 export_to_csv(cursor, 'weekly_schedule.csv')
 
-# **10. Summary of Unassigned Subjects**
-print("\n=== Unassigned Subjects ===")
-if unassigned_subjects:
-    for subject_code, reason in unassigned_subjects:
-        print(f"Subject Code: {subject_code} - Reason: {reason}")
-else:
-    print("All subjects were successfully scheduled.")
-
-# **11. Close MySQL Connection**
+# **10. Close MySQL Connection**
 conn.close()
 print("✅ Schedule generation process completed!")
