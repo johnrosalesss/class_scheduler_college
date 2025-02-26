@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector 
 import random
 import csv
 import sys
@@ -21,28 +21,24 @@ print("Connected successfully!")
 
 # **2. Load Data from Tables**
 print("Loading subjects...")
-cursor.execute("SELECT subject_code, subject_name, program, year_level, lecture_hours FROM subjects")
+cursor.execute("SELECT subject_code, subject_name, program, year_level, lecture_hours, subject_type FROM subjects")
 subjects = cursor.fetchall()
 
 print("Loading teachers...")
-cursor.execute("SELECT id_num, teacher_id, teacher_name, subject_code, type FROM teachers")
+cursor.execute("SELECT id_num, teacher_id, teacher_name, subject_code, teacher_type FROM teachers")
 teachers = cursor.fetchall()
 
 print("Loading rooms...")
-cursor.execute("SELECT room_id, room_name, capacity FROM rooms")
+cursor.execute("SELECT room_id, room_name, capacity, room_type FROM rooms")  # Added room_type
 rooms = cursor.fetchall()
 
 print("Loading time slots...")
 cursor.execute("SELECT time_slot_id, day, start_time, end_time FROM time_slots")
 time_slots = cursor.fetchall()
 
-print("Loading students...")
-cursor.execute("SELECT id, school_aide_id, last_name, first_name, rfid, section FROM student")
-students = cursor.fetchall()
-
-print("Loading student groups...")
-cursor.execute("SELECT block_id, course, year_level, num_students, section_name FROM students")
-student_groups = cursor.fetchall()
+print("Loading student groups (blocks)...")
+cursor.execute("SELECT block_id, course, year_level, num_students FROM students")
+student_groups = {f"{course}-{year_level}": block_id for block_id, course, year_level, _ in cursor.fetchall()}
 
 # **3. Clear Old Schedule**
 print("Clearing old schedule...")
@@ -55,37 +51,44 @@ DAY_START = "08:00:00"
 DAY_END = "17:00:00"
 
 # **5. Initialize Tracking Structures**
-assigned_slots = set()
 teacher_schedules = {}  # {teacher_id: [(day, start_time, end_time)]}
 room_schedules = {}     # {room_id: [(day, start_time, end_time)]}
-student_schedules = {}  # {program-year: [(day, start_time, end_time)]}
+student_schedules = {}  # {block_id: [(day, start_time, end_time)]}
 
 # **6. Function to Check Schedule Validity**
-def is_valid_slot(teacher_id, room_id, students, day, start_time, end_time):
+def is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teacher_type, subject_type, room_type):
     start_time_str = str(start_time) if isinstance(start_time, timedelta) else start_time
     end_time_str = str(end_time) if isinstance(end_time, timedelta) else end_time
 
-    # Lunch break restriction
+    # **Lunch break restriction**
     if LUNCH_START <= start_time_str <= LUNCH_END or LUNCH_START <= end_time_str <= LUNCH_END:
         return False
 
-    # School hours restriction
+    # **School hours restriction**
     if start_time_str < DAY_START or end_time_str > DAY_END:
         return False
 
-    # Check teacher schedule conflicts
+    # **Room Type Constraint**
+    if subject_type == "Laboratory" and room_type != "Laboratory":
+        return False  # Lab subjects must be in laboratory rooms
+
+    # **Part-Time Teacher Constraint**
+    if teacher_type == "Part-Time" and day != "Saturday":
+        return False  # Part-time teachers can only teach on Saturdays
+
+    # **Teacher Schedule Conflict**
     if teacher_id in teacher_schedules:
         if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in teacher_schedules[teacher_id]):
             return False
 
-    # Check room schedule conflicts
+    # **Room Schedule Conflict**
     if room_id in room_schedules:
         if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in room_schedules[room_id]):
             return False
 
-    # Check student group conflicts
-    if students in student_schedules:
-        if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in student_schedules[students]):
+    # **Student Group Conflict**
+    if block_id in student_schedules:
+        if any(d == day and not (str(e) <= start_time_str or str(s) >= end_time_str) for d, s, e in student_schedules[block_id]):
             return False
 
     return True
@@ -94,56 +97,61 @@ def is_valid_slot(teacher_id, room_id, students, day, start_time, end_time):
 unassigned_subjects = []
 
 for subject in subjects:
-    subject_code, subject_name, program, year_level, lecture_hours = subject
-    students_group = f"{program}-{year_level}"  # Unique student group key
+    subject_code, subject_name, program, year_level, lecture_hours, subject_type = subject
+    student_group_key = f"{program}-{year_level}"
 
+    if student_group_key not in student_groups:
+        print(f"⚠ No block found for {student_group_key}, skipping...")
+        unassigned_subjects.append((subject_code, "No matching block found"))
+        continue
+
+    block_id = student_groups[student_group_key]
     available_teachers = [t for t in teachers if t[3] == subject_code]
+    
     if not available_teachers:
         print(f"⚠ No teacher available for {subject_code}, skipping...")
         unassigned_subjects.append((subject_code, "No available teacher"))
         continue
 
     hours_scheduled = 0
-    max_attempts = 10
-    attempts = 0
 
-    while hours_scheduled < lecture_hours and attempts < max_attempts:
+    while hours_scheduled < lecture_hours:
         teacher = random.choice(available_teachers)
-        room = random.choice(rooms)
+        teacher_id = teacher[1]
+        teacher_name = teacher[2]  
+        teacher_type = teacher[4]  
 
-        # **Special Condition for Part-Time Teachers**
-        if teacher[4] == "Part-Time" and "Saturday" not in [slot[1] for slot in time_slots]:
-            print(f"⚠ Part-time teacher {teacher[1]} must be scheduled on Saturday, skipping...")
-            attempts += 1
-            continue
+        # **Select Room Based on Subject Type**
+        suitable_rooms = [r for r in rooms if subject_type == "Lecture" or (subject_type == "Laboratory" and r[3] == "Laboratory")]
+        if not suitable_rooms:
+            print(f"⚠ No suitable room for {subject_code}, skipping...")
+            unassigned_subjects.append((subject_code, "No suitable room"))
+            break
 
-        # **Randomly Select a Time Slot**
-        time_slot = random.choice(time_slots)
-        slot_id, day, start_time, end_time = time_slot
+        room = random.choice(suitable_rooms)
+        room_id = room[0]
+        room_name = room[1]
+        room_type = room[3]  
 
-        # **Check If Slot is Valid**
-        if is_valid_slot(teacher[1], room[0], students_group, day, start_time, end_time):
-            # Assign slot
-            assigned_slots.add(slot_id)
-            teacher_schedules.setdefault(teacher[0], []).append((day, start_time, end_time))
-            room_schedules.setdefault(room[0], []).append((day, start_time, end_time))
-            student_schedules.setdefault(f"{students_group}", []).append((day, start_time, end_time))
-            hours_scheduled += 1
+        # **Find a Valid Time Slot**
+        random.shuffle(time_slots)  # Shuffle to increase variety
+        for slot_id, day, start_time, end_time in time_slots:
+            if is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teacher_type, subject_type, room_type):
+                teacher_schedules.setdefault(teacher_id, []).append((day, start_time, end_time))
+                room_schedules.setdefault(room_id, []).append((day, start_time, end_time))
+                student_schedules.setdefault(block_id, []).append((day, start_time, end_time))
+                hours_scheduled += 1
 
-            print(f"Inserting: {subject_code} - {teacher[1]} in {room[1]} at {day} {start_time}-{end_time}")
-            cursor.execute(
-                "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, start_time, end_time) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                (students_group, subject_code, teacher[1], room[1], day, start_time, end_time)
-            )
-
-        else:
-            print(f"⚠ Slot {slot_id} conflicts with existing schedule, retrying...")
-
-        attempts += 1
+                print(f"Inserting: {subject_code} - {teacher_name} in {room_name} at {day} {start_time}-{end_time}")
+                cursor.execute(
+                    "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id) VALUES (%s, %s, %s, %s, %s, %s)",
+                    (block_id, subject_code, teacher_name, room_name, day, slot_id)
+                )
+                break  # Move to the next lecture hour requirement if one slot is assigned
 
     if hours_scheduled < lecture_hours:
-        print(f"❌ Failed to schedule all hours for {subject_code} after {attempts} attempts.")
-        unassigned_subjects.append((subject_code, "Failed to schedule all hours"))
+        print(f"❌ Failed to schedule all hours for {subject_code}.")
+        unassigned_subjects.append((subject_code, "Insufficient time slots"))
 
 # **8. Commit Schedule to Database**
 conn.commit()
@@ -155,7 +163,7 @@ def export_to_csv(cursor, filename):
 
     with open(filename, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(['Block ID', 'Subject Code', 'Teacher Name', 'Room Name', 'Day', 'Start Time', 'End Time'])
+        writer.writerow(['Block ID', 'Subject Code', 'Teacher Name', 'Room Name', 'Day', 'Time Slot ID'])
         for row in rows:
             writer.writerow(row)
 
