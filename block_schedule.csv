@@ -1,0 +1,76 @@
+Block ID,Course,Year Level,Subject,Subject Code,Teacher,Room ID,Day,Time Duration
+B001,Computer Science,1,Programming Fundamentals,CS102.2,Prof. Laura Wilson,R151,Friday,9:00:00 - 12:00:00
+B001,Computer Science,1,Programming Fundamentals,CS102.1,Prof. Laura Wilson,R017,Monday,9:00:00 - 11:00:00
+B001,Computer Science,1,Introduction to Computing,CS101.1,Dr. John Smith,R198,Saturday,9:00:00 - 11:00:00
+B001,Computer Science,1,Discrete Mathematics,CS103.1,Dr. Andrew Davis,R201,Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00
+B001,Computer Science,1,Introduction to Computing,CS101.2,Dr. John Smith,R239,Thursday,9:00:00 - 12:00:00
+B001,Computer Science,1,Digital Logic Design,CS105.1,Dr. Henry Foster,R171,Tuesday,9:00:00 - 11:00:00
+B001,Computer Science,1,Computer Organization,CS104.1,Prof. Karen Thompson,R030,Wednesday,9:00:00 - 11:00:00
+B002,Computer Science,2,Database Management Systems,CS204.1,Dr. Jason Taylor,R006,Friday,9:00:00 - 11:00:00
+B002,Computer Science,2,Operating Systems,CS205.2,Prof. Olivia Sanders,R175,Friday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00
+B002,Computer Science,2,Data Structures and Algorithms,CS201.1,Prof. Linda Carter,R194,Monday,9:00:00 - 11:00:00
+B002,Computer Science,2,Database Management Systems,CS204.2,Dr. Jason Taylor,R243,Monday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00
+B002,Computer Science,2,Object-Oriented Programming,CS202.1,Dr. Brian Adams,R197,Saturday,9:00:00 - 11:00:00
+B002,Computer Science,2,Object-Oriented Programming,CS202.2,Dr. Brian Adams,R181,Saturday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00
+B002,Computer Science,2,Computer Networks,CS203.2,Prof. Nancy Cooper,R245,Thursday,9:00:00 - 12:00:00
+B002,Computer Science,2,Computer Networks,CS203.1,Prof. Nancy Cooper,R036,Tuesday,9:00:00 - 11:00:00
+B002,Computer Science,2,Operating Systems,CS205.1,Prof. Olivia Sanders,R169,Tuesday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00
+B002,Computer Science,2,Data Structures and Algorithms,CS201.2,Prof. Linda Carter,R042,Wednesday,9:00:00 - 12:00:00
+B003,Computer Science,3,Cybersecurity,CS304.1,Prof. Lisa Bennett,R236,Monday,9:00:00 - 11:00:00
+B003,Computer Science,3,Software Engineering,CS301.1,Dr. Peter Clark,R218,Saturday,9:00:00 - 11:00:00
+B003,Computer Science,3,Computer Graphics & Multimedia,CS305.1,Dr. Ryan Scott,R225,Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00
+B003,Computer Science,3,Web Development & Mobile App Development,CS303.1,Dr. Ethan James,R168,Thursday,9:00:00 - 11:00:00
+B003,Computer Science,3,Web Development & Mobile App Development,CS303.2,Dr. Ethan James,R002,Tuesday,9:00:00 - 12:00:00
+B003,Computer Science,3,Artificial Intelligence & Machine Learning,CS302.1,Prof. Megan Ross,R195,Wednesday,9:00:00 - 11:00:00
+B004,Computer Science,4,Internet of Things (IoT),CS403.1,Prof. Angela Torres,R225,Friday,9:00:00 - 11:00:00
+B004,Computer Science,4,Internship,CS405.1,Prof. Julia King,R157,Monday,9:00:00 - 11:00:00
+B004,Computer Science,4,Thesis/Capstone Project,CS404.1,Dr. Thomas Reed,R213,Saturday,9:00:00 - 11:00:00
+B004,Computer Science,4,Cloud Computing,CS402.1,Dr. Samuel Hill,R043,Thursday,9:00:00 - 11:00:00
+B004,Computer Science,4,Distributed Systems,CS401.1,Prof. Emma Diaz,R246,Wednesday,9:00:00 - 11:00:00
+B005,Information Technology,1,Computer Hardware & Troubleshooting,IT103.1,Dr. David Wright,R218,Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00
+B005,Information Technology,1,Discrete Mathematics,IT104.1,Prof. Sarah Collins,R029,Thursday,9:00:00 - 11:00:00
+B005,Information Technology,1,Computer Programming,IT102.1,Prof. Christina Hall,R049,Tuesday,9:00:00 - 11:00:00
+B005,Information Technology,1,IT Fundamentals,IT101.1,Dr. Edward Miller,R163,Wednesday,9:00:00 - 11:00:00
+B006,Information Technology,2,Database Management Systems,IT201.1,Dr. Matthew Nelson,R218,Friday,9:00:00 - 11:00:00
+B006,Information Technology,2,Web Development,IT202.1,Prof. Hannah Robinson,R025,Monday,9:00:00 - 11:00:00
+B006,Information Technology,2,Networking Basics,IT204.1,Prof. Jennifer Scott,R045,Tuesday,9:00:00 - 11:00:00
+B006,Information Technology,2,Systems Analysis & Design,IT203.1,Dr. Kevin Perez,R045,Wednesday,9:00:00 - 11:00:00
+B007,Information Technology,3,Cloud Computing,IT303.1,Dr. Mark Evans,R199,Friday,9:00:00 - 11:00:00
+B007,Information Technology,3,Mobile Application Development,IT304.1,Prof. Emily Johnson,R039,Monday,9:00:00 - 11:00:00
+B007,Information Technology,3,Human-Computer Interaction,IT302.1,Prof. Sophia Adams,R171,Saturday,9:00:00 - 11:00:00
+B007,Information Technology,3,IT Security & Cybersecurity,IT301.1,Dr. William Turner,R171,Thursday,9:00:00 - 11:00:00
+B008,Information Technology,4,IT Capstone Project,IT403.1,Dr. Anthony Rivera,R029,Saturday,9:00:00 - 11:00:00
+B008,Information Technology,4,Internship,IT404.1,Prof. Rebecca King,R004,Thursday,9:00:00 - 11:00:00
+B008,Information Technology,4,Business Intelligence & Data Analytics,IT402.1,Prof. Olivia Cooper,R151,Tuesday,9:00:00 - 11:00:00
+B008,Information Technology,4,IT Project Management,IT401.1,Dr. George Harris,R041,Wednesday,9:00:00 - 11:00:00
+B009,Nursing,1,Human Anatomy & Physiology,BSN101.1,Dr. Sophia Martinez,R227,Friday,9:00:00 - 11:00:00
+B009,Nursing,1,Human Anatomy & Physiology,BSN101.2,Dr. Sophia Martinez,R248,Monday,9:00:00 - 12:00:00
+B009,Nursing,1,Fundamentals of Nursing,BSN104.1,Prof. James Carter,R011,Thursday,9:00:00 - 11:00:00
+B009,Nursing,1,Microbiology,BSN103.1,Dr. Laura Mitchell,R048,Tuesday,9:00:00 - 11:00:00
+B009,Nursing,1,Biochemistry,BSN102.1,Prof. William Garcia,R152,Wednesday,9:00:00 - 11:00:00
+B010,Nursing,2,Pharmacology,BSN201.1,Dr. Olivia Robinson,R024,Friday,9:00:00 - 11:00:00
+B010,Nursing,2,Health Assessment,BSN204.1,Dr. Hannah Evans,R166,Saturday,9:00:00 - 11:00:00
+B010,Nursing,2,Medical-Surgical Nursing,BSN203.1,Prof. Joshua Parker,R035,Tuesday,9:00:00 - 11:00:00
+B010,Nursing,2,Pathophysiology,BSN202.1,Dr. Sarah Brooks,R199,Wednesday,9:00:00 - 11:00:00
+B013,Hospitality Management,1,Business Communication,HM104.1,Prof. Sandra Allen,R204,Friday,9:00:00 - 11:00:00
+B013,Hospitality Management,1,Principles of Tourism,HM103.1,Dr. Richard White,R156,Monday,9:00:00 - 11:00:00
+B013,Hospitality Management,1,Food Safety & Sanitation,HM102.1,Dr. Barbara Young,R225,Saturday,9:00:00 - 11:00:00
+B013,Hospitality Management,1,Introduction to Hospitality Industry,HM101.1,Prof. Daniel Harris,R005,Thursday,9:00:00 - 11:00:00
+B014,Hospitality Management,2,Food & Beverage Management,HM202.1,Prof. Jessica Young,R044,Tuesday,9:00:00 - 11:00:00
+B014,Hospitality Management,2,Front Office Operations,HM201.1,Dr. Charles Thomas,R032,Wednesday,9:00:00 - 11:00:00
+B017,Business Administration,1,Business Mathematics,BA104.1,Prof. Rachel Lewis,R211,Friday,9:00:00 - 11:00:00
+B017,Business Administration,1,Microeconomics,BA103.1,Dr. Patrick Walker,R043,Monday,9:00:00 - 11:00:00
+B017,Business Administration,1,Financial Accounting,BA102.1,Dr. Patricia Lopez,R220,Saturday,9:00:00 - 11:00:00
+B017,Business Administration,1,Principles of Management,BA101.1,Prof. Christopher Scott,R172,Thursday,9:00:00 - 11:00:00
+B018,Business Administration,2,Business Law & Ethics,BA202.1,Prof. Stephanie Garcia,R156,Tuesday,9:00:00 - 11:00:00
+B018,Business Administration,2,Marketing Management,BA201.1,Dr. Daniel Martinez,R212,Wednesday,9:00:00 - 11:00:00
+B021,Accounting,1,Business Communication,AC104.1,Prof. Jennifer Adams,R033,Friday,9:00:00 - 11:00:00
+B021,Accounting,1,Microeconomics,AC103.1,Dr. Christopher Hill,R041,Monday,9:00:00 - 11:00:00
+B021,Accounting,1,Business Mathematics,AC102.1,Prof. Linda Foster,R016,Saturday,9:00:00 - 11:00:00
+B021,Accounting,1,Fundamentals of Accounting,AC101.1,Dr. Henry Morgan,R004,Thursday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00
+B025,Psychology,1,General Biology,PSY102.1,Prof. Rachel Nelson,R170,Saturday,9:00:00 - 11:00:00
+B025,Psychology,1,Developmental Psychology,PSY104.1,Prof. Megan Walker,R152,Thursday,9:00:00 - 11:00:00
+B025,Psychology,1,Statistics for Psychology,PSY103.1,Dr. Brandon Hughes,R250,Tuesday,9:00:00 - 11:00:00
+B025,Psychology,1,Introduction to Psychology,PSY101.1,Dr. Kevin Adams,R010,Wednesday,9:00:00 - 11:00:00
+B026,Psychology,2,Cognitive Psychology,PSY201.1,Dr. Nathan Allen,R239,Monday,9:00:00 - 11:00:00
+B026,Psychology,2,Social Psychology,PSY202.1,Prof. Diana Turner,R214,Saturday,9:00:00 - 11:00:00

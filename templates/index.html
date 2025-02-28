@@ -52,8 +52,6 @@
 </main>
 
 <script>
-	// Fetch schedule data from PHP
-	// fetch('/get_schedule')
   fetch('http://127.0.0.1:5000/get_schedule') // Explicitly use port 5000
         .then(response => response.json())
         .then(result => {

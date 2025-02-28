@@ -1,160 +1,76 @@
-Block ID,Subject Code,Teacher Name,Room Name,Day,Time Slot ID
-2539,B001,CS101.1,Dr. John Smith,Room 175,Saturday,S02
-2540,B001,CS101.1,Dr. John Smith,Room 175,Saturday,S03
-2541,B001,CS101.2,Dr. John Smith,Room 166,Wednesday,W02
-2542,B001,CS101.2,Dr. John Smith,Room 166,Wednesday,W03
-2543,B001,CS101.2,Dr. John Smith,Room 166,Wednesday,W04
-2544,B001,CS102.1,Prof. Laura Wilson,Room 195,Tuesday,T02
-2545,B001,CS102.1,Prof. Laura Wilson,Room 195,Tuesday,T03
-2546,B001,CS102.2,Prof. Laura Wilson,Room 142,Monday,M02
-2547,B001,CS102.2,Prof. Laura Wilson,Room 142,Monday,M03
-2548,B001,CS102.2,Prof. Laura Wilson,Room 142,Monday,M04
-2549,B001,CS103.1,Dr. Andrew Davis,Room 211,Saturday,S04
-2550,B001,CS103.1,Dr. Andrew Davis,Room 211,Saturday,S05
-2551,B001,CS104.1,Prof. Karen Thompson,Room 146,Friday,F02
-2552,B001,CS104.1,Prof. Karen Thompson,Room 146,Friday,F03
-2553,B001,CS105.1,Dr. Henry Foster,Room 165,Thursday,Th02
-2554,B001,CS105.1,Dr. Henry Foster,Room 165,Thursday,Th03
-2555,B002,CS201.1,Prof. Linda Carter,Room 170,Tuesday,T02
-2556,B002,CS201.1,Prof. Linda Carter,Room 170,Tuesday,T03
-2557,B002,CS201.2,Prof. Linda Carter,Room 108,Friday,F02
-2558,B002,CS201.2,Prof. Linda Carter,Room 108,Friday,F03
-2559,B002,CS201.2,Prof. Linda Carter,Room 108,Friday,F04
-2560,B002,CS202.1,Dr. Brian Adams,Room 189,Saturday,S02
-2561,B002,CS202.1,Dr. Brian Adams,Room 189,Saturday,S03
-2562,B002,CS202.2,Dr. Brian Adams,Room 182,Saturday,S04
-2563,B002,CS202.2,Dr. Brian Adams,Room 182,Saturday,S05
-2564,B002,CS202.2,Dr. Brian Adams,Room 182,Saturday,S06
-2565,B002,CS203.1,Prof. Nancy Cooper,Room 154,Thursday,Th02
-2566,B002,CS203.1,Prof. Nancy Cooper,Room 154,Thursday,Th03
-2567,B002,CS203.2,Prof. Nancy Cooper,Room 229,Wednesday,W02
-2568,B002,CS203.2,Prof. Nancy Cooper,Room 229,Wednesday,W03
-2569,B002,CS203.2,Prof. Nancy Cooper,Room 229,Wednesday,W04
-2570,B002,CS204.1,Dr. Jason Taylor,Room 244,Monday,M02
-2571,B002,CS204.1,Dr. Jason Taylor,Room 244,Monday,M03
-2572,B002,CS204.2,Dr. Jason Taylor,Room 132,Tuesday,T04
-2573,B002,CS204.2,Dr. Jason Taylor,Room 132,Tuesday,T05
-2574,B002,CS204.2,Dr. Jason Taylor,Room 132,Tuesday,T06
-2575,B002,CS205.1,Prof. Olivia Sanders,Room 155,Thursday,Th04
-2576,B002,CS205.1,Prof. Olivia Sanders,Room 155,Thursday,Th05
-2577,B002,CS205.2,Prof. Olivia Sanders,Room 194,Monday,M04
-2578,B002,CS205.2,Prof. Olivia Sanders,Room 194,Monday,M05
-2579,B002,CS205.2,Prof. Olivia Sanders,Room 194,Monday,M06
-2580,B003,CS301.1,Dr. Peter Clark,Room 153,Saturday,S02
-2581,B003,CS301.1,Dr. Peter Clark,Room 153,Saturday,S03
-2582,B003,CS302.1,Prof. Megan Ross,Room 128,Friday,F02
-2583,B003,CS302.1,Prof. Megan Ross,Room 128,Friday,F03
-2584,B003,CS303.1,Dr. Ethan James,Room 230,Wednesday,W02
-2585,B003,CS303.1,Dr. Ethan James,Room 230,Wednesday,W03
-2586,B003,CS303.2,Dr. Ethan James,Room 239,Thursday,Th02
-2587,B003,CS303.2,Dr. Ethan James,Room 239,Thursday,Th03
-2588,B003,CS303.2,Dr. Ethan James,Room 239,Thursday,Th04
-2589,B003,CS304.1,Prof. Lisa Bennett,Room 223,Tuesday,T02
-2590,B003,CS304.1,Prof. Lisa Bennett,Room 223,Tuesday,T03
-2591,B003,CS305.1,Dr. Ryan Scott,Room 233,Saturday,S04
-2592,B003,CS305.1,Dr. Ryan Scott,Room 233,Saturday,S05
-2593,B004,CS401.1,Prof. Emma Diaz,Room 172,Friday,F02
-2594,B004,CS401.1,Prof. Emma Diaz,Room 172,Friday,F03
-2595,B004,CS402.1,Dr. Samuel Hill,Room 146,Wednesday,W02
-2596,B004,CS402.1,Dr. Samuel Hill,Room 146,Wednesday,W03
-2597,B004,CS403.1,Prof. Angela Torres,Room 236,Monday,M02
-2598,B004,CS403.1,Prof. Angela Torres,Room 236,Monday,M03
-2599,B004,CS404.1,Dr. Thomas Reed,Room 113,Saturday,S02
-2600,B004,CS404.1,Dr. Thomas Reed,Room 113,Saturday,S03
-2601,B004,CS405.1,Prof. Julia King,Room 122,Tuesday,T02
-2602,B004,CS405.1,Prof. Julia King,Room 122,Tuesday,T03
-2603,B005,IT101.1,Dr. Edward Miller,Room 199,Friday,F02
-2604,B005,IT101.1,Dr. Edward Miller,Room 199,Friday,F03
-2605,B005,IT102.1,Prof. Christina Hall,Room 111,Thursday,Th02
-2606,B005,IT102.1,Prof. Christina Hall,Room 111,Thursday,Th03
-2607,B005,IT103.1,Dr. David Wright,Room 224,Saturday,S02
-2608,B005,IT103.1,Dr. David Wright,Room 224,Saturday,S03
-2609,B005,IT104.1,Prof. Sarah Collins,Room 137,Wednesday,W02
-2610,B005,IT104.1,Prof. Sarah Collins,Room 137,Wednesday,W03
-2611,B006,IT201.1,Dr. Matthew Nelson,Room 127,Monday,M02
-2612,B006,IT201.1,Dr. Matthew Nelson,Room 127,Monday,M03
-2613,B006,IT202.1,Prof. Hannah Robinson,Room 225,Tuesday,T02
-2614,B006,IT202.1,Prof. Hannah Robinson,Room 225,Tuesday,T03
-2615,B006,IT203.1,Dr. Kevin Perez,Room 175,Friday,F02
-2616,B006,IT203.1,Dr. Kevin Perez,Room 175,Friday,F03
-2617,B006,IT204.1,Prof. Jennifer Scott,Room 110,Thursday,Th02
-2618,B006,IT204.1,Prof. Jennifer Scott,Room 110,Thursday,Th03
-2619,B007,IT301.1,Dr. William Turner,Room 151,Wednesday,W02
-2620,B007,IT301.1,Dr. William Turner,Room 151,Wednesday,W03
-2621,B007,IT302.1,Prof. Sophia Adams,Room 149,Saturday,S02
-2622,B007,IT302.1,Prof. Sophia Adams,Room 149,Saturday,S03
-2623,B007,IT303.1,Dr. Mark Evans,Room 239,Monday,M02
-2624,B007,IT303.1,Dr. Mark Evans,Room 239,Monday,M03
-2625,B007,IT304.1,Prof. Emily Johnson,Room 123,Tuesday,T02
-2626,B007,IT304.1,Prof. Emily Johnson,Room 123,Tuesday,T03
-2627,B008,IT401.1,Dr. George Harris,Room 116,Friday,F02
-2628,B008,IT401.1,Dr. George Harris,Room 116,Friday,F03
-2629,B008,IT402.1,Prof. Olivia Cooper,Room 224,Thursday,Th02
-2630,B008,IT402.1,Prof. Olivia Cooper,Room 224,Thursday,Th03
-2631,B008,IT403.1,Dr. Anthony Rivera,Room 145,Saturday,S02
-2632,B008,IT403.1,Dr. Anthony Rivera,Room 145,Saturday,S03
-2633,B008,IT404.1,Prof. Rebecca King,Room 228,Wednesday,W02
-2634,B008,IT404.1,Prof. Rebecca King,Room 228,Wednesday,W03
-2635,B009,BSN101.1,Dr. Sophia Martinez,Room 228,Monday,M02
-2636,B009,BSN101.1,Dr. Sophia Martinez,Room 228,Monday,M03
-2637,B009,BSN101.2,Dr. Sophia Martinez,Room 134,Tuesday,T02
-2638,B009,BSN101.2,Dr. Sophia Martinez,Room 134,Tuesday,T03
-2639,B009,BSN101.2,Dr. Sophia Martinez,Room 134,Tuesday,T04
-2640,B009,BSN102.1,Prof. William Garcia,Room 167,Friday,F02
-2641,B009,BSN102.1,Prof. William Garcia,Room 167,Friday,F03
-2642,B009,BSN103.1,Dr. Laura Mitchell,Room 233,Thursday,Th02
-2643,B009,BSN103.1,Dr. Laura Mitchell,Room 233,Thursday,Th03
-2644,B009,BSN104.1,Prof. James Carter,Room 110,Wednesday,W02
-2645,B009,BSN104.1,Prof. James Carter,Room 110,Wednesday,W03
-2646,B010,BSN201.1,Dr. Olivia Robinson,Room 147,Monday,M02
-2647,B010,BSN201.1,Dr. Olivia Robinson,Room 147,Monday,M03
-2648,B010,BSN202.1,Dr. Sarah Brooks,Room 201,Friday,F02
-2649,B010,BSN202.1,Dr. Sarah Brooks,Room 201,Friday,F03
-2650,B010,BSN203.1,Prof. Joshua Parker,Room 212,Thursday,Th02
-2651,B010,BSN203.1,Prof. Joshua Parker,Room 212,Thursday,Th03
-2652,B010,BSN204.1,Dr. Hannah Evans,Room 104,Saturday,S02
-2653,B010,BSN204.1,Dr. Hannah Evans,Room 104,Saturday,S03
-2654,B013,HM101.1,Prof. Daniel Harris,Room 232,Wednesday,W02
-2655,B013,HM101.1,Prof. Daniel Harris,Room 232,Wednesday,W03
-2656,B013,HM102.1,Dr. Barbara Young,Room 201,Saturday,S02
-2657,B013,HM102.1,Dr. Barbara Young,Room 201,Saturday,S03
-2658,B013,HM103.1,Dr. Richard White,Room 127,Tuesday,T02
-2659,B013,HM103.1,Dr. Richard White,Room 127,Tuesday,T03
-2660,B013,HM104.1,Prof. Sandra Allen,Room 149,Monday,M02
-2661,B013,HM104.1,Prof. Sandra Allen,Room 149,Monday,M03
-2662,B014,HM201.1,Dr. Charles Thomas,Room 249,Friday,F02
-2663,B014,HM201.1,Dr. Charles Thomas,Room 249,Friday,F03
-2664,B014,HM202.1,Prof. Jessica Young,Room 209,Thursday,Th02
-2665,B014,HM202.1,Prof. Jessica Young,Room 209,Thursday,Th03
-2666,B017,BA101.1,Prof. Christopher Scott,Room 174,Wednesday,W02
-2667,B017,BA101.1,Prof. Christopher Scott,Room 174,Wednesday,W03
-2668,B017,BA102.1,Dr. Patricia Lopez,Room 134,Saturday,S02
-2669,B017,BA102.1,Dr. Patricia Lopez,Room 134,Saturday,S03
-2670,B017,BA103.1,Dr. Patrick Walker,Room 138,Tuesday,T02
-2671,B017,BA103.1,Dr. Patrick Walker,Room 138,Tuesday,T03
-2672,B017,BA104.1,Prof. Rachel Lewis,Room 160,Monday,M02
-2673,B017,BA104.1,Prof. Rachel Lewis,Room 160,Monday,M03
-2674,B018,BA201.1,Dr. Daniel Martinez,Room 230,Friday,F02
-2675,B018,BA201.1,Dr. Daniel Martinez,Room 230,Friday,F03
-2676,B018,BA202.1,Prof. Stephanie Garcia,Room 233,Thursday,Th04
-2677,B018,BA202.1,Prof. Stephanie Garcia,Room 233,Thursday,Th05
-2678,B021,AC101.1,Dr. Henry Morgan,Room 242,Wednesday,W02
-2679,B021,AC101.1,Dr. Henry Morgan,Room 242,Wednesday,W03
-2680,B021,AC102.1,Prof. Linda Foster,Room 171,Saturday,S02
-2681,B021,AC102.1,Prof. Linda Foster,Room 171,Saturday,S03
-2682,B021,AC103.1,Dr. Christopher Hill,Room 208,Tuesday,T02
-2683,B021,AC103.1,Dr. Christopher Hill,Room 208,Tuesday,T03
-2684,B021,AC104.1,Prof. Jennifer Adams,Room 114,Monday,M02
-2685,B021,AC104.1,Prof. Jennifer Adams,Room 114,Monday,M03
-2686,B025,PSY101.1,Dr. Kevin Adams,Room 232,Friday,F02
-2687,B025,PSY101.1,Dr. Kevin Adams,Room 232,Friday,F03
-2688,B025,PSY102.1,Prof. Rachel Nelson,Room 102,Saturday,S02
-2689,B025,PSY102.1,Prof. Rachel Nelson,Room 102,Saturday,S03
-2690,B025,PSY103.1,Dr. Brandon Hughes,Room 185,Thursday,Th02
-2691,B025,PSY103.1,Dr. Brandon Hughes,Room 185,Thursday,Th03
-2692,B025,PSY104.1,Prof. Megan Walker,Room 127,Wednesday,W02
-2693,B025,PSY104.1,Prof. Megan Walker,Room 127,Wednesday,W03
-2694,B026,PSY201.1,Dr. Nathan Allen,Room 216,Tuesday,T02
-2695,B026,PSY201.1,Dr. Nathan Allen,Room 216,Tuesday,T03
-2696,B026,PSY202.1,Prof. Diana Turner,Room 246,Saturday,S02
-2697,B026,PSY202.1,Prof. Diana Turner,Room 246,Saturday,S03
+Day,Time,Subject Name,Teacher Name,Section Name,Room Name
+Monday,9:00:00 - 11:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 117
+Monday,9:00:00 - 11:00:00,Web Development,Prof. Hannah Robinson,Information Technology - 2,Room 125
+Monday,9:00:00 - 11:00:00,Mobile Application Development,Prof. Emily Johnson,Information Technology - 3,Room 139
+Monday,9:00:00 - 11:00:00,Microeconomics,Dr. Christopher Hill,Accounting - 1,Room 141
+Monday,9:00:00 - 11:00:00,Microeconomics,Dr. Patrick Walker,Business Administration - 1,Room 143
+Monday,9:00:00 - 11:00:00,Principles of Tourism,Dr. Richard White,Hospitality Management - 1,Room 156
+Monday,9:00:00 - 11:00:00,Internship,Prof. Julia King,Computer Science - 4,Room 157
+Monday,9:00:00 - 11:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 194
+Monday,9:00:00 - 11:00:00,Cybersecurity,Prof. Lisa Bennett,Computer Science - 3,Room 236
+Monday,9:00:00 - 11:00:00,Cognitive Psychology,Dr. Nathan Allen,Psychology - 2,Room 239
+Monday,9:00:00 - 12:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 248
+Monday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 243
+Tuesday,9:00:00 - 12:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 102
+Tuesday,9:00:00 - 11:00:00,Medical-Surgical Nursing,Prof. Joshua Parker,Nursing - 2,Room 135
+Tuesday,9:00:00 - 11:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 136
+Tuesday,9:00:00 - 11:00:00,Food & Beverage Management,Prof. Jessica Young,Hospitality Management - 2,Room 144
+Tuesday,9:00:00 - 11:00:00,Networking Basics,Prof. Jennifer Scott,Information Technology - 2,Room 145
+Tuesday,9:00:00 - 11:00:00,Microbiology,Dr. Laura Mitchell,Nursing - 1,Room 148
+Tuesday,9:00:00 - 11:00:00,Computer Programming,Prof. Christina Hall,Information Technology - 1,Room 149
+Tuesday,9:00:00 - 11:00:00,Business Intelligence & Data Analytics,Prof. Olivia Cooper,Information Technology - 4,Room 151
+Tuesday,9:00:00 - 11:00:00,Business Law & Ethics,Prof. Stephanie Garcia,Business Administration - 2,Room 156
+Tuesday,9:00:00 - 11:00:00,Digital Logic Design,Dr. Henry Foster,Computer Science - 1,Room 171
+Tuesday,9:00:00 - 11:00:00,Statistics for Psychology,Dr. Brandon Hughes,Psychology - 1,Room 250
+Tuesday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 169
+Wednesday,9:00:00 - 11:00:00,Introduction to Psychology,Dr. Kevin Adams,Psychology - 1,Room 110
+Wednesday,9:00:00 - 11:00:00,Computer Organization,Prof. Karen Thompson,Computer Science - 1,Room 130
+Wednesday,9:00:00 - 11:00:00,Front Office Operations,Dr. Charles Thomas,Hospitality Management - 2,Room 132
+Wednesday,9:00:00 - 11:00:00,IT Project Management,Dr. George Harris,Information Technology - 4,Room 141
+Wednesday,9:00:00 - 12:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 142
+Wednesday,9:00:00 - 11:00:00,Systems Analysis & Design,Dr. Kevin Perez,Information Technology - 2,Room 145
+Wednesday,9:00:00 - 11:00:00,Biochemistry,Prof. William Garcia,Nursing - 1,Room 152
+Wednesday,9:00:00 - 11:00:00,IT Fundamentals,Dr. Edward Miller,Information Technology - 1,Room 163
+Wednesday,9:00:00 - 11:00:00,Artificial Intelligence & Machine Learning,Prof. Megan Ross,Computer Science - 3,Room 195
+Wednesday,9:00:00 - 11:00:00,Pathophysiology,Dr. Sarah Brooks,Nursing - 2,Room 199
+Wednesday,9:00:00 - 11:00:00,Marketing Management,Dr. Daniel Martinez,Business Administration - 2,Room 212
+Wednesday,9:00:00 - 11:00:00,Distributed Systems,Prof. Emma Diaz,Computer Science - 4,Room 246
+Thursday,9:00:00 - 11:00:00,Fundamentals of Nursing,Prof. James Carter,Nursing - 1,Room 111
+Thursday,9:00:00 - 11:00:00,Introduction to Hospitality Industry,Prof. Daniel Harris,Hospitality Management - 1,Room 105
+Thursday,9:00:00 - 11:00:00,Internship,Prof. Rebecca King,Information Technology - 4,Room 104
+Thursday,9:00:00 - 11:00:00,Discrete Mathematics,Prof. Sarah Collins,Information Technology - 1,Room 129
+Thursday,9:00:00 - 11:00:00,Cloud Computing,Dr. Samuel Hill,Computer Science - 4,Room 143
+Thursday,9:00:00 - 11:00:00,Developmental Psychology,Prof. Megan Walker,Psychology - 1,Room 152
+Thursday,9:00:00 - 11:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 168
+Thursday,9:00:00 - 11:00:00,IT Security & Cybersecurity,Dr. William Turner,Information Technology - 3,Room 171
+Thursday,9:00:00 - 11:00:00,Principles of Management,Prof. Christopher Scott,Business Administration - 1,Room 172
+Thursday,9:00:00 - 12:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 239
+Thursday,9:00:00 - 12:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 245
+Thursday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Fundamentals of Accounting,Dr. Henry Morgan,Accounting - 1,Room 104
+Friday,9:00:00 - 11:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 106
+Friday,9:00:00 - 11:00:00,Pharmacology,Dr. Olivia Robinson,Nursing - 2,Room 124
+Friday,9:00:00 - 11:00:00,Business Communication,Prof. Jennifer Adams,Accounting - 1,Room 133
+Friday,9:00:00 - 12:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 151
+Friday,9:00:00 - 11:00:00,Cloud Computing,Dr. Mark Evans,Information Technology - 3,Room 199
+Friday,9:00:00 - 11:00:00,Business Communication,Prof. Sandra Allen,Hospitality Management - 1,Room 204
+Friday,9:00:00 - 11:00:00,Business Mathematics,Prof. Rachel Lewis,Business Administration - 1,Room 211
+Friday,9:00:00 - 11:00:00,Database Management Systems,Dr. Matthew Nelson,Information Technology - 2,Room 218
+Friday,9:00:00 - 11:00:00,Internet of Things (IoT),Prof. Angela Torres,Computer Science - 4,Room 225
+Friday,9:00:00 - 11:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 227
+Friday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 175
+Saturday,9:00:00 - 11:00:00,Business Mathematics,Prof. Linda Foster,Accounting - 1,Room 116
+Saturday,9:00:00 - 11:00:00,IT Capstone Project,Dr. Anthony Rivera,Information Technology - 4,Room 129
+Saturday,9:00:00 - 11:00:00,Health Assessment,Dr. Hannah Evans,Nursing - 2,Room 166
+Saturday,9:00:00 - 11:00:00,General Biology,Prof. Rachel Nelson,Psychology - 1,Room 170
+Saturday,9:00:00 - 11:00:00,Human-Computer Interaction,Prof. Sophia Adams,Information Technology - 3,Room 171
+Saturday,9:00:00 - 11:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 197
+Saturday,9:00:00 - 11:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 198
+Saturday,9:00:00 - 11:00:00,Thesis/Capstone Project,Dr. Thomas Reed,Computer Science - 4,Room 213
+Saturday,9:00:00 - 11:00:00,Social Psychology,Prof. Diana Turner,Psychology - 2,Room 214
+Saturday,9:00:00 - 11:00:00,Software Engineering,Dr. Peter Clark,Computer Science - 3,Room 218
+Saturday,9:00:00 - 11:00:00,Financial Accounting,Dr. Patricia Lopez,Business Administration - 1,Room 220
+Saturday,9:00:00 - 11:00:00,Food Safety & Sanitation,Dr. Barbara Young,Hospitality Management - 1,Room 225
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 181
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Discrete Mathematics,Dr. Andrew Davis,Computer Science - 1,Room 201
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Computer Hardware & Troubleshooting,Dr. David Wright,Information Technology - 1,Room 218
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Computer Graphics & Multimedia,Dr. Ryan Scott,Computer Science - 3,Room 225
