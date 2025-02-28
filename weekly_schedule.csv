@@ -1,76 +1,76 @@
 Day,Time,Subject Name,Teacher Name,Section Name,Room Name
-Monday,9:00:00 - 11:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 117
-Monday,9:00:00 - 11:00:00,Web Development,Prof. Hannah Robinson,Information Technology - 2,Room 125
-Monday,9:00:00 - 11:00:00,Mobile Application Development,Prof. Emily Johnson,Information Technology - 3,Room 139
-Monday,9:00:00 - 11:00:00,Microeconomics,Dr. Christopher Hill,Accounting - 1,Room 141
-Monday,9:00:00 - 11:00:00,Microeconomics,Dr. Patrick Walker,Business Administration - 1,Room 143
-Monday,9:00:00 - 11:00:00,Principles of Tourism,Dr. Richard White,Hospitality Management - 1,Room 156
-Monday,9:00:00 - 11:00:00,Internship,Prof. Julia King,Computer Science - 4,Room 157
-Monday,9:00:00 - 11:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 194
-Monday,9:00:00 - 11:00:00,Cybersecurity,Prof. Lisa Bennett,Computer Science - 3,Room 236
-Monday,9:00:00 - 11:00:00,Cognitive Psychology,Dr. Nathan Allen,Psychology - 2,Room 239
-Monday,9:00:00 - 12:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 248
-Monday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 243
-Tuesday,9:00:00 - 12:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 102
-Tuesday,9:00:00 - 11:00:00,Medical-Surgical Nursing,Prof. Joshua Parker,Nursing - 2,Room 135
-Tuesday,9:00:00 - 11:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 136
-Tuesday,9:00:00 - 11:00:00,Food & Beverage Management,Prof. Jessica Young,Hospitality Management - 2,Room 144
-Tuesday,9:00:00 - 11:00:00,Networking Basics,Prof. Jennifer Scott,Information Technology - 2,Room 145
-Tuesday,9:00:00 - 11:00:00,Microbiology,Dr. Laura Mitchell,Nursing - 1,Room 148
-Tuesday,9:00:00 - 11:00:00,Computer Programming,Prof. Christina Hall,Information Technology - 1,Room 149
-Tuesday,9:00:00 - 11:00:00,Business Intelligence & Data Analytics,Prof. Olivia Cooper,Information Technology - 4,Room 151
-Tuesday,9:00:00 - 11:00:00,Business Law & Ethics,Prof. Stephanie Garcia,Business Administration - 2,Room 156
-Tuesday,9:00:00 - 11:00:00,Digital Logic Design,Dr. Henry Foster,Computer Science - 1,Room 171
-Tuesday,9:00:00 - 11:00:00,Statistics for Psychology,Dr. Brandon Hughes,Psychology - 1,Room 250
-Tuesday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 169
-Wednesday,9:00:00 - 11:00:00,Introduction to Psychology,Dr. Kevin Adams,Psychology - 1,Room 110
-Wednesday,9:00:00 - 11:00:00,Computer Organization,Prof. Karen Thompson,Computer Science - 1,Room 130
-Wednesday,9:00:00 - 11:00:00,Front Office Operations,Dr. Charles Thomas,Hospitality Management - 2,Room 132
-Wednesday,9:00:00 - 11:00:00,IT Project Management,Dr. George Harris,Information Technology - 4,Room 141
-Wednesday,9:00:00 - 12:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 142
-Wednesday,9:00:00 - 11:00:00,Systems Analysis & Design,Dr. Kevin Perez,Information Technology - 2,Room 145
-Wednesday,9:00:00 - 11:00:00,Biochemistry,Prof. William Garcia,Nursing - 1,Room 152
-Wednesday,9:00:00 - 11:00:00,IT Fundamentals,Dr. Edward Miller,Information Technology - 1,Room 163
-Wednesday,9:00:00 - 11:00:00,Artificial Intelligence & Machine Learning,Prof. Megan Ross,Computer Science - 3,Room 195
-Wednesday,9:00:00 - 11:00:00,Pathophysiology,Dr. Sarah Brooks,Nursing - 2,Room 199
-Wednesday,9:00:00 - 11:00:00,Marketing Management,Dr. Daniel Martinez,Business Administration - 2,Room 212
-Wednesday,9:00:00 - 11:00:00,Distributed Systems,Prof. Emma Diaz,Computer Science - 4,Room 246
-Thursday,9:00:00 - 11:00:00,Fundamentals of Nursing,Prof. James Carter,Nursing - 1,Room 111
-Thursday,9:00:00 - 11:00:00,Introduction to Hospitality Industry,Prof. Daniel Harris,Hospitality Management - 1,Room 105
-Thursday,9:00:00 - 11:00:00,Internship,Prof. Rebecca King,Information Technology - 4,Room 104
-Thursday,9:00:00 - 11:00:00,Discrete Mathematics,Prof. Sarah Collins,Information Technology - 1,Room 129
-Thursday,9:00:00 - 11:00:00,Cloud Computing,Dr. Samuel Hill,Computer Science - 4,Room 143
-Thursday,9:00:00 - 11:00:00,Developmental Psychology,Prof. Megan Walker,Psychology - 1,Room 152
-Thursday,9:00:00 - 11:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 168
-Thursday,9:00:00 - 11:00:00,IT Security & Cybersecurity,Dr. William Turner,Information Technology - 3,Room 171
-Thursday,9:00:00 - 11:00:00,Principles of Management,Prof. Christopher Scott,Business Administration - 1,Room 172
-Thursday,9:00:00 - 12:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 239
-Thursday,9:00:00 - 12:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 245
-Thursday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Fundamentals of Accounting,Dr. Henry Morgan,Accounting - 1,Room 104
-Friday,9:00:00 - 11:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 106
-Friday,9:00:00 - 11:00:00,Pharmacology,Dr. Olivia Robinson,Nursing - 2,Room 124
-Friday,9:00:00 - 11:00:00,Business Communication,Prof. Jennifer Adams,Accounting - 1,Room 133
-Friday,9:00:00 - 12:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 151
-Friday,9:00:00 - 11:00:00,Cloud Computing,Dr. Mark Evans,Information Technology - 3,Room 199
-Friday,9:00:00 - 11:00:00,Business Communication,Prof. Sandra Allen,Hospitality Management - 1,Room 204
-Friday,9:00:00 - 11:00:00,Business Mathematics,Prof. Rachel Lewis,Business Administration - 1,Room 211
-Friday,9:00:00 - 11:00:00,Database Management Systems,Dr. Matthew Nelson,Information Technology - 2,Room 218
-Friday,9:00:00 - 11:00:00,Internet of Things (IoT),Prof. Angela Torres,Computer Science - 4,Room 225
-Friday,9:00:00 - 11:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 227
-Friday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 175
-Saturday,9:00:00 - 11:00:00,Business Mathematics,Prof. Linda Foster,Accounting - 1,Room 116
-Saturday,9:00:00 - 11:00:00,IT Capstone Project,Dr. Anthony Rivera,Information Technology - 4,Room 129
-Saturday,9:00:00 - 11:00:00,Health Assessment,Dr. Hannah Evans,Nursing - 2,Room 166
-Saturday,9:00:00 - 11:00:00,General Biology,Prof. Rachel Nelson,Psychology - 1,Room 170
-Saturday,9:00:00 - 11:00:00,Human-Computer Interaction,Prof. Sophia Adams,Information Technology - 3,Room 171
-Saturday,9:00:00 - 11:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 197
-Saturday,9:00:00 - 11:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 198
-Saturday,9:00:00 - 11:00:00,Thesis/Capstone Project,Dr. Thomas Reed,Computer Science - 4,Room 213
-Saturday,9:00:00 - 11:00:00,Social Psychology,Prof. Diana Turner,Psychology - 2,Room 214
-Saturday,9:00:00 - 11:00:00,Software Engineering,Dr. Peter Clark,Computer Science - 3,Room 218
-Saturday,9:00:00 - 11:00:00,Financial Accounting,Dr. Patricia Lopez,Business Administration - 1,Room 220
-Saturday,9:00:00 - 11:00:00,Food Safety & Sanitation,Dr. Barbara Young,Hospitality Management - 1,Room 225
-Saturday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 181
-Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Discrete Mathematics,Dr. Andrew Davis,Computer Science - 1,Room 201
-Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Computer Hardware & Troubleshooting,Dr. David Wright,Information Technology - 1,Room 218
-Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Computer Graphics & Multimedia,Dr. Ryan Scott,Computer Science - 3,Room 225
+Monday,9:00:00 - 11:00:00,Computer Organization,Prof. Karen Thompson,Computer Science - 1,Room 107
+Monday,9:00:00 - 11:00:00,Marketing Management,Dr. Daniel Martinez,Business Administration - 2,Room 129
+Monday,9:00:00 - 11:00:00,Introduction to Psychology,Dr. Kevin Adams,Psychology - 1,Room 137
+Monday,9:00:00 - 11:00:00,IT Fundamentals,Dr. Edward Miller,Information Technology - 1,Room 138
+Monday,9:00:00 - 11:00:00,Artificial Intelligence & Machine Learning,Prof. Megan Ross,Computer Science - 3,Room 156
+Monday,9:00:00 - 11:00:00,Pathophysiology,Dr. Sarah Brooks,Nursing - 2,Room 164
+Monday,9:00:00 - 11:00:00,Systems Analysis & Design,Dr. Kevin Perez,Information Technology - 2,Room 167
+Monday,9:00:00 - 12:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 175
+Monday,9:00:00 - 11:00:00,Distributed Systems,Prof. Emma Diaz,Computer Science - 4,Room 203
+Monday,9:00:00 - 11:00:00,Biochemistry,Prof. William Garcia,Nursing - 1,Room 241
+Monday,9:00:00 - 11:00:00,IT Project Management,Dr. George Harris,Information Technology - 4,Room 246
+Monday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Front Office Operations,Dr. Charles Thomas,Hospitality Management - 2,Room 164
+Tuesday,9:00:00 - 11:00:00,Business Mathematics,Prof. Rachel Lewis,Business Administration - 1,Room 106
+Tuesday,9:00:00 - 11:00:00,Cloud Computing,Dr. Mark Evans,Information Technology - 3,Room 101
+Tuesday,9:00:00 - 11:00:00,Business Communication,Prof. Sandra Allen,Hospitality Management - 1,Room 123
+Tuesday,9:00:00 - 11:00:00,Business Communication,Prof. Jennifer Adams,Accounting - 1,Room 135
+Tuesday,9:00:00 - 11:00:00,Pharmacology,Dr. Olivia Robinson,Nursing - 2,Room 149
+Tuesday,9:00:00 - 11:00:00,Internet of Things (IoT),Prof. Angela Torres,Computer Science - 4,Room 169
+Tuesday,9:00:00 - 11:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 171
+Tuesday,9:00:00 - 12:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 188
+Tuesday,9:00:00 - 11:00:00,Database Management Systems,Dr. Matthew Nelson,Information Technology - 2,Room 233
+Tuesday,9:00:00 - 11:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 234
+Tuesday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 103
+Wednesday,9:00:00 - 11:00:00,Principles of Management,Prof. Christopher Scott,Business Administration - 1,Room 120
+Wednesday,9:00:00 - 11:00:00,Cybersecurity,Prof. Lisa Bennett,Computer Science - 3,Room 103
+Wednesday,9:00:00 - 12:00:00,Human Anatomy & Physiology,Dr. Sophia Martinez,Nursing - 1,Room 145
+Wednesday,9:00:00 - 11:00:00,Fundamentals of Accounting,Dr. Henry Morgan,Accounting - 1,Room 150
+Wednesday,9:00:00 - 11:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 158
+Wednesday,9:00:00 - 11:00:00,Internship,Prof. Julia King,Computer Science - 4,Room 197
+Wednesday,9:00:00 - 11:00:00,Developmental Psychology,Prof. Megan Walker,Psychology - 1,Room 209
+Wednesday,9:00:00 - 11:00:00,Introduction to Hospitality Industry,Prof. Daniel Harris,Hospitality Management - 1,Room 232
+Wednesday,9:00:00 - 11:00:00,Web Development,Prof. Hannah Robinson,Information Technology - 2,Room 245
+Wednesday,9:00:00 - 11:00:00,Mobile Application Development,Prof. Emily Johnson,Information Technology - 3,Room 248
+Wednesday,9:00:00 - 11:00:00,Data Structures and Algorithms,Prof. Linda Carter,Computer Science - 2,Room 249
+Wednesday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Database Management Systems,Dr. Jason Taylor,Computer Science - 2,Room 195
+Thursday,9:00:00 - 11:00:00,Discrete Mathematics,Prof. Sarah Collins,Information Technology - 1,Room 121
+Thursday,9:00:00 - 11:00:00,Cognitive Psychology,Dr. Nathan Allen,Psychology - 2,Room 125
+Thursday,9:00:00 - 11:00:00,Fundamentals of Nursing,Prof. James Carter,Nursing - 1,Room 141
+Thursday,9:00:00 - 11:00:00,Microeconomics,Dr. Patrick Walker,Business Administration - 1,Room 166
+Thursday,9:00:00 - 11:00:00,Cloud Computing,Dr. Samuel Hill,Computer Science - 4,Room 168
+Thursday,9:00:00 - 11:00:00,Internship,Prof. Rebecca King,Information Technology - 4,Room 169
+Thursday,9:00:00 - 11:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 170
+Thursday,9:00:00 - 11:00:00,Microeconomics,Dr. Christopher Hill,Accounting - 1,Room 175
+Thursday,9:00:00 - 12:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 208
+Thursday,9:00:00 - 12:00:00,Introduction to Computing,Dr. John Smith,Computer Science - 1,Room 214
+Thursday,9:00:00 - 11:00:00,IT Security & Cybersecurity,Dr. William Turner,Information Technology - 3,Room 218
+Thursday,9:00:00 - 11:00:00,Principles of Tourism,Dr. Richard White,Hospitality Management - 1,Room 247
+Friday,9:00:00 - 11:00:00,Computer Programming,Prof. Christina Hall,Information Technology - 1,Room 118
+Friday,9:00:00 - 11:00:00,Computer Networks,Prof. Nancy Cooper,Computer Science - 2,Room 138
+Friday,9:00:00 - 11:00:00,Digital Logic Design,Dr. Henry Foster,Computer Science - 1,Room 147
+Friday,9:00:00 - 11:00:00,Business Law & Ethics,Prof. Stephanie Garcia,Business Administration - 2,Room 159
+Friday,9:00:00 - 11:00:00,Food & Beverage Management,Prof. Jessica Young,Hospitality Management - 2,Room 192
+Friday,9:00:00 - 11:00:00,Statistics for Psychology,Dr. Brandon Hughes,Psychology - 1,Room 198
+Friday,9:00:00 - 12:00:00,Web Development & Mobile App Development,Dr. Ethan James,Computer Science - 3,Room 199
+Friday,9:00:00 - 11:00:00,Medical-Surgical Nursing,Prof. Joshua Parker,Nursing - 2,Room 215
+Friday,9:00:00 - 11:00:00,Microbiology,Dr. Laura Mitchell,Nursing - 1,Room 235
+Friday,9:00:00 - 11:00:00,Networking Basics,Prof. Jennifer Scott,Information Technology - 2,Room 236
+Friday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Operating Systems,Prof. Olivia Sanders,Computer Science - 2,Room 102
+Friday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Business Intelligence & Data Analytics,Prof. Olivia Cooper,Information Technology - 4,Room 138
+Saturday,9:00:00 - 11:00:00,Financial Accounting,Dr. Patricia Lopez,Business Administration - 1,Room 117
+Saturday,9:00:00 - 11:00:00,Business Mathematics,Prof. Linda Foster,Accounting - 1,Room 103
+Saturday,9:00:00 - 11:00:00,Food Safety & Sanitation,Dr. Barbara Young,Hospitality Management - 1,Room 130
+Saturday,9:00:00 - 11:00:00,Health Assessment,Dr. Hannah Evans,Nursing - 2,Room 140
+Saturday,9:00:00 - 11:00:00,Computer Hardware & Troubleshooting,Dr. David Wright,Information Technology - 1,Room 156
+Saturday,9:00:00 - 11:00:00,IT Capstone Project,Dr. Anthony Rivera,Information Technology - 4,Room 157
+Saturday,9:00:00 - 11:00:00,Software Engineering,Dr. Peter Clark,Computer Science - 3,Room 195
+Saturday,9:00:00 - 11:00:00,Human-Computer Interaction,Prof. Sophia Adams,Information Technology - 3,Room 202
+Saturday,9:00:00 - 11:00:00,General Biology,Prof. Rachel Nelson,Psychology - 1,Room 211
+Saturday,9:00:00 - 11:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 212
+Saturday,9:00:00 - 11:00:00,Social Psychology,Prof. Diana Turner,Psychology - 2,Room 223
+Saturday,9:00:00 - 11:00:00,Programming Fundamentals,Prof. Laura Wilson,Computer Science - 1,Room 226
+Saturday,9:00:00 - 11:00:00,Thesis/Capstone Project,Dr. Thomas Reed,Computer Science - 4,Room 229
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 15:00:00,Object-Oriented Programming,Dr. Brian Adams,Computer Science - 2,Room 106
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Computer Graphics & Multimedia,Dr. Ryan Scott,Computer Science - 3,Room 142
+Saturday,11:00:00 - 12:00:00; 13:00:00 - 14:00:00,Discrete Mathematics,Dr. Andrew Davis,Computer Science - 1,Room 169
