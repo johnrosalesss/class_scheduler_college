@@ -1,0 +1,213 @@
+#draft only do not use
+
+import mysql.connector
+import random
+import sys
+from collections import defaultdict
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+# **1. Connect to MySQL**
+print("Connecting to MySQL...")
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="class_scheduler_undergrad",
+    charset="utf8mb4",
+    collation="utf8mb4_general_ci"
+)
+cursor = conn.cursor()
+print("Connected successfully!")
+
+# **2. Load Data from Tables**
+print("Loading subjects...")
+cursor.execute("SELECT subject_id, subject_code, subject_name, program, year_level, hours_per_week FROM subjects")
+subjects = cursor.fetchall()
+
+print("Loading teachers...")
+cursor.execute("SELECT teacher_id, teacher_first_name, teacher_last_name, subject_name FROM teachers")
+teachers = [(t[0], f"{t[1]} {t[2]}", t[3]) for t in cursor.fetchall()]  # Combine first & last name
+
+print("Loading rooms...")
+cursor.execute("SELECT room_id, room_name FROM rooms")
+rooms = cursor.fetchall()
+
+print("Loading time slots...")
+cursor.execute("SELECT time_slot_id, day, start_time, end_time FROM time_slots ORDER BY day, start_time")
+time_slots = cursor.fetchall()
+
+import re  # Import regex for string extraction
+
+print("Loading student groups (blocks)...")
+cursor.execute("SELECT block_id, block_name FROM blocks")
+blocks = {}
+
+for block_id, block_name in cursor.fetchall():
+    match = re.match(r'([A-Za-z]+)\s(\d+)', block_name)  
+    if match:
+        program, year_level = match.groups()
+        block_key = f"{program}-{year_level}"
+        blocks[block_key] = block_id
+
+print(f"✅ Loaded {len(blocks)} blocks successfully!")
+
+# **3. Clear Old Schedule & Break Data**
+print("Clearing old schedule and break entries...")
+cursor.execute("DELETE FROM schedule")
+cursor.execute("DELETE FROM break")  
+
+# **4. Generate Breaks for All Sections Using `sections` Table**
+BREAKS = [
+    ("Recess", "09:30:00", "10:00:00"),  # 30-minute recess
+    ("Lunch Break", "12:00:00", "13:00:00")  # 1-hour lunch
+]
+
+print("Generating break schedules for all sections...")
+
+# Fetch section IDs from the `sections` table
+cursor.execute("SELECT section_id FROM sections")
+sections = [row[0] for row in cursor.fetchall()]
+
+# Insert breaks for each section and each day
+for section_id in sections:
+    for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
+        for break_name, start_time, end_time in BREAKS:
+            # Find the correct `time_slot_id` for this break
+            cursor.execute(
+                "SELECT time_slot_id FROM time_slots WHERE day = %s AND start_time = %s AND end_time = %s",
+                (day, start_time, end_time)
+            )
+            result = cursor.fetchone()
+            time_slot_id = result[0] if result else None  
+
+            if time_slot_id:
+                cursor.execute("""
+                    INSERT INTO break (name, time_slot_id, start_time, end_time, section_id) 
+                    VALUES (%s, %s, %s, %s, %s)
+                """, (break_name, time_slot_id, start_time, end_time, section_id))
+                print(f"✔ Inserted {break_name} for Section {section_id} on {day} (Time Slot ID: {time_slot_id})")
+            else:
+                print(f"⚠ Warning: No matching time_slot_id for {break_name} on {day}!")
+
+print(f"✅ Successfully inserted breaks for {len(sections)} sections on all days!")
+
+# Get all valid sections from the `sections` table
+cursor.execute("SELECT section_id FROM sections")
+sections = [row[0] for row in cursor.fetchall()]
+
+for section_id in sections:
+    for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
+        for break_name, start_time, end_time in BREAKS:
+            cursor.execute("""
+                INSERT INTO break (name, start_time, end_time, section_id) 
+                VALUES (%s, %s, %s, %s)
+            """, (break_name, start_time, end_time, section_id))
+
+print(f"✅ Successfully inserted breaks for {len(sections)} sections on all days!")
+
+# **5. Load the Newly Inserted Breaks**
+print("Loading break times...")
+cursor.execute("SELECT id, name, start_time, end_time, section_id FROM break")
+breaks = cursor.fetchall()
+
+if not breaks:
+    print("⚠ No breaks found in the database.")
+else:
+    print(f"✅ Loaded {len(breaks)} breaks!")
+
+# **6. Initialize Tracking Structures**
+teacher_schedules = defaultdict(list)  
+room_schedules = defaultdict(list)    
+block_schedules = defaultdict(list)   
+
+# **7. Function to Check Schedule Validity (Including Breaks)**
+def is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, is_break=False):
+    if not is_break:  
+        for d, s, e in teacher_schedules[teacher_id]:
+            if d == day and not (e <= start_time or s >= end_time):
+                return False  
+
+    for d, s, e in room_schedules[room_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False  
+
+    for d, s, e in block_schedules[block_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False  
+
+    return True  
+
+# **8. Assign Subjects**
+for subject in subjects:
+    subject_id, subject_code, subject_name, program, year_level, hours_per_week = subject
+
+    block_key = f"{program}-{year_level}"
+    if block_key not in blocks:
+        print(f"⚠ No block found for {block_key}, skipping...")
+        continue
+    block_id = blocks[block_key]
+
+    available_teachers = [t for t in teachers if t[2] == subject_name]
+    if not available_teachers:
+        print(f"⚠ No teacher available for {subject_name}, skipping...")
+        continue
+
+    hours_scheduled = 0
+    while hours_scheduled < hours_per_week:
+        teacher = random.choice(available_teachers)
+        teacher_id, teacher_name, _ = teacher
+
+        available_rooms = rooms[:]  
+        random.shuffle(available_rooms)
+
+        for room in available_rooms:
+            room_id, room_name = room
+
+            for time_slot in time_slots:
+                time_slot_id, day, start_time, end_time = time_slot
+
+                if is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time):
+                    teacher_schedules[teacher_id].append((day, start_time, end_time))
+                    room_schedules[room_id].append((day, start_time, end_time))
+                    block_schedules[block_id].append((day, start_time, end_time))
+                    hours_scheduled += 1
+
+                    cursor.execute(
+                        "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                        (block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time)
+                    )
+
+                    print(f"✔ Scheduled {subject_name} for Block {block_id} with {teacher_name} in {room_name} on {day} from {start_time} to {end_time}")
+
+                    break  
+
+            if hours_scheduled >= hours_per_week:
+                break  
+
+# **9. Assign Breaks to Schedule**
+print("Scheduling breaks into the timetable...")
+
+cursor.execute("SELECT id, name, time_slot_id, start_time, end_time, section_id FROM break")
+breaks = cursor.fetchall()
+
+for break_entry in breaks:
+    break_id, break_name, time_slot_id, break_start, break_end, section_id = break_entry
+
+    for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
+        if is_valid_slot("BREAK", "BREAK_ROOM", section_id, day, break_start, break_end, is_break=True):
+            # ✅ Insert into `schedule` table (now with `time_slot_id`)
+            cursor.execute("""
+                INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (section_id, "BREAK", "BREAK", "BREAK_ROOM", day, time_slot_id, break_start, break_end))
+
+
+            print(f"✔ Scheduled Break '{break_name}' for Section {section_id} on {day} (Time Slot ID: {time_slot_id}) from {break_start} to {break_end}")
+
+# **10. Commit Schedule & Breaks to Database**
+conn.commit()
+
+# **11. Close MySQL Connection**
+conn.close()
+print("✅ Schedule generation process completed!")

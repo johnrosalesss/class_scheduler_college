@@ -1,167 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="CodeHim">
-    <title>Simple Table Pagination Example</title>
-    
+    <title>Class Schedule</title>
+
     <!-- Style CSS -->
     <link rel="stylesheet" href="static/css/style.css">
-	<!-- Demo CSS (No need to include it into your project) -->
-	<link rel="stylesheet" href="static/css/demo.css">
-  
-  </head>
-  <body>
- <header class="intro">
- <h1>Simple Table Schedule Example</h1>
- <p>Simple scheduling sample OptaPlanner.</p>
+    <link rel="stylesheet" href="static/css/demo.css">
+</head>
+<body>
+<header class="intro">
+    <h1>Class Schedule</h1>
+    <p>View the generated class schedule below.</p>
+</header>
 
- <!-- <div class="action">
- <a href="https://www.codehim.com/vanilla-javascript/simple-table-pagination-javascript/" title="Back to download and tutorial page" class="btn back">Back to Tutorial</a>
- </div> -->
- </header>
-  
-      
- <main>
+<main>
+    <button id="scheduleBtn">Generate Schedule</button>
 
-  <button id="scheduleBtn">Schedule</button>
+    <label for="day">Filter by Day:</label>
+    <select name="day" id="day">
+        <option value="">All Days</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+    </select>
 
-  <label for="day">Sort by Day:</label>
-  <select name="day" id="day">
-      <option value="">All Days</option>
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-      <option value="Saturday">Saturday</option>
-  </select>
-  
-  <label for="search">Search:</label>
-  <input type="text" id="search" placeholder="Type to search...">
+    <label for="search">Search:</label>
+    <input type="text" id="search" placeholder="Type to search...">
 
-  
-  <table id="scheduleTable">
-		<thead>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-
+    <table id="scheduleTable">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
 </main>
 
 <script>
-  fetch('http://127.0.0.1:5000/get_schedule') // Explicitly use port 5000
+document.addEventListener("DOMContentLoaded", function () {
+    fetchSchedule(); // Load schedule when page loads
+
+    document.getElementById("scheduleBtn").addEventListener("click", function () {
+        fetch('/run_scheduler', { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || data.error); // Show success or error message
+                fetchSchedule(); // Refresh schedule table
+            })
+            .catch(error => console.error("Error running scheduler:", error));
+    });
+
+    document.getElementById("day").addEventListener("change", function () {
+        fetchSchedule(this.value);
+    });
+
+    document.getElementById("search").addEventListener("input", function () {
+        const searchText = this.value.toLowerCase();
+        document.querySelectorAll("#scheduleTable tbody tr").forEach(row => {
+            row.style.display = row.textContent.toLowerCase().includes(searchText) ? "" : "none";
+        });
+    });
+});
+
+function fetchSchedule(dayFilter = "") {
+    fetch(`/get_schedule?day=${dayFilter}`)
         .then(response => response.json())
         .then(result => {
             const table = document.querySelector("#scheduleTable");
             const thead = table.querySelector("thead");
             const tbody = table.querySelector("tbody");
 
-            thead.innerHTML = "";  // Clear existing table headers
-            tbody.innerHTML = "";  // Clear existing table rows
+            thead.innerHTML = ""; // Clear existing headers
+            tbody.innerHTML = ""; // Clear existing rows
 
-            // Check if there is data
-            if (result.columns.length === 0 || result.data.length === 0) {
-                tbody.innerHTML = "<tr><td colspan='100%'>No schedule available</td></tr>";
-                return;
-            }
-
-            // Create table headers dynamically
+            // Create table headers
             const headerRow = document.createElement("tr");
-            result.columns.forEach(column => {
+            ["ID", "Block ID", "Subject Code", "Teacher", "Room", "Day", "Start Time", "End Time", "Semester"].forEach(text => {
                 const th = document.createElement("th");
-                th.textContent = column.replace("_", " "); // Format column names
+                th.textContent = text;
                 headerRow.appendChild(th);
             });
             thead.appendChild(headerRow);
 
-            // Create table rows dynamically
+            if (!result.data.length) {
+                tbody.innerHTML = "<tr><td colspan='9'>No schedule available</td></tr>";
+                return;
+            }
+
+            // Populate table rows
             result.data.forEach(row => {
                 const tr = document.createElement("tr");
-                result.columns.forEach(column => {
+                ["id", "block_id", "subject_code", "teacher_name", "room_name", "day", "start_time", "end_time", "semester"].forEach(column => {
                     const td = document.createElement("td");
-                    td.textContent = row[column];  // Match JSON key
+                    td.textContent = row[column] || "N/A";
                     tr.appendChild(td);
                 });
                 tbody.appendChild(tr);
             });
         })
         .catch(error => console.error("Error fetching schedule:", error));
-
-        document.getElementById("scheduleBtn").addEventListener("click", function() {
-          fetch('/run_scheduler', { method: 'POST' })
-          .then(response => response.json())
-          .then(data => {
-              alert(data.message || data.error); // Show success or error message
-              fetchSchedule(); // Refresh the schedule table after scheduling
-          })
-          .catch(error => console.error("Error running scheduler:", error));
-      });
-
-
-    document.getElementById("day").addEventListener("change", function() {
-        fetchSchedule(this.value);
-    });
-
-    function fetchSchedule(dayFilter = "") {
-        fetch(`/get_schedule?day=${dayFilter}`)
-            .then(response => response.json())
-            .then(result => {
-                const table = document.querySelector("#scheduleTable");
-                const thead = table.querySelector("thead");
-                const tbody = table.querySelector("tbody");
-
-                thead.innerHTML = "";  // Clear existing headers
-                tbody.innerHTML = "";  // Clear existing rows
-
-                if (result.columns.length === 0 || result.data.length === 0) {
-                    tbody.innerHTML = "<tr><td colspan='100%'>No schedule available</td></tr>";
-                    return;
-                }
-
-                // Create table headers dynamically
-                const headerRow = document.createElement("tr");
-                result.columns.forEach(column => {
-                    const th = document.createElement("th");
-                    th.textContent = column.replace("_", " "); // Format column names
-                    headerRow.appendChild(th);
-                });
-                thead.appendChild(headerRow);
-
-                // Create table rows dynamically
-                result.data.forEach(row => {
-                    const tr = document.createElement("tr");
-                    result.columns.forEach(column => {
-                        const td = document.createElement("td");
-                        td.textContent = row[column];  // Match JSON key
-                        tr.appendChild(td);
-                    });
-                    tbody.appendChild(tr);
-                });
-            })
-            .catch(error => console.error("Error fetching schedule:", error));
-    }
-
-    // Load schedule on page load
-    fetchSchedule();
-
-    document.getElementById("search").addEventListener("input", function() {
-    const searchText = this.value.toLowerCase();
-    const rows = document.querySelectorAll("#scheduleTable tbody tr");
-
-    rows.forEach(row => {
-        const rowText = row.textContent.toLowerCase();
-        row.style.display = rowText.includes(searchText) ? "" : "none";
-    });
-});
-
+}
 
 </script>
-  
-<!-- Script JS -->    
-<script  src="static/js/script.js"></script>
-   
-  </body>
+
+</body>
 </html>

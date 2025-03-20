@@ -1,12 +1,15 @@
-import mysql.connector 
+import mysql.connector
 import random
-import csv
 import sys
-from datetime import timedelta
+import subprocess  # For running blocks.py
 from collections import defaultdict
-from datetime import datetime
 
 sys.stdout.reconfigure(encoding='utf-8')
+
+# **Run blocks.py before proceeding**
+print("Running blocks.py to generate blocks...")
+subprocess.run(["python", "blocks.py"], check=True)
+print("✅ blocks.py executed successfully!")
 
 # **1. Connect to MySQL**
 print("Connecting to MySQL...")
@@ -22,355 +25,158 @@ cursor = conn.cursor()
 print("Connected successfully!")
 
 # **2. Load Data from Tables**
-print("Loading subjects...")
-cursor.execute("SELECT subject_code, subject_name, program, year_level, lecture_hours, subject_type FROM subjects")
-subjects = cursor.fetchall()
+print("Loading sections...")
+cursor.execute("SELECT section_id, year_level FROM sections")
+sections = {row[0]: row[1] for row in cursor.fetchall()}
+
+print("Loading blocks for each section...")
+cursor.execute("SELECT block_id, block_name, section_id, subject_id FROM blocks")
+blocks = defaultdict(list)
+for block_id, block_name, section_id, subject_id in cursor.fetchall():
+    blocks[section_id].append((block_id, block_name, subject_id))
+
+print(f"✅ Loaded {sum(len(b) for b in blocks.values())} blocks across {len(sections)} sections.")
 
 print("Loading teachers...")
-cursor.execute("SELECT id_num, teacher_id, teacher_name, subject_code, teacher_type FROM teachers")
-teachers = cursor.fetchall()
+cursor.execute("SELECT teacher_id, teacher_first_name, teacher_last_name, subject_name FROM teachers")
+teachers = [(t[0], f"{t[1]} {t[2]}", t[3]) for t in cursor.fetchall()]
 
-print("Loading rooms...")
-cursor.execute("SELECT room_id, room_name, capacity, room_type FROM rooms")
-rooms = cursor.fetchall()
+print("Loading rooms with types...")
+cursor.execute("SELECT room_id, room_name, room_type FROM rooms")
+rooms = {room[0]: {"name": room[1], "type": room[2]} for room in cursor.fetchall()}
 
 print("Loading time slots...")
 cursor.execute("SELECT time_slot_id, day, start_time, end_time FROM time_slots ORDER BY day, start_time")
 time_slots = cursor.fetchall()
 
-print("Loading student groups (blocks)...")
-cursor.execute("SELECT block_id, course, year_level, num_students FROM students")
-student_groups = {f"{course}-{year_level}": block_id for block_id, course, year_level, _ in cursor.fetchall()}
+print("Loading subjects with semester, max daily minutes, and subject types...")
+cursor.execute("SELECT subject_id, subject_code, subject_name, semester, max_daily_mins, subject_type FROM subjects")
+subject_info = {
+    row[0]: {
+        "subject_code": row[1],
+        "subject_name": row[2],
+        "semester": row[3],
+        "max_daily_mins": int(row[4]) if row[4] else 30,
+        "subject_type": row[5]  
+    }
+    for row in cursor.fetchall()
+}
+
+print("Loading hours per week for each section and subject...")
+cursor.execute("SELECT b.section_id, b.subject_id, s.hours_per_week FROM blocks b JOIN subjects s ON b.subject_id = s.subject_id")
+section_subject_hours = defaultdict(dict)
+for section_id, subject_id, hours_per_week in cursor.fetchall():
+    section_subject_hours[section_id][subject_id] = hours_per_week * 60
 
 # **3. Clear Old Schedule**
-print("Clearing old schedule...")
+print("Clearing old schedule entries...")
 cursor.execute("DELETE FROM schedule")
 
-# **4. Define Constraints**
-LUNCH_START = "12:00:00"
-LUNCH_END = "13:00:00"
-DAY_START = "08:00:00"
-DAY_END = "17:00:00"
+# **4. Initialize Tracking Structures**
+teacher_schedules = defaultdict(lambda: defaultdict(list))
+room_schedules = defaultdict(lambda: defaultdict(list))
+section_schedules = defaultdict(lambda: defaultdict(list))
+section_subject_weekly_hours = defaultdict(lambda: defaultdict(int))
+scheduled_blocks = set()  # Tracks scheduled blocks
 
-# **5. Initialize Tracking Structures**
-teacher_schedules = defaultdict(list)  
-room_schedules = defaultdict(list)    
-student_schedules = defaultdict(list)  
-
-# **6. Log File Setup**
-log_file = "schedule_log.csv"
-
-# Open CSV file and write headers
-with open(log_file, mode='w', newline='', encoding='utf-8') as file:
-    writer = csv.writer(file)
-    writer.writerow(["Message Type", "Course", "Teacher", "Room", "Day", "Time"])
-
-# Function to log messages dynamically
-def log_message(message_type, course, teacher, room, day, time):
-    with open(log_file, mode='a', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow([message_type, course, teacher, room, day, time])
-
-# **Function to Check Schedule Validity**
-def is_valid_slot(teacher_id, room_id, block_id, day, start_time, end_time, teacher_type, subject_type, room_type):
-    start_time_str = str(start_time)
-    end_time_str = str(end_time)
-
-    # **Lunch Break Restriction**
-    if LUNCH_START <= start_time_str < LUNCH_END or LUNCH_START < end_time_str <= LUNCH_END:
-        return False
-
-    # **School Hours Restriction**
-    if start_time_str < DAY_START or end_time_str > DAY_END:
-        return False
-
-    # **Room Type Constraint**
-    if subject_type == "Laboratory" and room_type != "Laboratory":
-        return False  # Lab subjects must be in laboratory rooms
-
-    # **Part-Time Teacher Constraint**
-    if teacher_type == "Part-Time" and day != "Saturday":
-        return False  # Part-time teachers can only teach on Saturdays
-
-    # **Teacher Schedule Conflict**
-    for d, s, e in teacher_schedules[teacher_id]:
+# **5. Conflict Checking Function**
+def is_valid_slot(teacher_id, room_id, section_id, semester, day, start_time, end_time):
+    for d, s, e in teacher_schedules[semester][teacher_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
-
-    # **Room Schedule Conflict**
-    for d, s, e in room_schedules[room_id]:
+    for d, s, e in room_schedules[semester][room_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
-
-    # **Student Group Conflict**
-    for d, s, e in student_schedules[block_id]:
+    for d, s, e in section_schedules[semester][section_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
-
     return True
 
-# **7. Assign Subjects While Distributing Across the Week**
-unassigned_subjects = []
-day_counts = defaultdict(int)
+# **6. Assign Blocks to Schedule**
+for section_id, section_blocks in blocks.items():
+    section_year_level = sections[section_id]
 
-for subject in subjects:
-    subject_code, subject_name, program, year_level, lecture_hours, subject_type = subject
-    student_group_key = f"{program}-{year_level}"
+    for block_id, block_name, subject_id in section_blocks:
+        if block_id in scheduled_blocks:
+            print(f"⚠ Block {block_id} already scheduled, skipping...")
+            continue
 
-    if student_group_key not in student_groups:
-        print(f"⚠ No block found for {student_group_key}, skipping...")
-        log_message("Failed", subject_code, "No matching block", "N/A", "N/A", "N/A")
-        unassigned_subjects.append((subject_code, "No matching block found"))
-        continue
+        if subject_id not in subject_info:
+            print(f"⚠ No subject data found for block {block_id}, skipping...")
+            continue
 
-    block_id = student_groups[student_group_key]
-    available_teachers = [t for t in teachers if t[3] == subject_code]
-    
-    if not available_teachers:
-        print(f"⚠ No teacher available for {subject_code}, skipping...")
-        log_message("Failed", subject_code, "No Teacher", "N/A", "N/A", "N/A")
-        unassigned_subjects.append((subject_code, "No available teacher"))
-        continue
+        subject_data = subject_info[subject_id]
+        subject_code = subject_data["subject_code"]
+        subject_name = subject_data["subject_name"]
+        semester = subject_data["semester"]
+        max_mins = subject_data["max_daily_mins"]
+        subject_type = subject_data["subject_type"]
 
-    hours_scheduled = 0
-    sorted_days = sorted(set(slot[1] for slot in time_slots), key=lambda d: day_counts[d])
+        if subject_id not in section_subject_hours[section_id]:
+            print(f"⚠ No weekly hours assigned for subject {subject_name} in Section {section_id}, skipping...")
+            continue
 
-    while hours_scheduled < lecture_hours:
-        teacher = random.choice(available_teachers)
-        teacher_id = teacher[1]
-        teacher_name = teacher[2]  
-        teacher_type = teacher[4]  
+        weekly_mins_limit = section_subject_hours[section_id][subject_id]
+        num_slots_needed = max_mins // 30
 
-        suitable_rooms = [r for r in rooms if subject_type == "Lecture" or (subject_type == "Laboratory" and r[3] == "Laboratory")]
-        if not suitable_rooms:
-            print(f"⚠ No suitable room for {subject_code}, skipping...")
-            log_message("Failed", subject_code, "No suitable room", "N/A", "N/A", "N/A")
-            unassigned_subjects.append((subject_code, "No suitable room"))
-            break
+        if section_subject_weekly_hours[semester][(section_id, subject_id)] >= weekly_mins_limit:
+            print(f"⚠ Subject {subject_name} (Semester {semester}) in Section {section_id} already reached weekly limit, skipping...")
+            continue
 
-        room = random.choice(suitable_rooms)
-        room_id = room[0]
-        room_name = room[1]
-        room_type = room[3]  
+        matching_teachers = [t for t in teachers if t[2] == subject_name]
+        print(f"Checking teachers for subject {subject_name} (Semester {semester}) in block {block_id}: Found {len(matching_teachers)} available.")
 
-        for day in sorted_days:
-            valid_slots = [slot for slot in time_slots if slot[1] == day]
-            for i in range(len(valid_slots) - (lecture_hours - hours_scheduled)):
-                continuous_slots = []
-                for j in range(lecture_hours - hours_scheduled):
-                    slot = valid_slots[i + j]
-                    slot_id, slot_day, start_time, end_time = slot
+        if not matching_teachers:
+            print(f"⚠ No teacher available for {subject_name} (Semester {semester}), skipping...")
+            continue
 
-                    if is_valid_slot(teacher_id, room_id, block_id, slot_day, start_time, end_time, teacher_type, subject_type, room_type):
-                        continuous_slots.append(slot)
-                    else:
-                        break  
+        teacher = random.choice(matching_teachers)
+        teacher_id, teacher_name, _ = teacher
 
-                if len(continuous_slots) == (lecture_hours - hours_scheduled):  
-                    for slot_id, slot_day, start_time, end_time in continuous_slots:
-                        teacher_schedules[teacher_id].append((slot_day, start_time, end_time))
-                        room_schedules[room_id].append((slot_day, start_time, end_time))
-                        student_schedules[block_id].append((slot_day, start_time, end_time))
-                        day_counts[slot_day] += 1  
-                        hours_scheduled += 1
+        available_rooms = [
+            room_id for room_id, room in rooms.items() if room["type"] == subject_type
+        ]
 
-                        print(f"Inserting: {subject_code} - {teacher_name} in {room_name} at {slot_day} {start_time}-{end_time}")
-                        log_message("Success", subject_code, teacher_name, room_name, slot_day, f"{start_time}-{end_time}")
+        if not available_rooms:
+            print(f"⚠ No suitable room found for {subject_name} (Type: {subject_type}), skipping...")
+            continue
 
-                        cursor.execute(
-                            "INSERT INTO schedule (block_id, subject_code, teacher_name, room_name, day, time_slot_id) VALUES (%s, %s, %s, %s, %s, %s)",
-                            (block_id, subject_code, teacher_name, room_name, slot_day, slot_id)
-                        )
-                    break
+        random.shuffle(available_rooms)
 
-def merge_time_slots(time_slots):
-    """ Merge overlapping and consecutive time slots into a single duration """
-    if not time_slots:
-        return []
+        for room_id in available_rooms:
+            room_name = rooms[room_id]["name"]
 
-    # **Sort by start time**
-    time_slots.sort()
+            available_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            random.shuffle(available_days)
 
-    merged = []
-    start_time, end_time = time_slots[0]
+            for day in available_days:
+                for i in range(len(time_slots) - num_slots_needed + 1):
+                    selected_slots = time_slots[i : i + num_slots_needed]
 
-    for current_start, current_end in time_slots[1:]:
-        # **If current slot overlaps or is consecutive, extend the end time**
-        if current_start <= end_time:  # Overlapping or consecutive
-            end_time = max(end_time, current_end)
-        else:
-            merged.append(f"{start_time} - {end_time}")  # Save previous slot
-            start_time, end_time = current_start, current_end  # Start new slot
+                    if len(selected_slots) < num_slots_needed:
+                        continue
 
-    merged.append(f"{start_time} - {end_time}")  # Add last slot
-    return merged
+                    time_slot_ids, days, start_times, end_times = zip(*selected_slots)
 
-def export_teacher_schedule(cursor, filename):
-    """ Export teacher schedule with merged time slots """
-    
-    # **Fetch schedule data**
-    cursor.execute("""
-        SELECT t.teacher_id, t.teacher_name, s.subject_name, s.subject_code, 
-               r.room_id, sc.day, ts.start_time, ts.end_time
-        FROM schedule sc
-        JOIN teachers t ON sc.teacher_name = t.teacher_name
-        JOIN subjects s ON sc.subject_code = s.subject_code
-        JOIN rooms r ON sc.room_name = r.room_name
-        JOIN time_slots ts ON sc.time_slot_id = ts.time_slot_id
-        ORDER BY t.teacher_id, sc.day, ts.start_time
-    """)
-    
-    rows = cursor.fetchall()
-    teacher_schedule = {}
+                    total_mins_scheduled = section_subject_weekly_hours[semester][(section_id, subject_id)] + max_mins
+                    if total_mins_scheduled > weekly_mins_limit:
+                        continue
 
-    # **Group by (teacher, subject, day, room)**
-    for teacher_id, teacher_name, subject_name, subject_code, room_id, day, start_time, end_time in rows:
-        key = (teacher_id, teacher_name, subject_name, subject_code, room_id, day)
-        
-        if key not in teacher_schedule:
-            teacher_schedule[key] = []
-        
-        teacher_schedule[key].append((start_time, end_time))
+                    if is_valid_slot(teacher_id, room_id, section_id, semester, days[0], start_times[0], end_times[-1]):
+                        cursor.execute("""
+                            INSERT INTO schedule (section_id, block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time, semester)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (section_id, block_id, subject_code, teacher_name, room_name, days[0], time_slot_ids[0], start_times[0], end_times[-1], semester))
 
-    # **Write to CSV**
-    with open(filename, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Teacher ID', 'Teacher Name', 'Subject', 'Subject Code', 'Room ID', 'Day', 'Time Duration'])
+                        teacher_schedules[semester][teacher_id].append((days[0], start_times[0], end_times[-1]))
+                        room_schedules[semester][room_id].append((days[0], start_times[0], end_times[-1]))
+                        section_schedules[semester][section_id].append((days[0], start_times[0], end_times[-1]))
 
-        for (teacher_id, teacher_name, subject_name, subject_code, room_id, day), time_slots in teacher_schedule.items():
-            merged_time = merge_time_slots(time_slots)  # **Now defined!**
-            writer.writerow([teacher_id, teacher_name, subject_name, subject_code, room_id, day, "; ".join(merged_time)])
+                        section_subject_weekly_hours[semester][(section_id, subject_id)] += max_mins
+                        scheduled_blocks.add(block_id)  # Track scheduled block
+                        break
 
-    print(f"📄 Teacher schedule exported successfully to {filename}.")
-
-# **✅ Call the function**
-export_teacher_schedule(cursor, 'teacher_schedule.csv')
-
-def merge_time_slots(time_slots):
-    """ Merge overlapping and consecutive time slots into a single duration. """
-    if not time_slots:
-        return []
-    
-    # Convert time to datetime objects for easier comparison
-    time_slots = sorted(time_slots, key=lambda x: x[0])
-    merged = [time_slots[0]]
-
-    for start, end in time_slots[1:]:
-        last_start, last_end = merged[-1]
-
-        # **Check if the new slot overlaps or is consecutive**
-        if start <= last_end:  
-            # Merge by extending the end time
-            merged[-1] = (last_start, max(last_end, end))
-        else:
-            # Otherwise, start a new time block
-            merged.append((start, end))
-
-    # Convert back to string format
-    return [f"{s} - {e}" for s, e in merged]
-
-def export_block_schedule(cursor, filename):
-    cursor.execute("""
-        SELECT st.block_id, st.course, st.year_level, s.subject_name, s.subject_code, 
-               t.teacher_name, r.room_id, sc.day, ts.start_time, ts.end_time
-        FROM schedule sc
-        JOIN students st ON sc.block_id = st.block_id
-        JOIN subjects s ON sc.subject_code = s.subject_code
-        JOIN teachers t ON sc.teacher_name = t.teacher_name
-        JOIN rooms r ON sc.room_name = r.room_name
-        JOIN time_slots ts ON sc.time_slot_id = ts.time_slot_id
-        ORDER BY st.block_id, sc.day, ts.start_time
-    """)
-    
-    rows = cursor.fetchall()
-    block_schedule = {}
-
-    # **Group schedules by block, subject, and day**
-    for block_id, course, year_level, subject_name, subject_code, teacher_name, room_id, day, start_time, end_time in rows:
-        key = (block_id, course, year_level, subject_name, subject_code, teacher_name, room_id, day)
-        
-        if key not in block_schedule:
-            block_schedule[key] = []
-        
-        block_schedule[key].append((start_time, end_time))
-
-    # **Write to CSV**
-    with open(filename, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Block ID', 'Course', 'Year Level', 'Subject', 'Subject Code', 'Teacher', 'Room ID', 'Day', 'Time Duration'])
-        
-        for (block_id, course, year_level, subject_name, subject_code, teacher_name, room_id, day), time_slots in block_schedule.items():
-            merged_time = merge_time_slots(time_slots)  # **Fix merging**
-            writer.writerow([block_id, course, year_level, subject_name, subject_code, teacher_name, room_id, day, "; ".join(merged_time)])
-
-    print(f"📄 Block schedule exported successfully to {filename}.")
-
-# **✅ Call the function**
-export_block_schedule(cursor, 'block_schedule.csv')
-
-# **Function to Merge Overlapping Time Slots**
-def merge_time_slots(time_slots):
-    """ Merge overlapping and consecutive time slots into a single duration. """
-    if not time_slots:
-        return []
-    
-    # Convert time to datetime objects for easier comparison
-    time_slots = sorted(time_slots, key=lambda x: x[0])
-    merged = [time_slots[0]]
-
-    for start, end in time_slots[1:]:
-        last_start, last_end = merged[-1]
-
-        # **Check if the new slot overlaps or is consecutive**
-        if start <= last_end:  
-            # Merge by extending the end time
-            merged[-1] = (last_start, max(last_end, end))
-        else:
-            # Otherwise, start a new time block
-            merged.append((start, end))
-
-    # Convert back to string format
-    return [f"{s} - {e}" for s, e in merged]
-
-# **Export Weekly Schedule Function**
-def export_weekly_schedule(cursor, filename):
-    """ Exports the weekly schedule grouped by day and time. """
-
-    cursor.execute("""
-        SELECT sc.day, ts.start_time, ts.end_time, s.subject_name, t.teacher_name, st.section_name, r.room_name
-        FROM schedule sc
-        JOIN students st ON sc.block_id = st.block_id
-        JOIN subjects s ON sc.subject_code = s.subject_code
-        JOIN teachers t ON sc.teacher_name = t.teacher_name
-        JOIN rooms r ON sc.room_name = r.room_name
-        JOIN time_slots ts ON sc.time_slot_id = ts.time_slot_id
-        ORDER BY FIELD(sc.day, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'), ts.start_time
-    """)
-
-    rows = cursor.fetchall()
-    weekly_schedule = defaultdict(list)
-
-    for day, start_time, end_time, subject_name, teacher_name, section_name, room_name in rows:
-        key = (day, subject_name, teacher_name, section_name, room_name)
-        weekly_schedule[key].append((start_time, end_time))
-
-    # **Write to CSV**
-    with open(filename, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Day", "Time", "Subject Name", "Teacher Name", "Section Name", "Room Name"])
-
-        for (day, subject_name, teacher_name, section_name, room_name), time_slots in weekly_schedule.items():
-            merged_time = merge_time_slots(time_slots)  
-            writer.writerow([day, "; ".join(merged_time), subject_name, teacher_name, section_name, room_name])
-
-    print(f"📄 Weekly schedule exported successfully to {filename}.")
-
-# **✅ Call the function**
-export_weekly_schedule(cursor, 'weekly_schedule.csv')
-
-# **8. Commit Schedule to Database**
+# **7. Commit Schedule to Database**
 conn.commit()
-
-# **9. Close MySQL Connection**
 conn.close()
 print("✅ Schedule generation process completed!")
