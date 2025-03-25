@@ -1,0 +1,198 @@
+import mysql.connector
+import random
+import sys
+from collections import defaultdict
+
+sys.stdout.reconfigure(encoding="utf-8")
+
+# **1. Run Blocks & Breaks File First**
+import subprocess
+print("Running breaks.py first...")
+subprocess.run(["python", "breaks.py"])
+
+print("Running blocks.py first...")
+subprocess.run(["python", "blocks.py"])
+
+# **2. Connect to MySQL**
+print("Connecting to MySQL...")
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="class_scheduler_undergrad",
+    charset="utf8mb4",
+    collation="utf8mb4_general_ci"
+)
+cursor = conn.cursor()
+print("Connected successfully!")
+
+# **3. Load Data from Tables**
+
+print("Loading break times...")
+cursor.execute("SELECT time_slot_id, start_time, end_time, section_id FROM break")
+break_times = defaultdict(list)
+
+for time_slot_id, start_time, end_time, section_id in cursor.fetchall():
+    break_times[section_id].append((start_time, end_time))
+
+print(f"Loaded {sum(len(b) for b in break_times.values())} break times.")
+
+print("Loading sections...")
+cursor.execute("SELECT section_id, year_level FROM sections")
+sections = {row[0]: row[1] for row in cursor.fetchall()}
+
+print("Loading blocks for each section...")
+cursor.execute("SELECT block_id, block_name, section_id, subject_id FROM blocks")
+blocks = defaultdict(list)
+for block_id, block_name, section_id, subject_id in cursor.fetchall():
+    blocks[section_id].append((block_id, block_name, subject_id))
+
+print("Loading teachers...")
+cursor.execute("SELECT teacher_id, teacher_first_name, teacher_last_name, subject_name FROM teachers")
+teachers = [(t[0], f"{t[1]} {t[2]}", t[3]) for t in cursor.fetchall()]
+
+print("Loading rooms with types...")
+cursor.execute("SELECT room_id, room_name, room_type FROM rooms")
+rooms = {room[0]: {"name": room[1], "type": room[2]} for room in cursor.fetchall()}
+
+print("Loading time slots (Valid Hours: 8:00 AM - 8:00 PM)...")
+cursor.execute("SELECT time_slot_id, day, start_time, end_time, minutes FROM time_slots WHERE start_time >= '08:00:00' AND end_time <= '20:00:00' ORDER BY day, start_time")
+time_slots = defaultdict(list)
+for time_slot_id, day, start_time, end_time, minutes in cursor.fetchall():
+    time_slots[day].append({"id": time_slot_id, "start": start_time, "end": end_time, "minutes": minutes})
+
+print("Loading subjects with semester, max daily minutes, and minutes per week...")
+cursor.execute("SELECT subject_id, subject_code, subject_name, semester, max_daily_mins, minutes_per_week, subject_type FROM subjects")
+subject_info = {
+    row[0]: {
+        "subject_code": row[1],
+        "subject_name": row[2],
+        "semester": row[3],
+        "max_daily_mins": int(row[4]) if row[4] else 30,
+        "minutes_per_week": int(row[5]),
+        "subject_type": row[6]
+    }
+    for row in cursor.fetchall()
+}
+
+# **4. Clear Old Schedule**
+print("Clearing old schedule entries...")
+cursor.execute("DELETE FROM schedule")
+
+# **5. Initialize Tracking Structures**
+teacher_schedules = defaultdict(lambda: defaultdict(list))
+room_schedules = defaultdict(lambda: defaultdict(list))
+section_schedules = defaultdict(lambda: defaultdict(list))
+section_subject_weekly_minutes = defaultdict(lambda: defaultdict(int))
+block_scheduled_times = defaultdict(lambda: defaultdict(list))  # Track when a block is scheduled
+
+# **6. Conflict Checking Function**
+def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, start_time, end_time):
+    """Ensure no room, teacher, section, or block conflicts, including break times."""
+
+    # Check if this block is already scheduled on this day
+    if any(d == day for d, _, _ in block_scheduled_times[semester][block_id]):
+        return False  # Block already scheduled on this day
+
+    # Check for teacher conflicts
+    for d, s, e in teacher_schedules[semester][teacher_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False
+
+    # Check for room conflicts
+    for d, s, e in room_schedules[semester][room_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False
+
+    # Check for section conflicts
+    for d, s, e in section_schedules[semester][section_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False
+
+    # **Check for break conflicts** (Newly added)
+    if section_id in break_times:
+        for b_start, b_end in break_times[section_id]:
+            if not (end_time <= b_start or start_time >= b_end):  # Overlap detected
+                return False  
+
+    return True
+
+# **7. Assign Blocks to Schedule (Ensuring Weekly & Daily Limits)**
+for section_id, section_blocks in blocks.items():
+    section_year_level = sections[section_id]
+
+    for block_id, block_name, subject_id in section_blocks:
+        if subject_id not in subject_info:
+            print(f"⚠ No subject data found for block {block_id}, skipping...")
+            continue
+
+        subject_data = subject_info[subject_id]
+        subject_code = subject_data["subject_code"]
+        subject_name = subject_data["subject_name"]
+        semester = subject_data["semester"]
+        max_daily_mins = subject_data["max_daily_mins"]
+        minutes_per_week = subject_data["minutes_per_week"]
+        subject_type = subject_data["subject_type"]
+
+        if section_subject_weekly_minutes[semester][(section_id, subject_id)] >= minutes_per_week:
+            print(f"⚠ Subject {subject_name} (Semester {semester}) in Section {section_id} already reached weekly limit, skipping...")
+            continue
+
+        matching_teachers = [t for t in teachers if t[2] == subject_name]
+        if not matching_teachers:
+            print(f"⚠ No teacher available for {subject_name} (Semester {semester}), skipping...")
+            continue
+
+        teacher = random.choice(matching_teachers)
+        teacher_id, teacher_name, _ = teacher
+
+        available_rooms = [room_id for room_id, room in rooms.items() if room["type"] == subject_type]
+        if not available_rooms:
+            print(f"⚠ No suitable room found for {subject_name} (Type: {subject_type}), skipping...")
+            continue
+
+        random.shuffle(available_rooms)
+
+        available_days = list(time_slots.keys())
+        random.shuffle(available_days)
+
+        for day in available_days:
+            if section_subject_weekly_minutes[semester][(section_id, subject_id)] >= minutes_per_week:
+                break
+
+            for room_id in available_rooms:
+                room_name = rooms[room_id]["name"]
+
+                for i in range(len(time_slots[day])):
+                    slot = time_slots[day][i]
+                    slot_id = slot["id"]
+                    slot_start = slot["start"]
+                    slot_end = slot["end"]
+                    slot_minutes = slot["minutes"]
+
+                    if slot_minutes > max_daily_mins:
+                        continue  # Skip slots exceeding the max daily limit
+
+                    total_scheduled = section_subject_weekly_minutes[semester][(section_id, subject_id)] + slot_minutes
+                    if total_scheduled > minutes_per_week:
+                        continue  # Skip if it exceeds the allowed weekly minutes
+
+                    if is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, slot_start, slot_end):
+                        cursor.execute("""
+                            INSERT INTO schedule (section_id, block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time, semester)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (section_id, block_id, subject_code, teacher_name, room_name, day, slot_id, slot_start, slot_end, semester))
+
+                        block_scheduled_times[semester][block_id].append((day, slot_start, slot_end))
+
+                        teacher_schedules[semester][teacher_id].append((day, slot_start, slot_end))
+                        room_schedules[semester][room_id].append((day, slot_start, slot_end))
+                        section_schedules[semester][section_id].append((day, slot_start, slot_end))
+
+                        section_subject_weekly_minutes[semester][(section_id, subject_id)] += slot_minutes
+                        break
+
+# **8. Commit Schedule to Database**
+conn.commit()
+conn.close()
+print("✅ Schedule generation process completed!")
