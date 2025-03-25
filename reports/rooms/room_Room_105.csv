@@ -1,0 +1,31 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+1,9,GEN_109,Marco Castillo,Friday,11:30:00,12:00:00,1
+1,9,GEN_109,Marco Castillo,Monday,11:30:00,12:00:00,1
+1,9,GEN_109,Marco Castillo,Saturday,11:30:00,12:00:00,1
+1,9,GEN_109,Marco Castillo,Thursday,11:30:00,12:00:00,1
+1,9,GEN_109,Marco Castillo,Tuesday,11:30:00,12:00:00,1
+1,9,GEN_109,Marco Castillo,Wednesday,11:30:00,12:00:00,1
+2,39,ABM_107,Marvin Dela Cruz,Friday,10:00:00,10:30:00,2
+2,39,ABM_107,Marvin Dela Cruz,Monday,10:00:00,10:30:00,2
+2,39,ABM_107,Marvin Dela Cruz,Saturday,10:00:00,10:30:00,2
+2,39,ABM_107,Marvin Dela Cruz,Thursday,10:00:00,10:30:00,2
+2,39,ABM_107,Marvin Dela Cruz,Tuesday,10:00:00,10:30:00,2
+2,39,ABM_107,Marvin Dela Cruz,Wednesday,10:00:00,10:30:00,2
+4,69,GEN_125,Teresa Reyes,Friday,10:00:00,10:30:00,1
+4,69,GEN_125,Teresa Reyes,Monday,10:00:00,10:30:00,1
+4,69,GEN_125,Teresa Reyes,Saturday,10:00:00,10:30:00,1
+4,69,GEN_125,Teresa Reyes,Thursday,10:00:00,10:30:00,1
+4,69,GEN_125,Teresa Reyes,Tuesday,10:00:00,10:30:00,1
+4,69,GEN_125,Teresa Reyes,Wednesday,10:00:00,10:30:00,1
+5,92,GEN_111,Gregory Delos Santos,Friday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Friday,8:30:00,9:00:00,1
+5,92,GEN_111,Gregory Delos Santos,Monday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Monday,8:30:00,9:00:00,1
+5,92,GEN_111,Gregory Delos Santos,Saturday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Saturday,8:30:00,9:00:00,1
+5,92,GEN_111,Gregory Delos Santos,Thursday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Thursday,8:30:00,9:00:00,1
+5,92,GEN_111,Gregory Delos Santos,Tuesday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Tuesday,8:30:00,9:00:00,1
+5,92,GEN_111,Gregory Delos Santos,Wednesday,7:00:00,7:30:00,2
+5,85,GEN_104,Ana Dela Cruz,Wednesday,8:30:00,9:00:00,1

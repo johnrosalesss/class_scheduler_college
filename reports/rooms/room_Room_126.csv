@@ -1,0 +1,25 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+5,103,STEM_103,Raymond Castillo,Friday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Friday,13:30:00,14:00:00,1
+5,103,STEM_103,Raymond Castillo,Monday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Monday,13:30:00,14:00:00,1
+5,103,STEM_103,Raymond Castillo,Saturday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Saturday,13:30:00,14:00:00,1
+5,103,STEM_103,Raymond Castillo,Thursday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Thursday,13:30:00,14:00:00,1
+5,103,STEM_103,Raymond Castillo,Tuesday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Tuesday,13:30:00,14:00:00,1
+5,103,STEM_103,Raymond Castillo,Wednesday,13:00:00,13:30:00,2
+5,101,STEM_101,Elena Reyes,Wednesday,13:30:00,14:00:00,1
+6,117,GEN_131,Rosario Dela Cruz,Friday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Friday,9:00:00,9:30:00,2
+6,117,GEN_131,Rosario Dela Cruz,Monday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Monday,9:00:00,9:30:00,2
+6,117,GEN_131,Rosario Dela Cruz,Saturday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Saturday,9:00:00,9:30:00,2
+6,117,GEN_131,Rosario Dela Cruz,Thursday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Thursday,9:00:00,9:30:00,2
+6,117,GEN_131,Rosario Dela Cruz,Tuesday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Tuesday,9:00:00,9:30:00,2
+6,117,GEN_131,Rosario Dela Cruz,Wednesday,8:30:00,9:00:00,2
+6,118,GEN_132,Camille Reyes,Wednesday,9:00:00,9:30:00,2

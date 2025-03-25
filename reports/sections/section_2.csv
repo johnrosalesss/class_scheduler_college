@@ -1,0 +1,103 @@
+Section ID,Block ID,Subject Code,Teacher Name,Room Name,Day,Start Time,End Time,Semester
+2,24,GEN_120,Leonardo Cortez,Room 118,Friday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Friday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Friday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Friday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Friday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Friday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Friday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Friday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Friday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Friday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Friday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Friday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Friday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Friday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Friday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Friday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Friday,13:00:00,13:30:00,1
+2,24,GEN_120,Leonardo Cortez,Room 118,Monday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Monday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Monday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Monday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Monday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Monday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Monday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Monday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Monday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Monday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Monday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Monday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Monday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Monday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Monday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Monday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Monday,13:00:00,13:30:00,1
+2,24,GEN_120,Leonardo Cortez,Room 118,Saturday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Saturday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Saturday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Saturday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Saturday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Saturday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Saturday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Saturday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Saturday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Saturday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Saturday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Saturday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Saturday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Saturday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Saturday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Saturday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Saturday,13:00:00,13:30:00,1
+2,24,GEN_120,Leonardo Cortez,Room 118,Thursday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Thursday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Thursday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Thursday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Thursday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Thursday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Thursday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Thursday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Thursday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Thursday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Thursday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Thursday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Thursday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Thursday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Thursday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Thursday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Thursday,13:00:00,13:30:00,1
+2,24,GEN_120,Leonardo Cortez,Room 118,Tuesday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Tuesday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Tuesday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Tuesday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Tuesday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Tuesday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Tuesday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Tuesday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Tuesday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Tuesday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Tuesday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Tuesday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Tuesday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Tuesday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Tuesday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Tuesday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Tuesday,13:00:00,13:30:00,1
+2,24,GEN_120,Leonardo Cortez,Room 118,Wednesday,7:00:00,7:30:00,1
+2,32,GEN_128,Elena Ramos,Room 114,Wednesday,7:00:00,7:30:00,2
+2,25,GEN_121,Michael Cruz,Room 110,Wednesday,7:30:00,8:00:00,1
+2,33,GEN_129,Melissa Domingo,Computer Lab 4,Wednesday,7:30:00,8:00:00,2
+2,26,GEN_122,Jonathan Tan,Room 129,Wednesday,8:00:00,8:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Room 103,Wednesday,8:00:00,8:30:00,2
+2,27,GEN_123,Cynthia Gomez,Room 122,Wednesday,8:30:00,9:00:00,1
+2,35,GEN_131,Josefina Ramos,Room 106,Wednesday,8:30:00,9:00:00,2
+2,28,GEN_124,Daniel Lopez,Room 120,Wednesday,9:00:00,9:30:00,1
+2,36,GEN_132,Camille Reyes,Room 112,Wednesday,9:00:00,9:30:00,2
+2,29,GEN_125,Teresa Reyes,Room 118,Wednesday,10:00:00,10:30:00,1
+2,39,ABM_107,Marvin Dela Cruz,Room 105,Wednesday,10:00:00,10:30:00,2
+2,30,GEN_126,Samuel Castro,Room 127,Wednesday,10:30:00,11:00:00,1
+2,40,ABM_108,Maria Santos,Room 127,Wednesday,10:30:00,11:00:00,2
+2,31,GEN_127,Albert Domingo,Engineering Lab 2,Wednesday,11:00:00,11:30:00,1
+2,37,ABM_105,Ricardo Gonzalez,Room 104,Wednesday,11:30:00,12:00:00,1
+2,38,ABM_106,Beatrice Santos,Room 103,Wednesday,13:00:00,13:30:00,1

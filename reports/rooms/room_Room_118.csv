@@ -1,0 +1,37 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+1,11,GEN_111,Gregory Delos Santos,Friday,7:00:00,7:30:00,2
+1,11,GEN_111,Gregory Delos Santos,Monday,7:00:00,7:30:00,2
+1,11,GEN_111,Gregory Delos Santos,Saturday,7:00:00,7:30:00,2
+1,11,GEN_111,Gregory Delos Santos,Thursday,7:00:00,7:30:00,2
+1,11,GEN_111,Gregory Delos Santos,Tuesday,7:00:00,7:30:00,2
+1,11,GEN_111,Gregory Delos Santos,Wednesday,7:00:00,7:30:00,2
+2,24,GEN_120,Leonardo Cortez,Friday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Friday,10:00:00,10:30:00,1
+2,24,GEN_120,Leonardo Cortez,Monday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Monday,10:00:00,10:30:00,1
+2,24,GEN_120,Leonardo Cortez,Saturday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Saturday,10:00:00,10:30:00,1
+2,24,GEN_120,Leonardo Cortez,Thursday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Thursday,10:00:00,10:30:00,1
+2,24,GEN_120,Leonardo Cortez,Tuesday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Tuesday,10:00:00,10:30:00,1
+2,24,GEN_120,Leonardo Cortez,Wednesday,7:00:00,7:30:00,1
+2,29,GEN_125,Teresa Reyes,Wednesday,10:00:00,10:30:00,1
+5,87,GEN_106,Robert Torres,Friday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Friday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Friday,11:30:00,12:00:00,1
+5,87,GEN_106,Robert Torres,Monday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Monday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Monday,11:30:00,12:00:00,1
+5,87,GEN_106,Robert Torres,Saturday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Saturday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Saturday,11:30:00,12:00:00,1
+5,87,GEN_106,Robert Torres,Thursday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Thursday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Thursday,11:30:00,12:00:00,1
+5,87,GEN_106,Robert Torres,Tuesday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Tuesday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Tuesday,11:30:00,12:00:00,1
+5,87,GEN_106,Robert Torres,Wednesday,10:00:00,10:30:00,1
+5,88,GEN_107,Daniel Garcia,Wednesday,10:30:00,11:00:00,1
+5,90,GEN_109,Marco Castillo,Wednesday,11:30:00,12:00:00,1

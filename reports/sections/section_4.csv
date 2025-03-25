@@ -1,0 +1,109 @@
+Section ID,Block ID,Subject Code,Teacher Name,Room Name,Day,Start Time,End Time,Semester
+4,64,GEN_120,Jonathan Rivera,Room 102,Friday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Friday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Friday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Friday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Friday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Friday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Friday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Friday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Friday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Friday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Friday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Friday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Friday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Friday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Friday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Friday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Friday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Friday,13:00:00,13:30:00,1
+4,64,GEN_120,Jonathan Rivera,Room 102,Monday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Monday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Monday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Monday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Monday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Monday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Monday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Monday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Monday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Monday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Monday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Monday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Monday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Monday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Monday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Monday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Monday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Monday,13:00:00,13:30:00,1
+4,64,GEN_120,Jonathan Rivera,Room 102,Saturday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Saturday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Saturday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Saturday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Saturday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Saturday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Saturday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Saturday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Saturday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Saturday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Saturday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Saturday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Saturday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Saturday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Saturday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Saturday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Saturday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Saturday,13:00:00,13:30:00,1
+4,64,GEN_120,Jonathan Rivera,Room 102,Thursday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Thursday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Thursday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Thursday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Thursday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Thursday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Thursday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Thursday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Thursday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Thursday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Thursday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Thursday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Thursday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Thursday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Thursday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Thursday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Thursday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Thursday,13:00:00,13:30:00,1
+4,64,GEN_120,Jonathan Rivera,Room 102,Tuesday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Tuesday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Tuesday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Tuesday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Tuesday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Tuesday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Tuesday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Tuesday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Tuesday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Tuesday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Tuesday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Tuesday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Tuesday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Tuesday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Tuesday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Tuesday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Tuesday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Tuesday,13:00:00,13:30:00,1
+4,64,GEN_120,Jonathan Rivera,Room 102,Wednesday,7:00:00,7:30:00,1
+4,72,GEN_128,Angela Gutierrez,Room 104,Wednesday,7:00:00,7:30:00,2
+4,65,GEN_121,Melissa Navarro,Room 104,Wednesday,7:30:00,8:00:00,1
+4,73,GEN_129,Francis Ortega,Computer Lab 4,Wednesday,7:30:00,8:00:00,2
+4,66,GEN_122,Marco Delgado,Room 107,Wednesday,8:00:00,8:30:00,1
+4,74,GEN_130,Joseph Garcia,Room 115,Wednesday,8:00:00,8:30:00,2
+4,67,GEN_123,Sophia Castro,Room 110,Wednesday,8:30:00,9:00:00,1
+4,75,GEN_131,Josefina Ramos,Room 113,Wednesday,8:30:00,9:00:00,2
+4,68,GEN_124,Daniel Lopez,Room 112,Wednesday,9:00:00,9:30:00,1
+4,76,GEN_132,Cynthia Lopez,Room 104,Wednesday,9:00:00,9:30:00,2
+4,69,GEN_125,Teresa Reyes,Room 105,Wednesday,10:00:00,10:30:00,1
+4,79,HUMSS_107,Bryan Santos,Room 112,Wednesday,10:00:00,10:30:00,2
+4,70,GEN_126,Anthony Salvador,Room 119,Wednesday,10:30:00,11:00:00,1
+4,80,HUMSS_108,Jessica Rivera,Room 104,Wednesday,10:30:00,11:00:00,2
+4,71,GEN_127,Michael Santos,Engineering Lab 2,Wednesday,11:00:00,11:30:00,1
+4,81,HUMSS_109,Francis Castillo,Room 128,Wednesday,11:00:00,11:30:00,2
+4,77,HUMSS_105,Ricardo Manalo,Room 102,Wednesday,11:30:00,12:00:00,1
+4,78,HUMSS_106,Juan Cruz,Room 104,Wednesday,13:00:00,13:30:00,1

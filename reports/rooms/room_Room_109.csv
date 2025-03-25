@@ -1,0 +1,25 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+1,15,GEN_115,Jessica Torres,Friday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Friday,13:30:00,14:00:00,1
+1,15,GEN_115,Jessica Torres,Monday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Monday,13:30:00,14:00:00,1
+1,15,GEN_115,Jessica Torres,Saturday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Saturday,13:30:00,14:00:00,1
+1,15,GEN_115,Jessica Torres,Thursday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Thursday,13:30:00,14:00:00,1
+1,15,GEN_115,Jessica Torres,Tuesday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Tuesday,13:30:00,14:00:00,1
+1,15,GEN_115,Jessica Torres,Wednesday,9:00:00,9:30:00,2
+1,20,ABM_101,Maria Santos,Wednesday,13:30:00,14:00:00,1
+5,99,GEN_118,Daniel Garcia,Friday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Monday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Saturday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Thursday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Tuesday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Wednesday,11:00:00,11:30:00,2
+6,111,GEN_125,Sister Maria Reyes,Friday,10:00:00,10:30:00,1
+6,111,GEN_125,Sister Maria Reyes,Monday,10:00:00,10:30:00,1
+6,111,GEN_125,Sister Maria Reyes,Saturday,10:00:00,10:30:00,1
+6,111,GEN_125,Sister Maria Reyes,Thursday,10:00:00,10:30:00,1
+6,111,GEN_125,Sister Maria Reyes,Tuesday,10:00:00,10:30:00,1
+6,111,GEN_125,Sister Maria Reyes,Wednesday,10:00:00,10:30:00,1

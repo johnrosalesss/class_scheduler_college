@@ -1,0 +1,25 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+1,10,GEN_110,Emilio Tan,Friday,13:00:00,13:30:00,1
+1,10,GEN_110,Emilio Tan,Monday,13:00:00,13:30:00,1
+1,10,GEN_110,Emilio Tan,Saturday,13:00:00,13:30:00,1
+1,10,GEN_110,Emilio Tan,Thursday,13:00:00,13:30:00,1
+1,10,GEN_110,Emilio Tan,Tuesday,13:00:00,13:30:00,1
+1,10,GEN_110,Emilio Tan,Wednesday,13:00:00,13:30:00,1
+2,31,GEN_127,Albert Domingo,Friday,11:00:00,11:30:00,1
+2,31,GEN_127,Albert Domingo,Monday,11:00:00,11:30:00,1
+2,31,GEN_127,Albert Domingo,Saturday,11:00:00,11:30:00,1
+2,31,GEN_127,Albert Domingo,Thursday,11:00:00,11:30:00,1
+2,31,GEN_127,Albert Domingo,Tuesday,11:00:00,11:30:00,1
+2,31,GEN_127,Albert Domingo,Wednesday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Friday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Monday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Saturday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Thursday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Tuesday,11:00:00,11:30:00,1
+4,71,GEN_127,Michael Santos,Wednesday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Friday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Monday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Saturday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Thursday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Tuesday,11:00:00,11:30:00,1
+6,113,GEN_127,Albert Domingo,Wednesday,11:00:00,11:30:00,1

@@ -1,0 +1,25 @@
+Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
+2,34,GEN_130,Ricardo Hernandez,Friday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Friday,13:00:00,13:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Monday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Monday,13:00:00,13:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Saturday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Saturday,13:00:00,13:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Thursday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Thursday,13:00:00,13:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Tuesday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Tuesday,13:00:00,13:30:00,1
+2,34,GEN_130,Ricardo Hernandez,Wednesday,8:00:00,8:30:00,2
+2,38,ABM_106,Beatrice Santos,Wednesday,13:00:00,13:30:00,1
+5,84,GEN_103,Liza Gomez,Friday,8:00:00,8:30:00,1
+5,84,GEN_103,Liza Gomez,Monday,8:00:00,8:30:00,1
+5,84,GEN_103,Liza Gomez,Saturday,8:00:00,8:30:00,1
+5,84,GEN_103,Liza Gomez,Thursday,8:00:00,8:30:00,1
+5,84,GEN_103,Liza Gomez,Tuesday,8:00:00,8:30:00,1
+5,84,GEN_103,Liza Gomez,Wednesday,8:00:00,8:30:00,1
+6,112,GEN_126,Christian Mendoza,Friday,10:30:00,11:00:00,1
+6,112,GEN_126,Christian Mendoza,Monday,10:30:00,11:00:00,1
+6,112,GEN_126,Christian Mendoza,Saturday,10:30:00,11:00:00,1
+6,112,GEN_126,Christian Mendoza,Thursday,10:30:00,11:00:00,1
+6,112,GEN_126,Christian Mendoza,Tuesday,10:30:00,11:00:00,1
+6,112,GEN_126,Christian Mendoza,Wednesday,10:30:00,11:00:00,1
