@@ -79,6 +79,19 @@ subject_info = {
     for row in cursor.fetchall()
 }
 
+print("Loading subject preferences...")
+cursor.execute("SELECT subject_id, preferred_day, preferred_start_time, preferred_end_time FROM subject_preferences")
+subject_preferences = {}
+
+for subject_id, preferred_day, preferred_start_time, preferred_end_time in cursor.fetchall():
+    subject_preferences[subject_id] = {
+        "day": preferred_day,
+        "start_time": preferred_start_time,
+        "end_time": preferred_end_time
+    }
+
+print(f"✅ Loaded {len(subject_preferences)} subject preferences.")
+
 # **4. Clear Old Schedule**
 print("Clearing old schedule entries...")
 cursor.execute("DELETE FROM schedule")
@@ -91,38 +104,43 @@ section_subject_weekly_minutes = defaultdict(lambda: defaultdict(int))
 block_scheduled_days = defaultdict(lambda: defaultdict(set))
 
 # **6. Conflict Checking Function**
-def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, start_time, end_time):
-    """Ensure no room, teacher, section, or block conflicts, including break times and teacher availability."""
+def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, subject_id, day, start_time, end_time):
+    """Ensure no room, teacher, section, block, or break conflicts, and apply subject preferences if they exist."""
 
-    # **Ensure section is not scheduled in multiple subjects at the same time**
-    for d, s, e in section_schedules[semester][section_id]:
-        if d == day and not (e <= start_time or s >= end_time):
-            return False  # **Section already has another subject in this time slot**
+    # ✅ Apply subject preferences only if they exist
+    if subject_id in subject_preferences:
+        pref = subject_preferences[subject_id]
 
-    # **Ensure block is only scheduled once per day**
+        if pref["day"] and day != pref["day"]:
+            return False  # ❌ Subject must be scheduled on a specific day
+        
+        if pref["start_time"] and pref["end_time"]:
+            if not (pref["start_time"] <= start_time and pref["end_time"] >= end_time):
+                return False  # ❌ Subject must be scheduled in preferred time range
+
+    # ✅ Check if this block is already scheduled on this day
     if day in block_scheduled_days[semester][block_id]:
-        return False  # **Block already scheduled on this day**
+        return False  # ❌ Block already scheduled on this day
 
-    # Check teacher availability
-    if teacher_id in teacher_availability and day in teacher_availability[teacher_id]:
-        available_times = teacher_availability[teacher_id][day]
-        if not any(s <= start_time and e >= end_time for s, e in available_times):
-            return False  # Teacher is not available at this time
-
-    # Check for teacher conflicts
+    # ✅ Check for teacher conflicts
     for d, s, e in teacher_schedules[semester][teacher_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
 
-    # Check for room conflicts
+    # ✅ Check for room conflicts
     for d, s, e in room_schedules[semester][room_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
 
-    # Check for break conflicts
+    # ✅ Check for section conflicts
+    for d, s, e in section_schedules[semester][section_id]:
+        if d == day and not (e <= start_time or s >= end_time):
+            return False
+
+    # ✅ Check for break conflicts
     if section_id in break_times and day in break_times[section_id]:
         for b_start, b_end in break_times[section_id][day]:
-            if not (end_time <= b_start or start_time >= b_end):  # Overlap detected
+            if not (end_time <= b_start or start_time >= b_end):  # ❌ Overlap detected
                 return False  
 
     return True
@@ -169,7 +187,7 @@ for section_id, section_blocks in blocks.items():
         for day in available_days:
             for room_id in available_rooms:
                 for slot in time_slots[day]:
-                    if is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, slot["start"], slot["end"]):
+                    if is_valid_slot(teacher_id, room_id, section_id, block_id, semester, subject_id, day, slot["start"], slot["end"]):
                         cursor.execute("""
                             INSERT INTO schedule (section_id, block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time, semester)
                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
