@@ -27,21 +27,25 @@ cursor = conn.cursor()
 print("Connected successfully!")
 
 # **3. Load Data from Tables**
-
 print("Loading break times...")
-cursor.execute("SELECT time_slot_id, start_time, end_time, section_id FROM break")
-break_times = defaultdict(list)
+cursor.execute("SELECT time_slot_id, day, start_time, end_time, section_id FROM break")
+break_times = defaultdict(lambda: defaultdict(list))
 
-for time_slot_id, start_time, end_time, section_id in cursor.fetchall():
-    break_times[section_id].append((start_time, end_time))
+for time_slot_id, day, start_time, end_time, section_id in cursor.fetchall():
+    break_times[section_id][day].append((start_time, end_time))
 
-print(f"Loaded {sum(len(b) for b in break_times.values())} break times.")
+print("Loading teacher availability...")
+cursor.execute("SELECT teacher_id, day, time_start, time_end FROM teacher_availability")
+teacher_availability = defaultdict(lambda: defaultdict(list))
+
+for teacher_id, day, time_start, time_end in cursor.fetchall():
+    teacher_availability[teacher_id][day].append((time_start, time_end))
 
 print("Loading sections...")
 cursor.execute("SELECT section_id, year_level FROM sections")
 sections = {row[0]: row[1] for row in cursor.fetchall()}
 
-print("Loading blocks for each section...")
+print("Loading blocks...")
 cursor.execute("SELECT block_id, block_name, section_id, subject_id FROM blocks")
 blocks = defaultdict(list)
 for block_id, block_name, section_id, subject_id in cursor.fetchall():
@@ -51,17 +55,17 @@ print("Loading teachers...")
 cursor.execute("SELECT teacher_id, teacher_first_name, teacher_last_name, subject_name FROM teachers")
 teachers = [(t[0], f"{t[1]} {t[2]}", t[3]) for t in cursor.fetchall()]
 
-print("Loading rooms with types...")
+print("Loading rooms...")
 cursor.execute("SELECT room_id, room_name, room_type FROM rooms")
 rooms = {room[0]: {"name": room[1], "type": room[2]} for room in cursor.fetchall()}
 
-print("Loading time slots (Valid Hours: 8:00 AM - 8:00 PM)...")
-cursor.execute("SELECT time_slot_id, day, start_time, end_time, minutes FROM time_slots WHERE start_time >= '08:00:00' AND end_time <= '20:00:00' ORDER BY day, start_time")
+print("Loading time slots...")
+cursor.execute("SELECT time_slot_id, day, start_time, end_time, minutes FROM time_slots ORDER BY day, start_time")
 time_slots = defaultdict(list)
 for time_slot_id, day, start_time, end_time, minutes in cursor.fetchall():
     time_slots[day].append({"id": time_slot_id, "start": start_time, "end": end_time, "minutes": minutes})
 
-print("Loading subjects with semester, max daily minutes, and minutes per week...")
+print("Loading subjects...")
 cursor.execute("SELECT subject_id, subject_code, subject_name, semester, max_daily_mins, minutes_per_week, subject_type FROM subjects")
 subject_info = {
     row[0]: {
@@ -75,6 +79,33 @@ subject_info = {
     for row in cursor.fetchall()
 }
 
+print("Loading subject preferences...")
+cursor.execute("SELECT subject_id, preferred_day, preferred_start_time, preferred_end_time FROM subject_preferences")
+subject_preferences = {}
+
+for subject_id, preferred_day, preferred_start_time, preferred_end_time in cursor.fetchall():
+    subject_preferences[subject_id] = {
+        "day": preferred_day,
+        "start_time": preferred_start_time,
+        "end_time": preferred_end_time
+    }
+
+print(f"✅ Loaded {len(subject_preferences)} subject preferences.")
+
+print("Loading section preferences...")
+cursor.execute("SELECT section_id, preferred_mode, preferred_day, preferred_start_time, preferred_end_time FROM section_preferences")
+section_preferences = defaultdict(lambda: {"day": None, "start_time": None, "end_time": None})
+
+for section_id, preferred_mode, preferred_day, preferred_start_time, preferred_end_time in cursor.fetchall():
+    section_preferences[section_id] = {
+        "mode": preferred_mode,
+        "day": preferred_day,
+        "start_time": preferred_start_time,
+        "end_time": preferred_end_time
+    }
+
+print(f"✅ Loaded {len(section_preferences)} section preferences.")
+
 # **4. Clear Old Schedule**
 print("Clearing old schedule entries...")
 cursor.execute("DELETE FROM schedule")
@@ -84,40 +115,62 @@ teacher_schedules = defaultdict(lambda: defaultdict(list))
 room_schedules = defaultdict(lambda: defaultdict(list))
 section_schedules = defaultdict(lambda: defaultdict(list))
 section_subject_weekly_minutes = defaultdict(lambda: defaultdict(int))
-block_scheduled_times = defaultdict(lambda: defaultdict(list))  # Track when a block is scheduled
+block_scheduled_days = defaultdict(lambda: defaultdict(set))
 
 # **6. Conflict Checking Function**
-def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, start_time, end_time):
-    """Ensure no room, teacher, section, or block conflicts, including break times."""
+def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, subject_id, day, start_time, end_time):
+    """Ensure no room, teacher, section, block, or break conflicts, and apply section and subject preferences if they exist."""
 
-    # Check if this block is already scheduled on this day
-    if any(d == day for d, _, _ in block_scheduled_times[semester][block_id]):
-        return False  # Block already scheduled on this day
+    # ✅ Check section preferences if they exist
+    if section_id in section_preferences:
+        pref = section_preferences[section_id]
 
-    # Check for teacher conflicts
+        if pref["day"] and day != pref["day"]:
+            return False  # ❌ Section prefers a specific day
+        
+        if pref["start_time"] and pref["end_time"]:
+            if not (pref["start_time"] <= start_time and pref["end_time"] >= end_time):
+                return False  # ❌ Section prefers a specific time range
+
+    # ✅ Apply subject preferences if they exist
+    if subject_id in subject_preferences:
+        pref = subject_preferences[subject_id]
+
+        if pref["day"] and day != pref["day"]:
+            return False  # ❌ Subject must be scheduled on a specific day
+        
+        if pref["start_time"] and pref["end_time"]:
+            if not (pref["start_time"] <= start_time and pref["end_time"] >= end_time):
+                return False  # ❌ Subject must be scheduled in preferred time range
+
+    # ✅ Check if this block is already scheduled on this day
+    if day in block_scheduled_days[semester][block_id]:
+        return False  # ❌ Block already scheduled on this day
+
+    # ✅ Check for teacher conflicts
     for d, s, e in teacher_schedules[semester][teacher_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
 
-    # Check for room conflicts
+    # ✅ Check for room conflicts
     for d, s, e in room_schedules[semester][room_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
 
-    # Check for section conflicts
+    # ✅ Check for section conflicts
     for d, s, e in section_schedules[semester][section_id]:
         if d == day and not (e <= start_time or s >= end_time):
             return False
 
-    # **Check for break conflicts** (Newly added)
-    if section_id in break_times:
-        for b_start, b_end in break_times[section_id]:
-            if not (end_time <= b_start or start_time >= b_end):  # Overlap detected
+    # ✅ Check for break conflicts
+    if section_id in break_times and day in break_times[section_id]:
+        for b_start, b_end in break_times[section_id][day]:
+            if not (end_time <= b_start or start_time >= b_end):  # ❌ Overlap detected
                 return False  
 
     return True
 
-# **7. Assign Blocks to Schedule (Ensuring Weekly & Daily Limits)**
+# **7. Assign Blocks to Schedule**
 for section_id, section_blocks in blocks.items():
     section_year_level = sections[section_id]
 
@@ -157,42 +210,19 @@ for section_id, section_blocks in blocks.items():
         random.shuffle(available_days)
 
         for day in available_days:
-            if section_subject_weekly_minutes[semester][(section_id, subject_id)] >= minutes_per_week:
-                break
-
             for room_id in available_rooms:
-                room_name = rooms[room_id]["name"]
-
-                for i in range(len(time_slots[day])):
-                    slot = time_slots[day][i]
-                    slot_id = slot["id"]
-                    slot_start = slot["start"]
-                    slot_end = slot["end"]
-                    slot_minutes = slot["minutes"]
-
-                    if slot_minutes > max_daily_mins:
-                        continue  # Skip slots exceeding the max daily limit
-
-                    total_scheduled = section_subject_weekly_minutes[semester][(section_id, subject_id)] + slot_minutes
-                    if total_scheduled > minutes_per_week:
-                        continue  # Skip if it exceeds the allowed weekly minutes
-
-                    if is_valid_slot(teacher_id, room_id, section_id, block_id, semester, day, slot_start, slot_end):
+                for slot in time_slots[day]:
+                    if is_valid_slot(teacher_id, room_id, section_id, block_id, semester, subject_id, day, slot["start"], slot["end"]):
                         cursor.execute("""
                             INSERT INTO schedule (section_id, block_id, subject_code, teacher_name, room_name, day, time_slot_id, start_time, end_time, semester)
                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        """, (section_id, block_id, subject_code, teacher_name, room_name, day, slot_id, slot_start, slot_end, semester))
+                        """, (section_id, block_id, subject_code, teacher_name, rooms[room_id]["name"], day, slot["id"], slot["start"], slot["end"], semester))
 
-                        block_scheduled_times[semester][block_id].append((day, slot_start, slot_end))
-
-                        teacher_schedules[semester][teacher_id].append((day, slot_start, slot_end))
-                        room_schedules[semester][room_id].append((day, slot_start, slot_end))
-                        section_schedules[semester][section_id].append((day, slot_start, slot_end))
-
-                        section_subject_weekly_minutes[semester][(section_id, subject_id)] += slot_minutes
+                        block_scheduled_days[semester][block_id].add(day)
+                        section_schedules[semester][section_id].append((day, slot["start"], slot["end"]))
                         break
 
-# **8. Commit Schedule to Database**
+# **8. Commit and Close**
 conn.commit()
 conn.close()
 print("✅ Schedule generation process completed!")

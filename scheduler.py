@@ -92,6 +92,20 @@ for subject_id, preferred_day, preferred_start_time, preferred_end_time in curso
 
 print(f"✅ Loaded {len(subject_preferences)} subject preferences.")
 
+print("Loading section preferences...")
+cursor.execute("SELECT section_id, preferred_mode, preferred_day, preferred_start_time, preferred_end_time FROM section_preferences")
+section_preferences = defaultdict(lambda: {"day": None, "start_time": None, "end_time": None})
+
+for section_id, preferred_mode, preferred_day, preferred_start_time, preferred_end_time in cursor.fetchall():
+    section_preferences[section_id] = {
+        "mode": preferred_mode,
+        "day": preferred_day,
+        "start_time": preferred_start_time,
+        "end_time": preferred_end_time
+    }
+
+print(f"✅ Loaded {len(section_preferences)} section preferences.")
+
 # **4. Clear Old Schedule**
 print("Clearing old schedule entries...")
 cursor.execute("DELETE FROM schedule")
@@ -105,9 +119,20 @@ block_scheduled_days = defaultdict(lambda: defaultdict(set))
 
 # **6. Conflict Checking Function**
 def is_valid_slot(teacher_id, room_id, section_id, block_id, semester, subject_id, day, start_time, end_time):
-    """Ensure no room, teacher, section, block, or break conflicts, and apply subject preferences if they exist."""
+    """Ensure no room, teacher, section, block, or break conflicts, and apply section and subject preferences if they exist."""
 
-    # ✅ Apply subject preferences only if they exist
+    # ✅ Check section preferences if they exist
+    if section_id in section_preferences:
+        pref = section_preferences[section_id]
+
+        if pref["day"] and day != pref["day"]:
+            return False  # ❌ Section prefers a specific day
+        
+        if pref["start_time"] and pref["end_time"]:
+            if not (pref["start_time"] <= start_time and pref["end_time"] >= end_time):
+                return False  # ❌ Section prefers a specific time range
+
+    # ✅ Apply subject preferences if they exist
     if subject_id in subject_preferences:
         pref = subject_preferences[subject_id]
 
