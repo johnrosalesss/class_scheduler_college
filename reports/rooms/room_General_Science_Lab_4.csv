@@ -1,19 +1,2 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-3,56,GEN_116,Pedro Gonzalez,Friday,10:00:00,10:30:00,2
-3,56,GEN_116,Pedro Gonzalez,Monday,10:00:00,10:30:00,2
-3,56,GEN_116,Pedro Gonzalez,Saturday,10:00:00,10:30:00,2
-3,56,GEN_116,Pedro Gonzalez,Thursday,10:00:00,10:30:00,2
-3,56,GEN_116,Pedro Gonzalez,Tuesday,10:00:00,10:30:00,2
-3,56,GEN_116,Pedro Gonzalez,Wednesday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Friday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Monday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Saturday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Thursday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Tuesday,10:00:00,10:30:00,2
-5,97,GEN_116,Pedro Gonzalez,Wednesday,10:00:00,10:30:00,2
-6,119,STEM_106,Daniel Fernandez,Friday,11:30:00,12:00:00,1
-6,119,STEM_106,Daniel Fernandez,Monday,11:30:00,12:00:00,1
-6,119,STEM_106,Daniel Fernandez,Saturday,11:30:00,12:00:00,1
-6,119,STEM_106,Daniel Fernandez,Thursday,11:30:00,12:00:00,1
-6,119,STEM_106,Daniel Fernandez,Tuesday,11:30:00,12:00:00,1
-6,119,STEM_106,Daniel Fernandez,Wednesday,11:30:00,12:00:00,1
+1,5,GEN_105,Melissa Soriano,Thursday,8:00:00,8:30:00,1

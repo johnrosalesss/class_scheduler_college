@@ -1,13 +1,13 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-1,9,GEN_109,Room 105,Friday,11:30:00,12:00:00,1
-1,9,GEN_109,Room 105,Monday,11:30:00,12:00:00,1
-1,9,GEN_109,Room 105,Saturday,11:30:00,12:00:00,1
-1,9,GEN_109,Room 105,Thursday,11:30:00,12:00:00,1
-1,9,GEN_109,Room 105,Tuesday,11:30:00,12:00:00,1
-1,9,GEN_109,Room 105,Wednesday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Friday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Monday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Saturday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Thursday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Tuesday,11:30:00,12:00:00,1
-5,90,GEN_109,Room 118,Wednesday,11:30:00,12:00:00,1
+3,49,GEN_109,Room 101,Friday,9:00:00,9:30:00,1
+3,49,GEN_109,Room 101,Monday,8:30:00,9:00:00,1
+3,49,GEN_109,Room 101,Saturday,8:30:00,9:00:00,1
+3,49,GEN_109,Room 101,Thursday,9:00:00,9:30:00,1
+3,49,GEN_109,Room 101,Tuesday,8:30:00,9:00:00,1
+3,49,GEN_109,Room 101,Wednesday,8:30:00,9:00:00,1
+5,90,GEN_109,Room 101,Friday,10:30:00,11:00:00,1
+5,90,GEN_109,Room 101,Monday,10:00:00,10:30:00,1
+5,90,GEN_109,Room 101,Saturday,10:00:00,10:30:00,1
+5,90,GEN_109,Room 101,Thursday,10:30:00,11:00:00,1
+5,90,GEN_109,Room 101,Tuesday,10:00:00,10:30:00,1
+5,90,GEN_109,Room 101,Wednesday,10:30:00,11:00:00,1

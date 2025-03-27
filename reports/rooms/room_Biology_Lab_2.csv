@@ -1,13 +1,13 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-5,104,STEM_104,Eliza Mendoza,Friday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Friday,14:00:00,14:30:00,1
-5,104,STEM_104,Eliza Mendoza,Monday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Monday,14:00:00,14:30:00,1
-5,104,STEM_104,Eliza Mendoza,Saturday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Saturday,14:00:00,14:30:00,1
-5,104,STEM_104,Eliza Mendoza,Thursday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Thursday,14:00:00,14:30:00,1
-5,104,STEM_104,Eliza Mendoza,Tuesday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Tuesday,14:00:00,14:30:00,1
-5,104,STEM_104,Eliza Mendoza,Wednesday,13:30:00,14:00:00,2
-5,102,STEM_102,Joseph Ramos,Wednesday,14:00:00,14:30:00,1
+5,102,STEM_102,Joseph Ramos,Friday,13:30:00,14:00:00,1
+5,104,STEM_104,Eliza Mendoza,Friday,15:00:00,15:30:00,2
+5,102,STEM_102,Joseph Ramos,Monday,11:30:00,12:00:00,1
+5,104,STEM_104,Eliza Mendoza,Monday,15:00:00,15:30:00,2
+5,102,STEM_102,Joseph Ramos,Saturday,11:30:00,12:00:00,1
+5,104,STEM_104,Eliza Mendoza,Saturday,15:00:00,15:30:00,2
+5,102,STEM_102,Joseph Ramos,Thursday,13:30:00,14:00:00,1
+5,104,STEM_104,Eliza Mendoza,Thursday,15:00:00,15:30:00,2
+5,102,STEM_102,Joseph Ramos,Tuesday,13:30:00,14:00:00,1
+5,104,STEM_104,Eliza Mendoza,Tuesday,15:00:00,15:30:00,2
+5,102,STEM_102,Joseph Ramos,Wednesday,13:30:00,14:00:00,1
+5,104,STEM_104,Eliza Mendoza,Wednesday,15:00:00,15:30:00,2

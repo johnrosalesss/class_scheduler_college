@@ -1,13 +1,7 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-1,4,GEN_104,Room 115,Friday,8:30:00,9:00:00,1
-1,4,GEN_104,Room 115,Monday,8:30:00,9:00:00,1
-1,4,GEN_104,Room 115,Saturday,8:30:00,9:00:00,1
-1,4,GEN_104,Room 115,Thursday,8:30:00,9:00:00,1
-1,4,GEN_104,Room 115,Tuesday,8:30:00,9:00:00,1
-1,4,GEN_104,Room 115,Wednesday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Friday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Monday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Saturday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Thursday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Tuesday,8:30:00,9:00:00,1
-5,85,GEN_104,Room 105,Wednesday,8:30:00,9:00:00,1
+1,15,GEN_115,Room 120,Friday,10:30:00,11:00:00,2
+1,15,GEN_115,Room 120,Monday,10:30:00,11:00:00,2
+1,15,GEN_115,Room 120,Saturday,10:30:00,11:00:00,2
+1,15,GEN_115,Room 120,Thursday,10:30:00,11:00:00,2
+1,15,GEN_115,Room 120,Tuesday,10:30:00,11:00:00,2
+1,15,GEN_115,Room 120,Wednesday,10:30:00,11:00:00,2

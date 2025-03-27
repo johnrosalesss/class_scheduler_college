@@ -1,7 +1,13 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-5,86,GEN_105,Angela Fernandez,Friday,9:00:00,9:30:00,1
-5,86,GEN_105,Angela Fernandez,Monday,9:00:00,9:30:00,1
-5,86,GEN_105,Angela Fernandez,Saturday,9:00:00,9:30:00,1
-5,86,GEN_105,Angela Fernandez,Thursday,9:00:00,9:30:00,1
-5,86,GEN_105,Angela Fernandez,Tuesday,9:00:00,9:30:00,1
-5,86,GEN_105,Angela Fernandez,Wednesday,9:00:00,9:30:00,1
+1,16,GEN_116,Joseph Santos,Friday,11:00:00,11:30:00,2
+1,16,GEN_116,Joseph Santos,Monday,11:00:00,11:30:00,2
+1,16,GEN_116,Joseph Santos,Saturday,11:00:00,11:30:00,2
+1,16,GEN_116,Joseph Santos,Thursday,11:00:00,11:30:00,2
+1,16,GEN_116,Joseph Santos,Tuesday,11:00:00,11:30:00,2
+1,16,GEN_116,Joseph Santos,Wednesday,11:00:00,11:30:00,2
+6,121,STEM_108,Eduardo Guzman,Friday,13:30:00,14:00:00,2
+6,121,STEM_108,Eduardo Guzman,Monday,13:30:00,14:00:00,2
+6,121,STEM_108,Eduardo Guzman,Saturday,13:30:00,14:00:00,2
+6,121,STEM_108,Eduardo Guzman,Thursday,13:30:00,14:00:00,2
+6,121,STEM_108,Eduardo Guzman,Tuesday,13:30:00,14:00:00,2
+6,121,STEM_108,Eduardo Guzman,Wednesday,13:30:00,14:00:00,2

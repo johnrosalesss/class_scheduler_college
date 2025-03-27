@@ -1,7 +1,8 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-1,16,GEN_116,Carlos Diaz,Friday,10:00:00,10:30:00,2
-1,16,GEN_116,Carlos Diaz,Monday,10:00:00,10:30:00,2
-1,16,GEN_116,Carlos Diaz,Saturday,10:00:00,10:30:00,2
-1,16,GEN_116,Carlos Diaz,Thursday,10:00:00,10:30:00,2
-1,16,GEN_116,Carlos Diaz,Tuesday,10:00:00,10:30:00,2
-1,16,GEN_116,Carlos Diaz,Wednesday,10:00:00,10:30:00,2
+5,86,GEN_105,Angela Fernandez,Thursday,8:30:00,9:00:00,1
+6,119,STEM_106,Daniel Fernandez,Friday,15:00:00,15:30:00,1
+6,119,STEM_106,Daniel Fernandez,Monday,15:00:00,15:30:00,1
+6,119,STEM_106,Daniel Fernandez,Saturday,15:00:00,15:30:00,1
+6,119,STEM_106,Daniel Fernandez,Thursday,15:00:00,15:30:00,1
+6,119,STEM_106,Daniel Fernandez,Tuesday,15:00:00,15:30:00,1
+6,119,STEM_106,Daniel Fernandez,Wednesday,15:00:00,15:30:00,1

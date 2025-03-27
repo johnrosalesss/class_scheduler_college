@@ -1,0 +1,13 @@
+Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
+2,35,GEN_131,Room 123,Friday,11:00:00,11:30:00,2
+2,35,GEN_131,Room 123,Monday,11:00:00,11:30:00,2
+2,35,GEN_131,Room 123,Saturday,11:00:00,11:30:00,2
+2,35,GEN_131,Room 123,Thursday,11:00:00,11:30:00,2
+2,35,GEN_131,Room 123,Tuesday,11:00:00,11:30:00,2
+2,35,GEN_131,Room 123,Wednesday,11:00:00,11:30:00,2
+4,75,GEN_131,Room 130,Friday,11:30:00,12:00:00,2
+4,75,GEN_131,Room 130,Monday,11:30:00,12:00:00,2
+4,75,GEN_131,Room 130,Saturday,11:30:00,12:00:00,2
+4,75,GEN_131,Room 130,Thursday,11:30:00,12:00:00,2
+4,75,GEN_131,Room 130,Tuesday,11:30:00,12:00:00,2
+4,75,GEN_131,Room 130,Wednesday,11:30:00,12:00:00,2

@@ -1,7 +1,7 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-1,21,ABM_102,Room 102,Friday,14:00:00,14:30:00,1
-1,21,ABM_102,Room 102,Monday,14:00:00,14:30:00,1
-1,21,ABM_102,Room 102,Saturday,14:00:00,14:30:00,1
-1,21,ABM_102,Room 102,Thursday,14:00:00,14:30:00,1
-1,21,ABM_102,Room 102,Tuesday,14:00:00,14:30:00,1
-1,21,ABM_102,Room 102,Wednesday,14:00:00,14:30:00,1
+1,21,ABM_102,Room 124,Friday,11:30:00,12:00:00,1
+1,21,ABM_102,Room 124,Monday,11:00:00,11:30:00,1
+1,21,ABM_102,Room 124,Saturday,11:00:00,11:30:00,1
+1,21,ABM_102,Room 124,Thursday,11:30:00,12:00:00,1
+1,21,ABM_102,Room 124,Tuesday,11:30:00,12:00:00,1
+1,21,ABM_102,Room 124,Wednesday,11:30:00,12:00:00,1

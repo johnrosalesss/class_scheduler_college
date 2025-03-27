@@ -1,19 +1,7 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-1,12,GEN_112,Angela Morales,Friday,7:30:00,8:00:00,2
-1,12,GEN_112,Angela Morales,Monday,7:30:00,8:00:00,2
-1,12,GEN_112,Angela Morales,Saturday,7:30:00,8:00:00,2
-1,12,GEN_112,Angela Morales,Thursday,7:30:00,8:00:00,2
-1,12,GEN_112,Angela Morales,Tuesday,7:30:00,8:00:00,2
-1,12,GEN_112,Angela Morales,Wednesday,7:30:00,8:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Friday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Friday,13:30:00,14:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Monday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Monday,13:30:00,14:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Saturday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Saturday,13:30:00,14:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Thursday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Thursday,13:30:00,14:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Tuesday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Tuesday,13:30:00,14:00:00,2
-3,62,HUMSS_103,Gregory Delos Santos,Wednesday,13:00:00,13:30:00,2
-3,63,HUMSS_104,Anthony Salvador,Wednesday,13:30:00,14:00:00,2
+4,66,GEN_122,Jonathan Tan,Friday,11:00:00,11:30:00,1
+4,66,GEN_122,Jonathan Tan,Monday,11:00:00,11:30:00,1
+4,66,GEN_122,Jonathan Tan,Saturday,11:00:00,11:30:00,1
+4,66,GEN_122,Jonathan Tan,Thursday,11:00:00,11:30:00,1
+4,66,GEN_122,Jonathan Tan,Tuesday,11:00:00,11:30:00,1
+4,66,GEN_122,Jonathan Tan,Wednesday,11:00:00,11:30:00,1

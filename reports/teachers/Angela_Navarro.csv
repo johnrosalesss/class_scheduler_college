@@ -1,7 +1,13 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-3,53,GEN_113,Speech Lab 2,Friday,8:00:00,8:30:00,2
-3,53,GEN_113,Speech Lab 2,Monday,8:00:00,8:30:00,2
-3,53,GEN_113,Speech Lab 2,Saturday,8:00:00,8:30:00,2
-3,53,GEN_113,Speech Lab 2,Thursday,8:00:00,8:30:00,2
-3,53,GEN_113,Speech Lab 2,Tuesday,8:00:00,8:30:00,2
-3,53,GEN_113,Speech Lab 2,Wednesday,8:00:00,8:30:00,2
+1,13,GEN_113,Speech Lab 1,Friday,9:00:00,9:30:00,2
+1,13,GEN_113,Speech Lab 1,Monday,9:00:00,9:30:00,2
+1,13,GEN_113,Speech Lab 1,Saturday,9:00:00,9:30:00,2
+1,13,GEN_113,Speech Lab 1,Thursday,9:00:00,9:30:00,2
+1,13,GEN_113,Speech Lab 1,Tuesday,9:00:00,9:30:00,2
+1,13,GEN_113,Speech Lab 1,Wednesday,9:00:00,9:30:00,2
+5,94,GEN_113,Speech Lab 2,Friday,10:00:00,10:30:00,2
+5,94,GEN_113,Speech Lab 2,Monday,10:00:00,10:30:00,2
+5,94,GEN_113,Speech Lab 2,Saturday,10:00:00,10:30:00,2
+5,94,GEN_113,Speech Lab 2,Thursday,10:00:00,10:30:00,2
+5,94,GEN_113,Speech Lab 2,Tuesday,10:00:00,10:30:00,2
+5,94,GEN_113,Speech Lab 2,Wednesday,10:00:00,10:30:00,2

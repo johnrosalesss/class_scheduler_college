@@ -1,7 +1,13 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-2,33,GEN_129,Computer Lab 4,Friday,7:30:00,8:00:00,2
-2,33,GEN_129,Computer Lab 4,Monday,7:30:00,8:00:00,2
-2,33,GEN_129,Computer Lab 4,Saturday,7:30:00,8:00:00,2
-2,33,GEN_129,Computer Lab 4,Thursday,7:30:00,8:00:00,2
-2,33,GEN_129,Computer Lab 4,Tuesday,7:30:00,8:00:00,2
-2,33,GEN_129,Computer Lab 4,Wednesday,7:30:00,8:00:00,2
+4,73,GEN_129,Computer Lab 4,Friday,10:30:00,11:00:00,2
+4,73,GEN_129,Computer Lab 4,Monday,10:30:00,11:00:00,2
+4,73,GEN_129,Computer Lab 4,Saturday,10:30:00,11:00:00,2
+4,73,GEN_129,Computer Lab 4,Thursday,10:30:00,11:00:00,2
+4,73,GEN_129,Computer Lab 4,Tuesday,10:30:00,11:00:00,2
+4,73,GEN_129,Computer Lab 4,Wednesday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Friday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Monday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Saturday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Thursday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Tuesday,10:30:00,11:00:00,2
+6,115,GEN_129,Computer Lab 9,Wednesday,10:30:00,11:00:00,2

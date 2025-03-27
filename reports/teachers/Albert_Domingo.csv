@@ -1,13 +1,13 @@
 Section ID,Block ID,Subject Code,Room Name,Day,Start Time,End Time,Semester
-2,31,GEN_127,Engineering Lab 2,Friday,11:00:00,11:30:00,1
-2,31,GEN_127,Engineering Lab 2,Monday,11:00:00,11:30:00,1
-2,31,GEN_127,Engineering Lab 2,Saturday,11:00:00,11:30:00,1
-2,31,GEN_127,Engineering Lab 2,Thursday,11:00:00,11:30:00,1
-2,31,GEN_127,Engineering Lab 2,Tuesday,11:00:00,11:30:00,1
-2,31,GEN_127,Engineering Lab 2,Wednesday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Friday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Monday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Saturday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Thursday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Tuesday,11:00:00,11:30:00,1
-6,113,GEN_127,Engineering Lab 2,Wednesday,11:00:00,11:30:00,1
+2,31,GEN_127,Engineering Lab 1,Friday,14:00:00,14:30:00,1
+2,31,GEN_127,Engineering Lab 1,Monday,14:00:00,14:30:00,1
+2,31,GEN_127,Engineering Lab 1,Saturday,14:00:00,14:30:00,1
+2,31,GEN_127,Engineering Lab 1,Thursday,14:00:00,14:30:00,1
+2,31,GEN_127,Engineering Lab 1,Tuesday,14:00:00,14:30:00,1
+2,31,GEN_127,Engineering Lab 1,Wednesday,14:00:00,14:30:00,1
+6,113,GEN_127,Engineering Lab 1,Friday,14:30:00,15:00:00,1
+6,113,GEN_127,Engineering Lab 1,Monday,14:30:00,15:00:00,1
+6,113,GEN_127,Engineering Lab 1,Saturday,14:30:00,15:00:00,1
+6,113,GEN_127,Engineering Lab 1,Thursday,14:30:00,15:00:00,1
+6,113,GEN_127,Engineering Lab 1,Tuesday,14:30:00,15:00:00,1
+6,113,GEN_127,Engineering Lab 1,Wednesday,14:30:00,15:00:00,1

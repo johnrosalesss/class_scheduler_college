@@ -1,7 +1,19 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-6,106,GEN_120,Jonathan Rivera,Friday,7:00:00,7:30:00,1
-6,106,GEN_120,Jonathan Rivera,Monday,7:00:00,7:30:00,1
-6,106,GEN_120,Jonathan Rivera,Saturday,7:00:00,7:30:00,1
-6,106,GEN_120,Jonathan Rivera,Thursday,7:00:00,7:30:00,1
-6,106,GEN_120,Jonathan Rivera,Tuesday,7:00:00,7:30:00,1
-6,106,GEN_120,Jonathan Rivera,Wednesday,7:00:00,7:30:00,1
+1,14,GEN_114,Marites Santos,Friday,10:00:00,10:30:00,2
+1,14,GEN_114,Marites Santos,Monday,10:00:00,10:30:00,2
+1,14,GEN_114,Marites Santos,Saturday,10:00:00,10:30:00,2
+1,14,GEN_114,Marites Santos,Thursday,10:00:00,10:30:00,2
+1,14,GEN_114,Marites Santos,Tuesday,10:00:00,10:30:00,2
+1,14,GEN_114,Marites Santos,Wednesday,10:00:00,10:30:00,2
+4,64,GEN_120,Andrea Santos,Friday,10:00:00,10:30:00,1
+4,64,GEN_120,Andrea Santos,Monday,10:00:00,10:30:00,1
+4,64,GEN_120,Andrea Santos,Saturday,10:00:00,10:30:00,1
+4,64,GEN_120,Andrea Santos,Thursday,10:00:00,10:30:00,1
+4,64,GEN_120,Andrea Santos,Tuesday,10:00:00,10:30:00,1
+4,64,GEN_120,Andrea Santos,Wednesday,10:00:00,10:30:00,1
+5,92,GEN_111,Michael Domingo,Friday,8:30:00,9:00:00,2
+5,92,GEN_111,Michael Domingo,Monday,8:30:00,9:00:00,2
+5,92,GEN_111,Michael Domingo,Saturday,8:30:00,9:00:00,2
+5,92,GEN_111,Michael Domingo,Thursday,8:30:00,9:00:00,2
+5,92,GEN_111,Michael Domingo,Tuesday,8:30:00,9:00:00,2
+5,92,GEN_111,Michael Domingo,Wednesday,8:30:00,9:00:00,2

@@ -1,7 +1,19 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-2,28,GEN_124,Daniel Lopez,Friday,9:00:00,9:30:00,1
-2,28,GEN_124,Daniel Lopez,Monday,9:00:00,9:30:00,1
-2,28,GEN_124,Daniel Lopez,Saturday,9:00:00,9:30:00,1
-2,28,GEN_124,Daniel Lopez,Thursday,9:00:00,9:30:00,1
-2,28,GEN_124,Daniel Lopez,Tuesday,9:00:00,9:30:00,1
-2,28,GEN_124,Daniel Lopez,Wednesday,9:00:00,9:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Friday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Friday,14:00:00,14:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Monday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Monday,14:00:00,14:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Saturday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Saturday,14:00:00,14:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Thursday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Thursday,14:00:00,14:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Tuesday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Tuesday,14:00:00,14:30:00,1
+1,15,GEN_115,Ana Dela Cruz,Wednesday,10:30:00,11:00:00,2
+1,4,GEN_104,Carlos Dela Cruz,Wednesday,14:00:00,14:30:00,1
+5,93,GEN_112,Lorena Mendoza,Friday,9:00:00,9:30:00,2
+5,93,GEN_112,Lorena Mendoza,Monday,9:00:00,9:30:00,2
+5,93,GEN_112,Lorena Mendoza,Saturday,9:00:00,9:30:00,2
+5,93,GEN_112,Lorena Mendoza,Thursday,9:00:00,9:30:00,2
+5,93,GEN_112,Lorena Mendoza,Tuesday,9:00:00,9:30:00,2
+5,93,GEN_112,Lorena Mendoza,Wednesday,9:00:00,9:30:00,2

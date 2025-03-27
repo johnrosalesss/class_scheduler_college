@@ -1,25 +1,37 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-1,15,GEN_115,Jessica Torres,Friday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Friday,13:30:00,14:00:00,1
-1,15,GEN_115,Jessica Torres,Monday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Monday,13:30:00,14:00:00,1
-1,15,GEN_115,Jessica Torres,Saturday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Saturday,13:30:00,14:00:00,1
-1,15,GEN_115,Jessica Torres,Thursday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Thursday,13:30:00,14:00:00,1
-1,15,GEN_115,Jessica Torres,Tuesday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Tuesday,13:30:00,14:00:00,1
-1,15,GEN_115,Jessica Torres,Wednesday,9:00:00,9:30:00,2
-1,20,ABM_101,Maria Santos,Wednesday,13:30:00,14:00:00,1
-5,99,GEN_118,Daniel Garcia,Friday,11:00:00,11:30:00,2
-5,99,GEN_118,Daniel Garcia,Monday,11:00:00,11:30:00,2
-5,99,GEN_118,Daniel Garcia,Saturday,11:00:00,11:30:00,2
-5,99,GEN_118,Daniel Garcia,Thursday,11:00:00,11:30:00,2
-5,99,GEN_118,Daniel Garcia,Tuesday,11:00:00,11:30:00,2
-5,99,GEN_118,Daniel Garcia,Wednesday,11:00:00,11:30:00,2
-6,111,GEN_125,Sister Maria Reyes,Friday,10:00:00,10:30:00,1
-6,111,GEN_125,Sister Maria Reyes,Monday,10:00:00,10:30:00,1
-6,111,GEN_125,Sister Maria Reyes,Saturday,10:00:00,10:30:00,1
-6,111,GEN_125,Sister Maria Reyes,Thursday,10:00:00,10:30:00,1
-6,111,GEN_125,Sister Maria Reyes,Tuesday,10:00:00,10:30:00,1
-6,111,GEN_125,Sister Maria Reyes,Wednesday,10:00:00,10:30:00,1
+1,20,ABM_101,Maria Santos,Friday,11:00:00,11:30:00,1
+1,20,ABM_101,Maria Santos,Monday,10:30:00,11:00:00,1
+1,20,ABM_101,Maria Santos,Saturday,10:30:00,11:00:00,1
+1,20,ABM_101,Maria Santos,Thursday,11:00:00,11:30:00,1
+1,20,ABM_101,Maria Santos,Tuesday,11:00:00,11:30:00,1
+1,20,ABM_101,Maria Santos,Wednesday,11:00:00,11:30:00,1
+2,32,GEN_128,Fr. Antonio Valdez,Friday,9:00:00,9:30:00,2
+2,32,GEN_128,Fr. Antonio Valdez,Monday,9:00:00,9:30:00,2
+2,32,GEN_128,Fr. Antonio Valdez,Saturday,9:00:00,9:30:00,2
+2,32,GEN_128,Fr. Antonio Valdez,Thursday,9:00:00,9:30:00,2
+2,32,GEN_128,Fr. Antonio Valdez,Tuesday,9:00:00,9:30:00,2
+2,32,GEN_128,Fr. Antonio Valdez,Wednesday,9:00:00,9:30:00,2
+4,78,HUMSS_106,Juan Cruz,Friday,15:30:00,16:00:00,1
+4,78,HUMSS_106,Juan Cruz,Monday,15:30:00,16:00:00,1
+4,78,HUMSS_106,Juan Cruz,Saturday,15:30:00,16:00:00,1
+4,78,HUMSS_106,Juan Cruz,Thursday,15:30:00,16:00:00,1
+4,78,HUMSS_106,Juan Cruz,Tuesday,15:30:00,16:00:00,1
+4,78,HUMSS_106,Juan Cruz,Wednesday,15:30:00,16:00:00,1
+5,96,GEN_115,Diana Gutierrez,Friday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Friday,13:30:00,14:00:00,2
+5,96,GEN_115,Diana Gutierrez,Monday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Monday,13:30:00,14:00:00,2
+5,96,GEN_115,Diana Gutierrez,Saturday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Saturday,13:30:00,14:00:00,2
+5,96,GEN_115,Diana Gutierrez,Thursday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Thursday,13:30:00,14:00:00,2
+5,96,GEN_115,Diana Gutierrez,Tuesday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Tuesday,13:30:00,14:00:00,2
+5,96,GEN_115,Diana Gutierrez,Wednesday,11:00:00,11:30:00,2
+5,99,GEN_118,Daniel Garcia,Wednesday,13:30:00,14:00:00,2
+6,116,GEN_130,Gabriel Santiago,Friday,11:00:00,11:30:00,2
+6,116,GEN_130,Gabriel Santiago,Monday,11:00:00,11:30:00,2
+6,116,GEN_130,Gabriel Santiago,Saturday,11:00:00,11:30:00,2
+6,116,GEN_130,Gabriel Santiago,Thursday,11:00:00,11:30:00,2
+6,116,GEN_130,Gabriel Santiago,Tuesday,11:00:00,11:30:00,2
+6,116,GEN_130,Gabriel Santiago,Wednesday,11:00:00,11:30:00,2

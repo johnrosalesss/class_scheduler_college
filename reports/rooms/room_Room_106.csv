@@ -1,13 +1,7 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-2,35,GEN_131,Josefina Ramos,Friday,8:30:00,9:00:00,2
-2,35,GEN_131,Josefina Ramos,Monday,8:30:00,9:00:00,2
-2,35,GEN_131,Josefina Ramos,Saturday,8:30:00,9:00:00,2
-2,35,GEN_131,Josefina Ramos,Thursday,8:30:00,9:00:00,2
-2,35,GEN_131,Josefina Ramos,Tuesday,8:30:00,9:00:00,2
-2,35,GEN_131,Josefina Ramos,Wednesday,8:30:00,9:00:00,2
-6,109,GEN_123,Maria Reyes,Friday,8:30:00,9:00:00,1
-6,109,GEN_123,Maria Reyes,Monday,8:30:00,9:00:00,1
-6,109,GEN_123,Maria Reyes,Saturday,8:30:00,9:00:00,1
-6,109,GEN_123,Maria Reyes,Thursday,8:30:00,9:00:00,1
-6,109,GEN_123,Maria Reyes,Tuesday,8:30:00,9:00:00,1
-6,109,GEN_123,Maria Reyes,Wednesday,8:30:00,9:00:00,1
+6,110,GEN_124,Antonio Velasquez,Friday,13:00:00,13:30:00,1
+6,110,GEN_124,Antonio Velasquez,Monday,13:00:00,13:30:00,1
+6,110,GEN_124,Antonio Velasquez,Saturday,13:00:00,13:30:00,1
+6,110,GEN_124,Antonio Velasquez,Thursday,13:00:00,13:30:00,1
+6,110,GEN_124,Antonio Velasquez,Tuesday,13:00:00,13:30:00,1
+6,110,GEN_124,Antonio Velasquez,Wednesday,13:00:00,13:30:00,1

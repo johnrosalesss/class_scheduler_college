@@ -1,13 +1,19 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-1,4,GEN_104,Ana Dela Cruz,Friday,8:30:00,9:00:00,1
-1,4,GEN_104,Ana Dela Cruz,Monday,8:30:00,9:00:00,1
-1,4,GEN_104,Ana Dela Cruz,Saturday,8:30:00,9:00:00,1
-1,4,GEN_104,Ana Dela Cruz,Thursday,8:30:00,9:00:00,1
-1,4,GEN_104,Ana Dela Cruz,Tuesday,8:30:00,9:00:00,1
-1,4,GEN_104,Ana Dela Cruz,Wednesday,8:30:00,9:00:00,1
-4,74,GEN_130,Joseph Garcia,Friday,8:00:00,8:30:00,2
-4,74,GEN_130,Joseph Garcia,Monday,8:00:00,8:30:00,2
-4,74,GEN_130,Joseph Garcia,Saturday,8:00:00,8:30:00,2
-4,74,GEN_130,Joseph Garcia,Thursday,8:00:00,8:30:00,2
-4,74,GEN_130,Joseph Garcia,Tuesday,8:00:00,8:30:00,2
-4,74,GEN_130,Joseph Garcia,Wednesday,8:00:00,8:30:00,2
+4,68,GEN_124,Antonio Velasquez,Friday,13:00:00,13:30:00,1
+4,68,GEN_124,Antonio Velasquez,Monday,13:00:00,13:30:00,1
+4,68,GEN_124,Antonio Velasquez,Saturday,13:00:00,13:30:00,1
+4,68,GEN_124,Antonio Velasquez,Thursday,13:00:00,13:30:00,1
+4,68,GEN_124,Antonio Velasquez,Tuesday,13:00:00,13:30:00,1
+4,68,GEN_124,Antonio Velasquez,Wednesday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Friday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Monday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Saturday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Thursday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Tuesday,13:00:00,13:30:00,1
+5,82,GEN_101,Gregory Delos Santos,Wednesday,13:00:00,13:30:00,1
+6,107,GEN_121,Michael Cruz,Friday,10:30:00,11:00:00,1
+6,107,GEN_121,Michael Cruz,Monday,10:30:00,11:00:00,1
+6,107,GEN_121,Michael Cruz,Saturday,10:30:00,11:00:00,1
+6,107,GEN_121,Michael Cruz,Thursday,10:30:00,11:00:00,1
+6,107,GEN_121,Michael Cruz,Tuesday,10:30:00,11:00:00,1
+6,107,GEN_121,Michael Cruz,Wednesday,10:30:00,11:00:00,1

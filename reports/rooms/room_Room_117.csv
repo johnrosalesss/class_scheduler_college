@@ -1,7 +1,19 @@
 Section ID,Block ID,Subject Code,Teacher Name,Day,Start Time,End Time,Semester
-1,7,GEN_107,Jonathan Tan,Friday,10:30:00,11:00:00,1
-1,7,GEN_107,Jonathan Tan,Monday,10:30:00,11:00:00,1
-1,7,GEN_107,Jonathan Tan,Saturday,10:30:00,11:00:00,1
-1,7,GEN_107,Jonathan Tan,Thursday,10:30:00,11:00:00,1
-1,7,GEN_107,Jonathan Tan,Tuesday,10:30:00,11:00:00,1
-1,7,GEN_107,Jonathan Tan,Wednesday,10:30:00,11:00:00,1
+2,24,GEN_120,Leonardo Cortez,Friday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Friday,11:30:00,12:00:00,1
+2,24,GEN_120,Leonardo Cortez,Monday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Monday,11:30:00,12:00:00,1
+2,24,GEN_120,Leonardo Cortez,Saturday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Saturday,11:30:00,12:00:00,1
+2,24,GEN_120,Leonardo Cortez,Thursday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Thursday,11:30:00,12:00:00,1
+2,24,GEN_120,Leonardo Cortez,Tuesday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Tuesday,11:30:00,12:00:00,1
+2,24,GEN_120,Leonardo Cortez,Wednesday,9:00:00,9:30:00,1
+2,28,GEN_124,Patrick Mendoza,Wednesday,11:30:00,12:00:00,1
+4,70,GEN_126,Anthony Salvador,Friday,14:00:00,14:30:00,1
+4,70,GEN_126,Anthony Salvador,Monday,14:00:00,14:30:00,1
+4,70,GEN_126,Anthony Salvador,Saturday,14:00:00,14:30:00,1
+4,70,GEN_126,Anthony Salvador,Thursday,14:00:00,14:30:00,1
+4,70,GEN_126,Anthony Salvador,Tuesday,14:00:00,14:30:00,1
+4,70,GEN_126,Anthony Salvador,Wednesday,14:00:00,14:30:00,1
